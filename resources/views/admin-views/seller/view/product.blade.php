@@ -163,7 +163,7 @@
                                                     <a class="btn btn-outline-danger btn-sm square-btn"
                                                        href="javascript:"
                                                        onclick="form_alert('product-{{$p['id']}}','{{ translate('Want_to_delete_this_item') }} ?')">
-                                                        <i class="tio-delete"></i>
+                                                        <i class="ri-delete-bin-5-line"></i>
                                                     </a>
                                                 </div>
                                                 <form action="{{route('admin.product.delete',[$p['id']])}}"

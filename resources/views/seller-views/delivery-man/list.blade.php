@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <a href="{{route('seller.delivery-man.add')}}" class="btn btn--primary">
-                    <i class="tio-add-circle"></i> {{translate('add_deliveryman')}}
+                    <i class="ri-add-box-line-circle"></i> {{translate('add_deliveryman')}}
                 </a>
             </div>
             <!-- End Header -->
@@ -124,7 +124,7 @@
                                         title="{{translate('delete')}}"
                                         href="javascript:"
                                         onclick="form_alert('delivery-man-{{$dm['id']}}','{{translate('want_to_remove_this_information?')}}')">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </a>
                                     <form action="{{route('seller.delivery-man.delete',[$dm['id']])}}"
                                             method="post" id="delivery-man-{{$dm['id']}}">

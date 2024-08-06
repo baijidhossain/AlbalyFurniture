@@ -154,12 +154,14 @@
                                autocomplete="off"
                                placeholder="{{ translate("search_here")}}..."
                                name="name">
+
                         <button class="input-group-append-overlay search_button" type="submit"
                                 style="border-radius: {{Session::get('direction') === "rtl" ? '7px 0px 0px 7px; right: unset; left: 0' : '0px 7px 7px 0px; left: unset; right: 0'}};top:0">
                                 <span class="input-group-text __text-20px">
                                     <i class="czi-search text-white"></i>
                                 </span>
                         </button>
+
                         <input name="data_from" value="search" hidden>
                         <input name="page" value="1" hidden>
                         <diV class="card search-card __inline-13">
@@ -433,6 +435,7 @@
                             @endif
                         @endif
                     </ul>
+                    
                     @if(auth('customer')->check())
                         <div class="logout-btn mt-auto d-md-none">
                             <hr>
@@ -441,6 +444,7 @@
                             </a>
                         </div>
                     @endif
+
                 </div>
             </div>
         </div>

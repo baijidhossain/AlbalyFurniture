@@ -172,14 +172,14 @@
                                                     type="button" class="btn btn-outline-danger btn-sm btn-xs delete"
                                                     id="{{$data->id}}"
                                                     >
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </a>
                                                 @else
                                                     <a href="javascript:" title="{{translate('delete')}}"
                                                         type="button" class="btn btn-outline-danger btn-sm btn-xs"
                                                         onclick="default_currency_delete_alert()"
                                                         >
-                                                        <i class="tio-delete"></i>
+                                                        <i class="ri-delete-bin-5-line"></i>
                                                     </a>
                                                 @endif
                                             @else

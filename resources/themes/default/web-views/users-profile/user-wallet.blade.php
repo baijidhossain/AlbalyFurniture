@@ -45,7 +45,7 @@
                                                     @if ($add_funds_to_wallet)
                                                     <div class="mx-3">
                                                         <button class="btn btn-light align-items-center" data-toggle="modal" data-target="#addFundToWallet">
-                                                            <i class="tio-add-circle text-accent"></i>
+                                                            <i class="ri-add-box-line-circle text-accent"></i>
                                                             <strong class="text-accent">{{ translate('add_Fund') }}</strong>
                                                         </button>
                                                     </div>

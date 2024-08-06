@@ -34,7 +34,7 @@
                             <div class="col-sm-8 col-md-6 col-lg-4">
                                 <div class="d-flex gap-10 justify-content-sm-end">
                                     <button class="btn btn--primary btn-icon-split" data-toggle="modal" data-target="#lang-modal">
-                                        <i class="tio-add"></i>
+                                        <i class="ri-add-box-line"></i>
                                         <span class="text">{{translate('add_new_language')}}</span>
                                     </button>
                                 </div>

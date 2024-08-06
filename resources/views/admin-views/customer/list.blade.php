@@ -130,7 +130,7 @@
                                     <a title="{{translate('delete')}}"
                                        class="btn btn-outline-danger btn-sm delete square-btn" href="javascript:"
                                        onclick="form_alert('customer-{{$customer['id']}}','{{translate('want_to_delete_this_customer').'?'}}')">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </a>
                                     @endif
                                 </div>

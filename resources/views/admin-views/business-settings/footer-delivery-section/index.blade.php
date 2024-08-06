@@ -53,7 +53,7 @@
                                             <input type="file" name="image" class="custom-upload-input-file aspect-ratio-3-15" data-imgpreview="pre_img_header_logo{{$key}}" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="uploadColorImage(this)">
 
                                             <span class="delete_file_input btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
 
                                             <div class="img_area_with_preview position-absolute z-index-2">

@@ -106,7 +106,7 @@
                                                     onclick="update_quantity({{ $p->id }})" type="button"
                                                     data-toggle="modal" data-target="#update-quantity"
                                                     title="{{ translate('update_quantity') }}">
-                                                <i class="tio-add-circle c1"></i>
+                                                <i class="ri-add-box-line-circle c1"></i>
                                             </button>
                                         </div>
                                     </td>
@@ -137,7 +137,7 @@
                                             <a class="btn btn-outline-danger btn-sm square-btn" href="javascript:"
                                                 title="{{translate('delete')}}"
                                                 onclick="form_alert('product-{{$p['id']}}','{{translate('want_to_delete_this_item?')}}')">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                         </div>
                                         <form action="{{route('admin.product.delete',[$p['id']])}}"

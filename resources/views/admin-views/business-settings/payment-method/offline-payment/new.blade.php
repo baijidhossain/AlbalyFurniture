@@ -29,7 +29,7 @@
                         <img width="20" src="{{asset('/public/assets/back-end/img/payment-card.png')}}" alt="">
                         <h5 class="mb-0">{{ translate('payment_Information') }}</h5>
                     </div>
-                    <a href="javascript:" onclick="add_input_fields_group()" class="btn btn--primary"><i class="tio-add"></i> {{ translate('Add_New_Field') }} </a>
+                    <a href="javascript:" onclick="add_input_fields_group()" class="btn btn--primary"><i class="ri-add-box-line"></i> {{ translate('Add_New_Field') }} </a>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                     <div class="d-flex justify-content-end">
                                         <a href="javascript:" class="btn btn-outline-danger btn-sm delete square-btn" title="Delete" onclick="remove_input_fields_group('{{ $aRandomNumber }}')">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                         <img width="20" src="{{asset('/public/assets/back-end/img/payment-card-fill.png')}}" alt="">
                         <h5 class="mb-0">{{ translate('required_Information_from_Customer') }}</h5>
                     </div>
-                    <a href="javascript:" onclick="add_customer_input_fields_group()" class="btn btn--primary"><i class="tio-add"></i> {{ translate('Add_New_Field') }} </a>
+                    <a href="javascript:" onclick="add_customer_input_fields_group()" class="btn btn--primary"><i class="ri-add-box-line"></i> {{ translate('Add_New_Field') }} </a>
                 </div>
                 <div class="card-body">
                     {{-- <div class="row">
@@ -112,7 +112,7 @@
                                         </div>
 
                                         <a class="btn btn-outline-danger btn-sm delete square-btn" title="Delete"  onclick="remove_input_fields_group('{{ $cRandomNumber }}')">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@
                                 <div class="form-group">
                                     <div class="d-flex justify-content-end">
                                         <a href="javascript:" class="btn btn-outline-danger btn-sm delete square-btn" title="Delete" onclick="remove_input_fields_group('`+id+`')">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -202,7 +202,7 @@
                                 </div>
 
                                 <a class="btn btn-outline-danger btn-sm delete square-btn" title="Delete"  onclick="remove_input_fields_group('`+id+`')">
-                                    <i class="tio-delete"></i>
+                                    <i class="ri-delete-bin-5-line"></i>
                                 </a>
                             </div>
                         </div>

@@ -228,7 +228,7 @@
                                                 onclick="form_alert('coupon-{{$c['id']}}','{{translate('want_to_delete_this_coupon?')}}')"
                                                 title="{{translate('delete')}}"
                                                 >
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                             <form action="{{route('admin.coupon.delete',[$c['id']])}}"
                                                 method="post" id="coupon-{{$c['id']}}">

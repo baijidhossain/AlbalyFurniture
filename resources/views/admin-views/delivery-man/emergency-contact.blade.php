@@ -103,7 +103,7 @@
                                         <a class="btn btn-outline-danger btn-sm delete mx-auto" href="javascript:"
                                            onclick="delete_contact('delete-contact-{{$contact->id}}','{{ translate('want_to_remove_this_information') }} ?')"
                                            title="{{ translate('delete')}}">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                         <form action="{{route('admin.delivery-man.emergency-contact.destroy')}}"
                                               method="post" id="delete-contact-{{$contact->id}}">

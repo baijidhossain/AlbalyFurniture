@@ -83,7 +83,7 @@
                             <div class="">
 
                                 <a href="{{route('admin.employee.add-new')}}" class="btn btn--primary text-nowrap">
-                                    <i class="tio-add"></i>
+                                    <i class="ri-add-box-line"></i>
                                     <span class="text ">{{translate('add_new')}}</span>
                                 </a>
                             </div>

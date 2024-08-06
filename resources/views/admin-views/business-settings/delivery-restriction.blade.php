@@ -151,7 +151,7 @@
                                                     href="javascript:"
                                                     title="{{translate('delete')}}"
                                                     onclick="form_alert('country-{{$store->id}}','{{translate('want_to_delete_this_item?')}}')">
-                                                        <i class="tio-delete"></i>
+                                                        <i class="ri-delete-bin-5-line"></i>
                                                     </a>
                                                     <form
                                                         action="{{route('admin.business-settings.delivery-restriction.delivery-country-delete',['id' => $store->id])}}"
@@ -224,7 +224,7 @@
                                                     href="javascript:"
                                                     title="{{translate('delete')}}"
                                                     onclick="form_alert('zip-{{$zip->id}}','{{translate('want_to_delete_this_item?')}}')">
-                                                        <i class="tio-delete"></i>
+                                                        <i class="ri-delete-bin-5-line"></i>
                                                     </a>
                                                     <form
                                                         action="{{route('admin.business-settings.delivery-restriction.zip-code-delete',['id' => $zip->id])}}"

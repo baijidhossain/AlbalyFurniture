@@ -20,7 +20,7 @@
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h5 class="mb-0">{{translate('file_manager')}}</h5>
             <button type="button" class="btn btn--primary modalTrigger" data-toggle="modal" data-target="#exampleModal">
-                <i class="tio-add"></i>
+                <i class="ri-add-box-line"></i>
                 <span class="text">{{translate('add_New')}}</span>
             </button>
         </div>

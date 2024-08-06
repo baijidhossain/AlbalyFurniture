@@ -128,11 +128,11 @@
                                     </ul>
                                 </div>
                                 <a href="{{route('seller.product.stock-limit-list',['in_house', ''])}}" class="btn btn-info">
-                                    <i class="tio-add-circle"></i>
+                                    <i class="ri-add-box-line-circle"></i>
                                     <span class="text">{{translate('limited_Stocks')}}</span>
                                 </a>
                                 <a href="{{route('seller.product.add-new')}}" class="btn btn--primary">
-                                    <i class="tio-add"></i>
+                                    <i class="ri-add-box-line"></i>
                                     <span class="text">{{translate('add_new_product')}}</span>
                                 </a>
                             </div>
@@ -220,7 +220,7 @@
                                             <a  class="btn btn-outline-danger btn-sm square-btn" href="javascript:"
                                                 title="{{translate('delete')}}"
                                                 onclick="form_alert('product-{{$p['id']}}','{{translate('want_to_delete_this_item')}} ?')">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                         </div>
                                         <form action="{{route('seller.product.delete',[$p['id']])}}"

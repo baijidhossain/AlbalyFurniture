@@ -757,10 +757,10 @@
                         }
                         response["qty"] <= 1
                             ? $(`.quantity__minus${cart_id}`).html(
-                                '<i class="tio-delete-outlined text-danger fs-10"></i>'
+                                '<i class="ri-delete-bin-5-line-outlined text-danger fs-10"></i>'
                             )
                             : $(`.quantity__minus${cart_id}`).html(
-                                '<i class="tio-remove fs-10"></i>'
+                                '<i class="ri-checkbox-indeterminate-line fs-10"></i>'
                             );
 
                         $(`.cartQuantity${cart_id}`).val(response["qty"]);
@@ -793,13 +793,13 @@
                                 .parent()
                                 .find(".quantity__minus")
                                 .html(
-                                    '<i class="tio-delete-outlined text-danger fs-10"></i>'
+                                    '<i class="ri-delete-bin-5-line-outlined text-danger fs-10"></i>'
                                 );
                         } else {
                             cart_quantity_of
                                 .parent()
                                 .find(".quantity__minus")
-                                .html('<i class="tio-remove fs-10"></i>');
+                                .html('<i class="ri-checkbox-indeterminate-line fs-10"></i>');
                         }
                         if (
                             segment === "shop-cart" ||

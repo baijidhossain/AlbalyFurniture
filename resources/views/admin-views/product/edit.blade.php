@@ -517,7 +517,7 @@
 
                                         <span class="delete_file_input btn btn-outline-danger btn-sm square-btn"
                                         style="display: @if (File::exists(base_path('storage/app/public/product/thumbnail/'. $product->thumbnail))) flex @else none @endif">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </span>
 
                                         <div class="img_area_with_preview position-absolute z-index-2">
@@ -591,7 +591,7 @@
                                                     <div class="custom_upload_input custom-upload-input-file-area position-relative border-dashed-2">
 
                                                         <a class="delete_file_input_css btn btn-outline-danger btn-sm square-btn" href="{{route('admin.product.remove-image',['id'=>$product['id'],'name'=>$photo])}}">
-                                                            <i class="tio-delete"></i>
+                                                            <i class="ri-delete-bin-5-line"></i>
                                                         </a>
 
                                                         <div class="img_area_with_preview position-absolute z-index-2 border-0">
@@ -614,7 +614,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="custom_upload_input custom-upload-input-file-area position-relative border-dashed-2">
                                                                 <a class="delete_file_input_css btn btn-outline-danger btn-sm square-btn" href="{{route('admin.product.remove-image',['id'=>$product['id'],'name'=>$photo->image_name,'color'=>'null'])}}">
-                                                                    <i class="tio-delete"></i>
+                                                                    <i class="ri-delete-bin-5-line"></i>
                                                                 </a>
 
                                                                 <div class="img_area_with_preview position-absolute z-index-2 border-0">
@@ -637,7 +637,7 @@
                                                     <div class="col-sm-12 col-md-4">
                                                         <div class="custom_upload_input custom-upload-input-file-area position-relative border-dashed-2">
                                                             <a class="delete_file_input_css btn btn-outline-danger btn-sm square-btn" href="{{route('admin.product.remove-image',['id'=>$product['id'],'name'=>$photo])}}">
-                                                                <i class="tio-delete"></i>
+                                                                <i class="ri-delete-bin-5-line"></i>
                                                             </a>
 
                                                             <div class="img_area_with_preview position-absolute z-index-2 border-0">
@@ -661,7 +661,7 @@
                                                     accept=".jpg, .webp, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="addMoreImage(this, '#additional_Image_Section')">
 
                                                 <span class="delete_file_input delete_file_input_section btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </span>
 
                                                 <div class="img_area_with_preview position-absolute z-index-2 border-0">
@@ -770,7 +770,7 @@
 
                                             <span class="delete_file_input btn btn-outline-danger btn-sm square-btn"
                                             style="display: @if (File::exists(base_path('storage/app/public/product/meta/'. $product['meta_image']))) flex @else none @endif">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
 
                                             <div class="img_area_with_preview position-absolute z-index-2">
@@ -1050,7 +1050,7 @@
                                     <div class="upload--icon-btns d-flex gap-2 position-absolute z-index-2 p-2" >
                                         <button type="button" class="btn btn-square text-white btn-sm" style="background: #${color_value['color']}"><i class="tio-done"></i></button>
                                         <a href="`+remove_url+`?id=`+product_id+`&name=`+image_name+`&color=`+color_value['color']+`"
-                                    class="btn btn-outline-danger btn-sm square-btn"><i class="tio-delete"></i></a>
+                                    class="btn btn-outline-danger btn-sm square-btn"><i class="ri-delete-bin-5-line"></i></a>
                                     </div>
                                     <img class="w-100" height="auto"
                                         onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
@@ -1345,7 +1345,7 @@
                                 accept=".jpg, .webp, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="addMoreImage(this, '${targetSection}')">
 
                             <span class="delete_file_input delete_file_input_section btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                <i class="tio-delete"></i>
+                                <i class="ri-delete-bin-5-line"></i>
                             </span>
 
                             <div class="img_area_with_preview position-absolute z-index-2 border-0">

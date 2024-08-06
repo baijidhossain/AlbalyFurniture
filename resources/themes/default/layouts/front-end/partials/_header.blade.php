@@ -1,8 +1,10 @@
 <header>
   <div class="header-area">
     <div class="main-header">
+
       <div class="top-menu-wrapper d-none d-lg-block">
         <div class="container">
+
           <div class="row">
             <div class="col-lg-12">
               <div class="d-flex align-items-center justify-content-between">
@@ -17,36 +19,58 @@
                         d="M13.1345 2.40005C13.3929 2.40005 13.597 2.61672 13.597 2.88339C13.597 3.12089 13.3762 3.33339 13.1304 3.33339C12.8804 3.33339 12.6637 3.10422 12.6637 2.84589C12.6679 2.61256 12.8887 2.40005 13.1345 2.40005Z"
                         fill="#AD8C5C" />
                     </svg>
-                    <a href="order-track.html">
+                    <a href="/track-order">
                       <p class="pera text-color-primary">Track Your Order</p>
                     </a>
                   </div>
+
                   <div class="top-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
-                      <path
-                        d="M17.2021 1.33173C17.2021 4.77563 17.2021 8.21953 17.2021 11.6634C17.198 11.6718 17.1897 11.6843 17.1897 11.6926C17.0691 12.4941 16.3995 13.0243 15.5511 12.9992C14.8108 12.9784 14.0664 12.9951 13.3261 12.9951C9.47914 12.9951 5.63219 12.9951 1.78525 12.9951C0.86198 12.9951 0.20488 12.3606 0.20488 11.4547C0.200721 8.15274 0.200721 4.8466 0.209039 1.54045C0.209039 1.31086 0.267263 1.06039 0.362917 0.851674C0.64572 0.258906 1.1531 9.15527e-05 1.80188 9.15527e-05C6.40158 9.15527e-05 11.0013 9.15527e-05 15.5968 9.15527e-05C15.6343 9.15527e-05 15.6758 9.15527e-05 15.7133 9.15527e-05C16.1874 0.0209637 16.5783 0.204638 16.8778 0.576162C17.0607 0.801581 17.1398 1.06457 17.2021 1.33173ZM1.91417 1.0103C4.20155 3.28536 6.45981 5.53537 8.70559 7.76452C10.9597 5.50198 13.2013 3.25197 15.4388 1.0103C10.9555 1.0103 6.45565 1.0103 1.91417 1.0103ZM15.443 11.989C13.8709 10.4111 12.2905 8.82482 10.706 7.23436C10.6769 7.26359 10.6311 7.30533 10.5896 7.34707C10.1154 7.82296 9.64134 8.29884 9.16723 8.77055C8.86363 9.07528 8.60994 9.07528 8.29803 8.76638C7.81144 8.28214 7.32485 7.79791 6.83826 7.3095C6.79668 7.26776 6.77588 7.20097 6.75925 7.17592C5.12897 8.8123 3.54445 10.4028 1.96408 11.989C6.44733 11.989 10.9514 11.989 15.443 11.989ZM1.21132 1.71578C1.21132 4.92173 1.21132 8.08595 1.21132 11.2543C2.80417 9.65553 4.3887 8.06925 5.98154 6.46627C4.40117 4.89251 2.81665 3.31458 1.21132 1.71578ZM11.4837 6.49967C13.0474 8.06925 14.6237 9.65135 16.1957 11.2293C16.1957 8.08177 16.1957 4.91339 16.1957 1.77005C14.6278 3.34798 13.0474 4.93008 11.4837 6.49967Z"
-                        fill="#AD8C5C" />
+                      <path d="M17.2021 1.33173C17.2021 4.77563 17.2021 8.21953 17.2021 11.6634C17.198 11.6718 17.1897 11.6843 17.1897 11.6926C17.0691 12.4941 16.3995 13.0243 15.5511 12.9992C14.8108 12.9784 14.0664 12.9951 13.3261 12.9951C9.47914 12.9951 5.63219 12.9951 1.78525 12.9951C0.86198 12.9951 0.20488 12.3606 0.20488 11.4547C0.200721 8.15274 0.200721 4.8466 0.209039 1.54045C0.209039 1.31086 0.267263 1.06039 0.362917 0.851674C0.64572 0.258906 1.1531 9.15527e-05 1.80188 9.15527e-05C6.40158 9.15527e-05 11.0013 9.15527e-05 15.5968 9.15527e-05C15.6343 9.15527e-05 15.6758 9.15527e-05 15.7133 9.15527e-05C16.1874 0.0209637 16.5783 0.204638 16.8778 0.576162C17.0607 0.801581 17.1398 1.06457 17.2021 1.33173ZM1.91417 1.0103C4.20155 3.28536 6.45981 5.53537 8.70559 7.76452C10.9597 5.50198 13.2013 3.25197 15.4388 1.0103C10.9555 1.0103 6.45565 1.0103 1.91417 1.0103ZM15.443 11.989C13.8709 10.4111 12.2905 8.82482 10.706 7.23436C10.6769 7.26359 10.6311 7.30533 10.5896 7.34707C10.1154 7.82296 9.64134 8.29884 9.16723 8.77055C8.86363 9.07528 8.60994 9.07528 8.29803 8.76638C7.81144 8.28214 7.32485 7.79791 6.83826 7.3095C6.79668 7.26776 6.77588 7.20097 6.75925 7.17592C5.12897 8.8123 3.54445 10.4028 1.96408 11.989C6.44733 11.989 10.9514 11.989 15.443 11.989ZM1.21132 1.71578C1.21132 4.92173 1.21132 8.08595 1.21132 11.2543C2.80417 9.65553 4.3887 8.06925 5.98154 6.46627C4.40117 4.89251 2.81665 3.31458 1.21132 1.71578ZM11.4837 6.49967C13.0474 8.06925 14.6237 9.65135 16.1957 11.2293C16.1957 8.08177 16.1957 4.91339 16.1957 1.77005C14.6278 3.34798 13.0474 4.93008 11.4837 6.49967Z" fill="#AD8C5C"></path>
                     </svg>
                     <a href="javascript:void(0)">
-                      <p class="pera text-color-secondary">infoyour@gmail.com</p>
+                      <p class="pera text-color-secondary">{{ $web_config['email']->value }}</p>
                     </a>
                   </div>
+
                 </div>
                 <!--Top Right Side -->
                 <div class="top-header-right">
-                  <!-- country dropdwon -->
-                  <div class="dropdown-side-divider">
-                    <select class="country-select" name="country"></select>
-                  </div>
-                  <!-- Currency dropdown -->
+               
                   <div class="dropdown-side-divider ml-40">
+                    @php( $local = \App\CPU\Helpers::default_lang())
                     <select class="select2" name="currency">
-                      <option value="usd">USD</option>
-                      <option value="bdt">BDT</option>
-                      <option value="cad">CAD</option>
-                    </select>
-                  </div>
+
+                      @foreach(json_decode($language['value'],true) as $data)
+                      @if($data['code']==$local)
+
+                      <option value="usd">
+                        <img class="{{Session::get('direction') === "rtl" ? 'mr-2' : 'mr-2'}}" width="20"
+                        src="{{asset('public/assets/front-end')}}/img/flags/{{$data['code']}}.png"
+                        alt="Eng">
+                   {{$data['name']}}
+
+                      </option>
+
+                      @endif
+                  @endforeach
+
+                </select>
+              </div>
                   <!-- login/register -->
+
+                  @if(auth('customer')->check())
+
+                  <div class="login-wrapper ml-48">
+                    <i class="ri-logout-circle-r-line"></i>
+                    <a href="{{route('customer.auth.logout')}}">
+                      <p class="pera text-color-primary">
+                        {{translate('lgout')}}
+                      </p>
+                    </a>
+                  </div>
+
+                  @else
                   <div class="login-wrapper ml-48">
                     <svg width="20" height="20" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_366_11241)">
@@ -63,18 +87,24 @@
                         </clipPath>
                       </defs>
                     </svg>
-                    <a href="login.html">
+                    <a href="{{route('customer.auth.login')}}">
                       <p class="pera text-color-primary">
                         Login/ Regeister
                       </p>
                     </a>
+
                   </div>
+                  @endif
+
+
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+
       <div class="header-bottom header-sticky">
         <div class="container">
           <div class="row">
@@ -86,8 +116,13 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <!-- Logo-->
                       <div class="logo logo-large light-logo">
-                        <a href="index.html"><img src="https://wodmart.vercel.app/assets/images/logo/logo.png"
-                            alt="logo"></a>
+                        <a href="/">
+                          <img class="__inline-11"
+                          src="{{asset("storage/app/public/company")."/".$web_config['web_logo']->value}}"
+                          onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                          alt="{{$web_config['name']->value}}"/>
+                          
+                          </a>
                       </div>
                       <div class="search-header-position d-block d-lg-none">
                         <div class="d-flex gap-15">
@@ -99,129 +134,93 @@
                         </div>
                       </div>
                       <ul class="listing d-none d-lg-block" id="navigation">
+                        @php($categories=\App\Model\Category::with(['childes.childes'])->where('position', 0)->where('home_status',0)->priority()->take(6)->get())
+                        @foreach ($categories as $key=>$category)
                         <li class="single-list">
-                          <a href="javascript:void(0)" class="single active">Home <i
-                              class="ri-arrow-down-s-line"></i></a>
-                          <ul class="submenu">
-                            <li class="single-list">
-                              <a href="index.html" class="single active">Home 01</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="index-two.html" class="single">Home 02</a>
-                            </li>
-                          </ul>
+                            <a class="single"  href="{{route('products',['id'=> $category['id'],'data_from'=>'category','page'=>1])}}">{{$category->name}}</a>
+
+                            @if ($category->childes->count() > 0)
+                            <ul class="submenu">
+                                @foreach ($category->childes as $key=>$sub_category)
+                              
+                                <li class="single-list"> 
+                                  <a class="single" href="{{route('products',['id'=> $sub_category['id'],'data_from'=>'category','page'=>1])}}">{{$sub_category->name}}</a>
+                               
+
+                                @if ($sub_category->childes->count() >0)
+                                    <ul class="submenu">
+                                      @foreach ($sub_category->childes as $sub_sub_category)
+
+                                      <li class="single-list">
+                                        <a class="single"  href="{{route('products',['id'=> $sub_sub_category['id'],'data_from'=>'category','page'=>1])}}">{{$sub_sub_category->name}}</a>
+                                      <li>
+
+                                      @endforeach
+                                    </ul>
+                                  @endif
+
+                                <li>
+                                @endforeach
+                            </ul>
+                            @endif
                         </li>
-                        <li class="single-list">
-                          <a href="about.html" class="single">About</a>
-                        </li>
-                        <li class="single-list">
-                          <a href="shop.html" class="single">Shop</a>
-                        </li>
-                        <li class="single-list">
-                          <a href="blog.html" class="single">Blog</a>
-                        </li>
-                        <li class="single-list">
-                          <a href="javascript:void(0)" class="single">Pages <i class="ri-arrow-down-s-line"></i></a>
-                          <ul class="submenu">
-                            <li class="single-list">
-                              <a href="wishlist.html" class="single">Wishlist</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="blog-details.html" class="single">Blog
-                                Details</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="shop-details.html" class="single">Shop Details</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="order-track.html" class="single">Order
-                                Track</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="shopping-cart.html" class="single">Shopping
-                                Cart</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="checkout.html" class="single">Checkout</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="javascript:void(0)" class="single">Login<i
-                                  class="ri-arrow-right-s-line"></i></a>
-                              <ul class="submenu">
-                                <li class="single-list">
-                                  <a href="login.html" class="single">Login</a>
-                                </li>
-                                <li class="single-list">
-                                  <a href="register.html" class="single">Registration</a>
-                                </li>
-                                <li class="single-list">
-                                  <a href="forgot-pass.html" class="single">Forgot
-                                    Password</a>
-                                </li>
-                                <li class="single-list">
-                                  <a href="verification.html" class="single">Verification</a>
-                                </li>
-                                <li class="single-list">
-                                  <a href="new-password.html" class="single">New
-                                    Password</a>
-                                </li>
-                              </ul>
+                        @endforeach
+              
+                      <li class="single-list d-block d-lg-none">
+                        <a class="single" href="{{route('user-account')}}">
+                          {{translate('user_profile')}}
+                        </a>
+                      </li>
+
+                      <li class="single-list d-block d-lg-none">
+
+                        <a class="single" href="{{route('wishlists')}}">
+                          {{translate('Wishlist')}}
+                        </a>
+
+                      </li>
+
+                      <li class="single-list d-block d-lg-none">
+                        <a class="single" href="shopping-cart.html">
+                          Cart
+                        </a>
+                      </li>
+
+                      <li class="single-list d-block d-lg-none">
+                        <a class="single" href="wishlist.html">
+                          Wishlist
+                        </a>
+                      </li>
+
+                      <li class="single-list d-block d-lg-none">
+                        <a class="single" href="/track-order">
+                          Track Order
+                        </a>
+
+                      </li>
+
+                        @if(auth('customer')->check())
+
+                          <li class="single-list single-list d-block d-lg-none">
+                              <a class="single" href="{{route('customer.auth.logout')}}">
+                                  {{translate('lgout')}}
+                              </a>
+                          </li>
+                        @else
+                            <li class="single-list d-block d-lg-none">
+                                <a class="single" href="{{route('customer.auth.login')}}"> 
+                                    {{translate('login')}}
+                                </a>
                             </li>
 
-                            <li class="single-list">
-                              <a href="faq.html" class="single">FAQs</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="privacy-policy.html" class="single">privacy
-                                policy</a>
-                            </li>
-                            <li class="single-list">
-                              <a href="terms-condition.html" class="single">terms-condition</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="single-list">
-                          <a href="contact.html" class="single">Contact</a>
-                        </li>
-                        <li class="d-block d-lg-none">
-                          <div class="login-wrapper">
-                            <a href="login.html">
-                              <p class="pera text-color-primary">
-                                Login/ Regeister
-                              </p>
-                            </a>
-                          </div>
-                        </li>
-                        <li class="d-block d-lg-none">
-                          <div class="login-wrapper">
-                            <a href="shopping-cart.html">
-                              <p class="pera text-color-primary">
-                                Cart
-                              </p>
-                            </a>
-                          </div>
-                        </li>
-                        <li class="d-block d-lg-none">
-                          <div class="login-wrapper">
-                            <a href="wishlist.html">
-                              <p class="pera text-color-primary">
-                                Wishlist
-                              </p>
-                            </a>
-                          </div>
-                        </li>
-                        <li class="d-block d-lg-none">
-                          <div class="login-wrapper">
-                            <a href="order-track.html">
-                              <p class="pera text-color-primary">
-                                Track Order
-                              </p>
-                            </a>
-                          </div>
-                        </li>
+                        @endif
+
+
                       </ul>
+
                       <div class="d-none d-lg-block">
                         <div class="header-right">
+
                           <div class="header-icon search-bar">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -231,29 +230,33 @@
                             </svg>
 
                           </div>
+
                           <div class="header-icon">
-                            <a href="login.html">
-                              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <a href="{{route('user-account')}}">
+                              @if(auth('customer')->check())
+                              <img style="width: 34px;height: 34px; " src="{{asset('storage/app/public/profile/'.auth('customer')->user()->image)}}"
+                              onerror="this.src='{{asset('public/assets/front-end/img/user.png')}}'"
+                              class="img-profile rounded-circle __inline-14">
+
+                              @else
+                              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_366_11241)">
-                                  <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M13 1.75C6.7868 1.75 1.75 6.7868 1.75 13C1.75 16.0203 2.9395 18.7622 4.8774 20.7837C6.40175 17.853 9.4662 15.85 13 15.85C16.5338 15.85 19.5983 17.853 21.1226 20.7837C23.0605 18.7622 24.25 16.0203 24.25 13C24.25 6.7868 19.2132 1.75 13 1.75ZM19.9665 21.8341C18.762 19.188 16.0948 17.35 13 17.35C9.9052 17.35 7.23801 19.188 6.03354 21.8341C7.94968 23.3474 10.3686 24.25 13 24.25C15.6314 24.25 18.0503 23.3474 19.9665 21.8341ZM0.25 13C0.25 5.95837 5.95837 0.25 13 0.25C20.0416 0.25 25.75 5.95837 25.75 13C25.75 16.8422 24.0496 20.2881 21.3627 22.6245C19.1245 24.5709 16.199 25.75 13 25.75C9.80096 25.75 6.87546 24.5709 4.63726 22.6245C1.95044 20.2881 0.25 16.8422 0.25 13Z"
-                                    fill="currentColor" />
-                                  <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M13 12.25C11.6193 12.25 10.5 11.1307 10.5 9.75C10.5 8.36929 11.6193 7.25 13 7.25C14.3807 7.25 15.5 8.36929 15.5 9.75C15.5 11.1307 14.3807 12.25 13 12.25ZM9 9.75C9 11.9591 10.7909 13.75 13 13.75C15.2091 13.75 17 11.9591 17 9.75C17 7.54086 15.2091 5.75 13 5.75C10.7909 5.75 9 7.54086 9 9.75Z"
-                                    fill="currentColor" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 1.75C6.7868 1.75 1.75 6.7868 1.75 13C1.75 16.0203 2.9395 18.7622 4.8774 20.7837C6.40175 17.853 9.4662 15.85 13 15.85C16.5338 15.85 19.5983 17.853 21.1226 20.7837C23.0605 18.7622 24.25 16.0203 24.25 13C24.25 6.7868 19.2132 1.75 13 1.75ZM19.9665 21.8341C18.762 19.188 16.0948 17.35 13 17.35C9.9052 17.35 7.23801 19.188 6.03354 21.8341C7.94968 23.3474 10.3686 24.25 13 24.25C15.6314 24.25 18.0503 23.3474 19.9665 21.8341ZM0.25 13C0.25 5.95837 5.95837 0.25 13 0.25C20.0416 0.25 25.75 5.95837 25.75 13C25.75 16.8422 24.0496 20.2881 21.3627 22.6245C19.1245 24.5709 16.199 25.75 13 25.75C9.80096 25.75 6.87546 24.5709 4.63726 22.6245C1.95044 20.2881 0.25 16.8422 0.25 13Z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 12.25C11.6193 12.25 10.5 11.1307 10.5 9.75C10.5 8.36929 11.6193 7.25 13 7.25C14.3807 7.25 15.5 8.36929 15.5 9.75C15.5 11.1307 14.3807 12.25 13 12.25ZM9 9.75C9 11.9591 10.7909 13.75 13 13.75C15.2091 13.75 17 11.9591 17 9.75C17 7.54086 15.2091 5.75 13 5.75C10.7909 5.75 9 7.54086 9 9.75Z" fill="currentColor"></path>
                                 </g>
                                 <defs>
-                                  <clipPath id="clip0_366_11241">
-                                    <rect width="26" height="26" fill="white" />
-                                  </clipPath>
+                                <clipPath id="clip0_366_11241">
+                                <rect width="26" height="26" fill="white"></rect>
+                                </clipPath>
                                 </defs>
                               </svg>
+                              @endif
 
                             </a>
                           </div>
+
                           <div class="header-icon">
-                            <a href="wishlist.html">
+                            <a href="{{route('wishlists')}}">
                               <svg width="28" height="24" viewBox="0 0 28 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -261,12 +264,17 @@
                                   fill="currentColor" />
                               </svg>
 
-                              <div class="count"><span class="count-num">4</span>
+                              <div class="count">
+                               
+                                <span
+                                class="countWishlist count-num">{{session()->has('wish_list')?count(session('wish_list')):0}}</span>
                               </div>
                             </a>
                           </div>
-                          <div class="header-icon">
-                            <a href="shopping-cart.html">
+                    
+
+                          <div class="header-icon" id="cart_items">
+                            <a href="{{route('shop-cart')}}">
                               <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -274,12 +282,21 @@
                                   fill="#13172B" />
                               </svg>
 
-                              <div class="count"><span class="count-num">3</span>
+                              <div class="count">
+
+                              <span class="count-num">               
+                                @php($cart=\App\CPU\CartManager::get_cart())
+                                {{$cart->count()}} 
+                              </span>
+
                               </div>
+
                             </a>
                           </div>
+
                         </div>
                       </div>
+
                     </div>
                   </nav>
                 </div>
@@ -297,16 +314,22 @@
     <div class="search-container">
       <div class="top-section">
         <div class="search-icon">
-          <i class="ri-search-line"></i>
+          <i type="submit" class="ri-search-line"></i>
         </div>
-        <div class="modal-search-box">
-          <input type="text" id="searchField" class="search-field" placeholder="Search...">
-          <button id="closeSearch" class="close-search-btn">
-            <kbd class="light-text"> ESC </kbd>
-          </button>
-        </div>
+
+      <form action="{{route('products')}}">
+          <div class="modal-search-box">
+
+              <input type="text" id="searchField" class="search-field" placeholder="Search..." name="name">
+              <button type="submit" id="closeSearch" class="close-search-btn">
+                <kbd class="light-text"> Search </kbd>
+              </button>
+
+          </div>
+      </form>
+
       </div>
-      <div class="body-section">
+      {{-- <div class="body-section">
         <div class="row">
           <div class="col-md-8">
             <ul class="listing">
@@ -599,7 +622,7 @@
             <div class="filter_menu"></div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </header>

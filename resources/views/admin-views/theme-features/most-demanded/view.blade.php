@@ -160,7 +160,7 @@
                                             <a class="btn btn-outline-danger btn-sm cursor-pointer delete"
                                             title="{{ translate('delete')}}"
                                             id="{{$most_demanded['id']}}">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                         </div>
                                     </td>

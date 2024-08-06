@@ -188,7 +188,7 @@
                                     <a  title="{{translate('delete')}}"
                                         type="button" class="btn btn-outline-danger btn-sm btn-xs delete"
                                         onclick="form_alert('wallet-bonus-{{$item['id']}}','Want to delete this bonus ?')">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </a>
 
                                     <form action="{{route('admin.customer.wallet.bonus-setup-delete',['id'=>$item['id']])}}"

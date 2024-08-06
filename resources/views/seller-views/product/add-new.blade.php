@@ -464,7 +464,7 @@
                                                 onchange="uploadColorImage(this)">
 
                                             <span class="delete_file_input btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
 
                                             <div class="img_area_with_preview position-absolute z-index-2">
@@ -536,7 +536,7 @@
                                                 >
 
                                             <span class="delete_file_input delete_file_input_section btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
 
                                             <div class="img_area_with_preview position-absolute z-index-2 border-0">
@@ -633,7 +633,7 @@
                                                 accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="uploadColorImage(this)">
 
                                             <span class="delete_file_input btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
 
                                             <div class="img_area_with_preview position-absolute z-index-2">
@@ -1057,7 +1057,7 @@
                                 accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="addMoreImage(this, '${targetSection}')">
 
                             <span class="delete_file_input delete_file_input_section btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                <i class="tio-delete"></i>
+                                <i class="ri-delete-bin-5-line"></i>
                             </span>
 
                             <div class="img_area_with_preview position-absolute z-index-2 border-0">

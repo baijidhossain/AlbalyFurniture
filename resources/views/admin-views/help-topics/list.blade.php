@@ -27,7 +27,7 @@
                         <h5 class="mb-0">{{translate('help_topic_Table')}} </h5>
                         <button class="btn btn--primary btn-icon-split for-addFaq" data-toggle="modal"
                                 data-target="#addModal">
-                            <i class="tio-add"></i>
+                            <i class="ri-add-box-line"></i>
                             <span class="text">{{translate('add_FAQ')}}  </span>
                         </button>
                     </div>
@@ -74,7 +74,7 @@
                                                 <a class="btn btn-outline-danger btn-sm delete"
                                                    title="{{ translate('delete')}}"
                                                    id="{{$help['id']}}">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </a>
                                             </div>
                                         </td>

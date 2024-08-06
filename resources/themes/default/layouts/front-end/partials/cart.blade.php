@@ -1,4 +1,4 @@
-{{--code improved Md. Al imrun Khandakar--}}
+{{-- 
 <div class="navbar-tool dropdown {{Session::get('direction') === "rtl" ? 'mr-md-3' : 'ml-md-3'}}"
      style="margin-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}: 6px">
         <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="{{route('shop-cart')}}">
@@ -12,7 +12,7 @@
             {{\App\CPU\Helpers::currency_converter(\App\CPU\CartManager::cart_total_applied_discount(\App\CPU\CartManager::get_cart()))}}
         </a>
 
-    <!-- Cart dropdown-->
+  
     <div class="dropdown-menu dropdown-menu-{{Session::get('direction') === "rtl" ? 'left' : 'right'}} __w-20rem cart-dropdown py-0">
         <div class="widget widget-cart px-3 pt-2 pb-3">
             <div class="widget-cart-top rounded">
@@ -79,18 +79,18 @@
                                     @if( isset($product->status) && $product->status == 1)
                                         <div class="__quantity">
                                             <div class="quantity__minus cart-qty-btn" onclick="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '-1', 'minus')">
-                                                <i class="{{ $cartItem['quantity'] == (isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1) ? 'tio-delete-outlined text-danger fs-10' : 'tio-remove fs-10' }}"></i>
+                                                <i class="{{ $cartItem['quantity'] == (isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line-outlined text-danger fs-10' : 'ri-checkbox-indeterminate-line fs-10' }}"></i>
                                             </div>
                                             <input type="text" class="quantity__qty cart-qty-input form-control p-0 text-center cartQuantity{{$cartItem['id']}}" value="{{$cartItem['quantity']}}" name="quantity" id="cartQuantity{{$cartItem['id']}}"
                                                 onchange="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '0')" data-min="{{ isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1 }}" autocomplete="off" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                             <div class="quantity__plus cart-qty-btn" onclick="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '1')">
-                                                <i class="tio-add"></i>
+                                                <i class="ri-add-box-line"></i>
                                             </div>
                                         </div>
                                     @else
                                         <div class="__quantity mr-29 mb-4">
                                             <div class="quantity__minus cart-qty-btn form-control " onclick="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '-1', 'minus')">
-                                                <i class="tio-delete-outlined text-danger fs-10"></i>
+                                                <i class="ri-delete-bin-5-line-outlined text-danger fs-10"></i>
                                             </div>
                                         </div>
                                     @endif
@@ -149,5 +149,25 @@
         </div>
     </div>
 </div>
-{{--code improved Md. Al imrun Khandakar--}}
-{{--to do discount--}}
+
+ --}}
+
+
+ @php($cart=\App\CPU\CartManager::get_cart())
+
+ <a href="http://localhost/shop-cart">
+   <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <path
+       d="M19.7472 6.21264C19.5903 5.81551 19.2308 5.78119 17.464 5.78119H15.9959V5.15364C15.9959 4.17798 15.8541 3.49649 15.5099 2.79539C14.8872 1.52556 13.8443 0.638157 12.4926 0.226322C11.8345 0.0302096 10.8524 -0.053138 10.255 0.0351124C8.59958 0.290058 7.18715 1.31474 6.46828 2.77578C6.11896 3.49159 5.97721 4.17798 5.97721 5.15364V5.7861H4.50403C2.73722 5.7861 2.37778 5.82042 2.22084 6.23225C2.13984 6.4921 1.38047 12.0764 1.05647 14.4837C0.772972 16.5821 0.509722 18.5628 0.317347 20.0532C-0.0167771 22.6223 -0.00665214 22.6615 0.00347284 22.7057V22.7106C0.0490353 22.8773 0.499597 23.3136 0.636284 23.4411L1.2286 24H20.7091L21.1495 23.6225C21.3469 23.4509 22 22.8675 22 22.5782C22 22.3821 19.7877 6.32541 19.7472 6.21264ZM20.4003 22.2056C20.3952 22.2399 20.3547 22.3429 20.2838 22.4164L20.1826 22.5243H1.79053L1.52728 22.2497L2.56509 14.7435C2.92959 12.0715 3.25359 9.74266 3.44597 8.35026C3.53203 7.74231 3.57253 7.43344 3.59278 7.28145C4.27622 7.27655 7.26309 7.27165 10.979 7.27165H18.3702L18.3803 7.32558C18.4613 7.7178 20.3648 21.7692 20.4003 22.2056ZM7.50102 5.7861V5.22718C7.50102 4.84966 7.55165 4.32997 7.60734 4.08973C7.90602 2.86403 8.92358 1.86876 10.1943 1.55008C10.7258 1.4226 11.5966 1.46673 12.1281 1.65304H12.1332C12.6901 1.83444 13.1457 2.12861 13.5659 2.57967C14.2443 3.29547 14.4721 3.93774 14.4721 5.12422V5.7861H7.50102Z"
+       fill="#13172B"></path>
+   </svg>
+
+   <div class="count">
+
+     <span class="count-num">
+       {{$cart->count()}}
+     </span>
+
+   </div>
+
+ </a>

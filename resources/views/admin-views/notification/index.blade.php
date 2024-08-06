@@ -164,7 +164,7 @@
                                                title="{{translate('delete')}}"
                                                href="javascript:"
                                                id="{{$notification['id']}}')">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                         </div>
                                     </td>

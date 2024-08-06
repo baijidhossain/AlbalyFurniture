@@ -128,7 +128,7 @@
 
                                     <div id="banner-btn">
                                         <button id="main-banner-add" class="btn btn--primary text-nowrap">
-                                            <i class="tio-add"></i>
+                                            <i class="ri-add-box-line"></i>
                                             {{ translate('add_banner')}}
                                         </button>
                                     </div>
@@ -180,7 +180,7 @@
                                             <a class="btn btn-outline-danger btn-sm cursor-pointer delete"
                                                title="{{ translate('Delete')}}"
                                                id="{{$banner['id']}}">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                         </div>
                                     </td>

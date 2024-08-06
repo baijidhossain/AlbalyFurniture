@@ -49,7 +49,7 @@
                 <div class="card">
                     <div class="card-header justify-content-between">
                         <h5 class="mb-0">{{ translate('features_Section') }} - {{ translate('middle') }}</h5>
-                        <span onclick="addThisFeaturesCard_middle()" class="btn btn--primary"><i class="tio-add pr-2"></i>{{ translate('add_New') }}</span>
+                        <span onclick="addThisFeaturesCard_middle()" class="btn btn--primary"><i class="ri-add-box-line pr-2"></i>{{ translate('add_New') }}</span>
                     </div>
                     <div class="card-body">
 
@@ -61,7 +61,7 @@
                                         <div class="card-header justify-content-end">
                                             <div class="cursor-pointer removeThisFeaturesCard_class">
                                                 <span class="btn btn-outline-danger btn-sm square-btn">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@
                                         <div class="card-header justify-content-end">
                                             <div class="cursor-pointer removeThisFeaturesCard_class">
                                                 <span class="btn btn-outline-danger btn-sm square-btn">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
                 <div class="card">
                     <div class="card-header justify-content-between">
                         <h5 class="mb-0">{{ translate('features_Section') }} - {{ translate('bottom') }}</h5>
-                        <span onclick="addThisFeaturesCard_bottom()" class="btn btn--primary"><i class="tio-add pr-2"></i>{{ translate('add_New') }}</span>
+                        <span onclick="addThisFeaturesCard_bottom()" class="btn btn--primary"><i class="ri-add-box-line pr-2"></i>{{ translate('add_New') }}</span>
                     </div>
                     <div class="card-body">
                         <div class="row" id="features_Section_bottom_row">
@@ -134,7 +134,7 @@
                                         <div class="card-header align-items-center justify-content-between">
                                             <h5 class="m-0 text-muted">{{ translate('icon_box') }}</h5>
                                             <span class="cursor-pointer text-danger remove_icon_box_with_titles btn btn-outline-danger btn-sm square-btn" data-title="{{ $item->title }}" data-subtitle="{{ $item->subtitle }}">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </span>
                                         </div>
 
@@ -168,7 +168,7 @@
                                             <h5 class="m-0 text-muted">{{ translate('icon_box') }}</h5>
                                             <div class="cursor-pointer removeThisFeaturesCard_class">
                                                 <span class="btn btn-outline-danger btn-sm square-btn btn btn-outline-danger btn-sm square-btn">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -190,7 +190,7 @@
                                                 <input type="file" name="features_section_bottom_icon[]" class="custom-upload-input-file aspect-ratio-3-15" id="" data-imgpreview="pre_img_header_logo" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="uploadColorImage(this)">
 
                                                 <span class="delete_file_input btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </span>
 
                                                 <div class="img_area_with_preview position-absolute z-index-2">
@@ -262,7 +262,7 @@
                             <div class="card-header justify-content-end">
                                 <div class="cursor-pointer removeThisFeaturesCard_class">
                                     <span class="btn btn-outline-danger btn-sm square-btn">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </span>
                                 </div>
                             </div>
@@ -311,7 +311,7 @@
                                 <h5 class="m-0 text-muted">{{ translate('icon_box') }}</h5>
                                 <div class="cursor-pointer removeThisFeaturesCard_class">
                                     <span class="btn btn-outline-danger btn-sm square-btn">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </span>
                                 </div>
                             </div>
@@ -333,7 +333,7 @@
                                     <input type="file" name="features_section_bottom_icon[]" class="custom-upload-input-file aspect-ratio-3-15" id="" data-imgpreview="pre_img_header_logo${index}" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="uploadColorImage(this)">
 
                                     <span class="delete_file_input btn btn-outline-danger btn-sm square-btn" style="display: none">
-                                        <i class="tio-delete"></i>
+                                        <i class="ri-delete-bin-5-line"></i>
                                     </span>
 
                                     <div class="img_area_with_preview position-absolute z-index-2">

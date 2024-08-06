@@ -210,7 +210,7 @@
                                         <a href="#"
                                             class="btn btn-outline-danger btn-sm delete"
                                             title="{{translate('delete') }}" id="{{$r['id']}}">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                     </div>
                                 </td>

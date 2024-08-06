@@ -61,7 +61,7 @@
                                     </ul>
                                 </div>
                                 <a href="{{route('admin.delivery-man.add')}}" class="btn btn--primary text-nowrap">
-                                    <i class="tio-add"></i>
+                                    <i class="ri-add-box-line"></i>
                                     {{translate('add_Delivery_Man')}}
                                 </a>
                             </div>
@@ -144,7 +144,7 @@
                                             <a class="btn btn-outline-danger btn-sm delete" href="javascript:"
                                                 onclick="form_alert('delivery-man-{{$dm['id']}}','{{translate('want_to_remove_this_information?')}}')"
                                                 title="{{ translate('delete')}}">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                             </a>
                                             <form action="{{route('admin.delivery-man.delete',[$dm['id']])}}"
                                                     method="post" id="delivery-man-{{$dm['id']}}">

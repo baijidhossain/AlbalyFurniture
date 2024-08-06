@@ -1,3 +1,46 @@
+  
+  
+  
+		<!-- Subscription area S t a r t -->
+		<section class="subscription-area subscription-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="subscription-wrapper">
+							<div class="left-wrapper">
+								<div class="subscription-content">
+									<h4 class="title">Stay Updated with Our Latest News</h4>
+									<p class="pera">Join our email subscription now</p>
+								</div>
+								<div class="subscription-input-section">
+									<input type="text" class="subscription-input" placeholder="Enter your email address">
+									<button type="submit" class="subscribe-btn"><span class="btn-text">Subscribe</span><span
+											class="icon"><i class="ri-arrow-right-line"></i></span></button>
+								</div>
+							</div>
+							<div class="right-wrapper">
+								<div class="subscription-content">
+									<h4 class="title">Download App</h4>
+									<p class="pera">Mobile app available</p>
+								</div>
+								<div class="download-app">
+									<a href="javascript:void(0)" target="_blank" class="  wow fadeInUp" data-wow-delay="0.0s">
+										<img src="https://wodmart.vercel.app/assets/images/icon/google-play.png" alt="img">
+									</a>
+									<a href="javascript:void(0)" target="_blank" class="  wow fadeInUp" data-wow-delay="0.1s">
+										<img src="https://wodmart.vercel.app/assets/images/icon/app-store.png" alt="img">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End-of subscription-->
+  
+  
+  
   <!-- Footer S t a r t -->
   <footer>
     <div class="footer-wrapper footer-bg-one">
@@ -8,21 +51,21 @@
               <div class="single-footer-caption">
                 <div class="footer-tittle">
                   <h4 class="title">About Us</h4>
-                  <p class="pera">Etoshi is an exciting contemporary brand
-                    which focuses on high-quality products
-                    graphics with a British style</p>
+                  <p class="pera">
+                    Albaly Furniture is your go-to destination for transforming any space into a stylish and comfortable haven. Our dedication to quality, craftsmanship, and customer service makes us a trusted choice for all your furniture needs.
+                  </p>
                   <ul class="info-listing">
                     <li class="footer-info-list">
                       <a href="#" class="single">
                         <i class="ri-mail-fill"></i>
-                        <p class="pera">info@mydomain.com</p>
+                        <p class="pera">{{ $web_config['email']->value }}</p>
                       </a>
                     </li>
                     <li class="footer-info-list">
                       <a href="#" class="single">
                         <div class="d-flex gap-6">
                           <i class="ri-phone-fill"></i>
-                          <p class="pera">+777 2345 7885</p>
+                          <p class="pera">{{ $web_config['phone']->value }}</p>
                         </div>
                       </a>
                     </li>
@@ -33,60 +76,88 @@
             <div class="col-xl-6">
               <div class="footer-menu-section">
                 <div class="logo logo-large light-logo">
-                  <a href="index.html"><img src="https://wodmart.vercel.app/assets/images/logo/logo-dark.png"
-                      alt="logo"></a>
+                  <a href="index.html">
+                 
+                    <img class="{{Session::get('direction') === "rtl" ? 'rightalign' : ''}}" src="{{asset("storage/app/public/company/")}}/{{ $web_config['footer_logo']->value }}"
+                    onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                    alt="{{ $web_config['name']->value }}"/>
+                    
+                    </a>
                 </div>
                 <div class="footer-social-section">
                   <h4 class="title">Follow Us</h4>
                   <ul class="footer-social-lists">
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-facebook-fill"></i>
-                      </a>
-                    </li>
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-whatsapp-fill"></i>
-                      </a>
-                    </li>
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-twitter-fill"></i>
-                      </a>
-                    </li>
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-instagram-fill"></i>
-                      </a>
-                    </li>
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-linkedin-fill"></i>
-                      </a>
-                    </li>
-                    <li class="list-icon">
-                      <a href="javascript:void(0)" class="list">
-                        <i class="ri-pinterest-fill"></i>
-                      </a>
-                    </li>
+                 
+
+
+                    @if($web_config['social_media'])
+                    @foreach ($web_config['social_media'] as $item)
+                        <span class="social-media ">
+
+                          @if ($item->name == "twitter")
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-twitter-fill"></i>
+                              </a>
+                          </li>
+                      @elseif($item->name == "facebook") 
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-facebook-fill"></i>
+                              </a>
+                          </li>
+
+                          @elseif($item->name == "instagram") 
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-instagram-fill"></i>
+                              </a>
+                          </li>
+
+                          @elseif($item->name == "pinterest") 
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-pinterest-fill"></i>
+                              </a>
+                          </li>
+
+                          
+                          @elseif($item->name == "google-plus") 
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-google-fill"></i>
+                              </a>
+                          </li>
+                      @else
+                          <li class="list-icon">
+                              <a href="{{ $item->link }}" class="list">
+                                  <i class="ri-linkedin-fill"></i> 
+                              </a>
+                          </li>
+                      @endif
+                      
+
+                        </span>
+                    @endforeach
+                @endif
+
+
                   </ul>
                 </div>
                 <div class="footer-menu">
                   <ul class="menu-lists">
                     <li class="list">
-                      <a href="index.html" class="menu-list">Home</a>
+                      <a href="/" class="menu-list">Home</a>
                     </li>
                     <li class="list">
-                      <a href="about.html" class="menu-list">About</a>
+                      <a href="{{route('about-us')}}" class="menu-list">{{translate('about_us')}}</a>
                     </li>
                     <li class="list">
-                      <a href="shop.html" class="menu-list">Shop</a>
+                      <a href="{{route('wishlists')}}" class="menu-list">{{translate('Wishlist')}}</a>
                     </li>
+
                     <li class="list">
-                      <a href="blog.html" class="menu-list">Blog</a>
-                    </li>
-                    <li class="list">
-                      <a href="contact.html" class="menu-list">Contact</a>
+                      <a href="{{route('contacts')}}" class="menu-list">{{translate('contacts')}}</a>
                     </li>
                   </ul>
                 </div>
@@ -97,14 +168,26 @@
                 <div class="footer-tittle">
                   <h4 class="title">My Accounts</h4>
                   <ul class="listing">
-                    <li class="single-list"><a href="javascript:void(0)" class="single">My
-                        Orders</a></li>
-                    <li class="single-list"><a href="javascript:void(0)" class="single">My Credit
-                        Slips</a></li>
-                    <li class="single-list"><a href="javascript:void(0)" class="single">My
-                        Addresses</a></li>
-                    <li class="single-list"><a href="javascript:void(0)" class="single">My Personal
-                        Info</a></li>
+            
+            
+                    <li class="single-list">
+                      <a href="{{route('refund-policy')}}" class="single">{{translate('refund_policy')}}</a>
+                    </li>
+
+                    <li class="single-list">
+                      <a href="{{route('return-policy')}}" class="single">{{translate('return_policy')}}</a>
+                    </li>
+
+                    <li class="single-list">
+                      <a href="{{route('cancellation-policy')}}" class="single">{{translate('cancellation_policy')}}</a>
+                    </li>
+
+
+                    <li class="single-list">
+                      <a href="{{route('contacts')}}" class="single">{{translate('contacts')}}</a>
+                    </li>
+
+
                   </ul>
                 </div>
               </div>
@@ -117,12 +200,12 @@
         <div class="container">
           <div class="d-flex justify-content-between gap-14 flex-wrap">
             <div class="privacy-section d-flex">
-              <a href="privacy-policy.html">
-                <p class="pera mr-25">Privacy Policy</p>
+              <a href="{{route('privacy-policy')}}">
+                <p class="pera mr-25">{{translate('privacy_policy')}}</p>
               </a>
               <span>|</span>
-              <a href="terms-condition.html">
-                <p class="pera ml-25">Terms & Conditions</p>
+              <a href="{{route('terms')}}">
+                <p class="pera ml-25">{{translate('terms_&_conditions')}}</p>
               </a>
             </div>
             <div class="payment-list">
@@ -134,23 +217,3 @@
     </div>
   </footer>
   <!-- End-of Footer -->
-
-  <!-- Scroll Up  -->
-  <div class="progressParent" id="back-top">
-    <svg class="backCircle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </div>
-  <!-- Add an overlay element -->
-  <div class="overlay"></div>
-  <!-- jquery-->
-  <script src="https://wodmart.vercel.app/assets/js/jquery-3.7.0.min.js"></script>
-  <script src="https://wodmart.vercel.app/assets/js/popper.min.js"></script>
-  <script src="https://wodmart.vercel.app/assets/js/bootstrap-5.3.0.min.js"></script>
-  <!-- Plugin -->
-  <script src="https://wodmart.vercel.app/assets/js/plugin.js"></script>
-  <!-- Main js-->
-  <script src="https://wodmart.vercel.app/assets/js/main.js"></script>
-</body>
-
-</html>

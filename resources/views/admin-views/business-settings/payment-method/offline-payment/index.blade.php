@@ -51,7 +51,7 @@
                                 <!-- End Search -->
                             </div>
                             <div class="col-sm-4 col-md-6 col-lg-8 d-flex justify-content-end">
-                                <a href="{{route('admin.business-settings.payment-method.offline.new')}}" class="btn btn--primary"><i class="tio-add"></i> {{ translate('add_New_Method') }}</a>
+                                <a href="{{route('admin.business-settings.payment-method.offline.new')}}" class="btn btn--primary"><i class="ri-add-box-line"></i> {{ translate('add_New_Method') }}</a>
                             </div>
                         </div>
                         <!-- End Row -->
@@ -110,7 +110,7 @@
                                                         <i class="tio-edit"></i>
                                                     </a>
                                                     <button class="btn btn-outline-danger btn-sm delete square-btn" title="Delete" onclick="form_alert('delete-method_name-{{ $method->id }}', '{{ translate('Want_to_delete_this_item') }} ?')">
-                                                        <i class="tio-delete"></i>
+                                                        <i class="ri-delete-bin-5-line"></i>
                                                     </button>
 
                                                     <form action="{{route('admin.business-settings.payment-method.offline.delete')}}" method="post" id="delete-method_name-{{ $method->id }}">

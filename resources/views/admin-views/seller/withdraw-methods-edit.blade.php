@@ -16,7 +16,7 @@
                     {{translate('Withdrawal_Methods')}}
                 </h2>
                 <button class="btn btn--primary" id="add-more-field">
-                    <i class="tio-add"></i> {{translate('add_Fields')}}
+                    <i class="ri-add-box-line"></i> {{translate('add_Fields')}}
                 </button>
             </div>
         </div>
@@ -134,7 +134,7 @@
                                             </div>
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <span class="btn btn-danger" onclick="remove_field({{$key}})">
-                                                <i class="tio-delete"></i>
+                                                <i class="ri-delete-bin-5-line"></i>
                                                     {{translate('remove')}}
                                                 </span>
                                             </div>
@@ -219,7 +219,7 @@
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-end">
                                     <span class="btn btn-danger" onclick="remove_field(${counter})">
-                                    <i class="tio-delete"></i>
+                                    <i class="ri-delete-bin-5-line"></i>
                                         {{translate('remove')}}
                                     </span>
                                 </div>

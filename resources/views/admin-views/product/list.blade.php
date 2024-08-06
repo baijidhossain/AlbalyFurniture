@@ -151,7 +151,7 @@
                                     <span class="text">{{translate('limited_Sotcks')}}</span>
                                 </a>
                                 <a href="{{route('admin.product.add-new')}}" class="btn btn--primary">
-                                    <i class="tio-add"></i>
+                                    <i class="ri-add-box-line"></i>
                                     <span class="text">{{translate('add_new_product')}}</span>
                                 </a>
                             @endif
@@ -247,7 +247,7 @@
                                         <a class="btn btn-outline-danger btn-sm square-btn" href="javascript:"
                                             title="{{translate('delete')}}"
                                             onclick="form_alert('product-{{$p['id']}}','{{translate('want_to_delete_this_item?')}}')">
-                                            <i class="tio-delete"></i>
+                                            <i class="ri-delete-bin-5-line"></i>
                                         </a>
                                     </div>
                                     <form action="{{route('admin.product.delete',[$p['id']])}}"

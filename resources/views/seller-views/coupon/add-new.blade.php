@@ -253,7 +253,7 @@
                                                    href="javascript:"
                                                    onclick="form_alert('coupon-{{$coupon['id']}}','Want to delete this coupon ?')"
                                                    title="{{translate('delete')}}">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </a>
                                                 <form action="{{route('seller.coupon.delete',[$coupon['id']])}}"
                                                       method="post" id="coupon-{{$coupon['id']}}">
@@ -268,7 +268,7 @@
                                                 <button
                                                     class="btn btn-outline-danger btn-sm delete disabled cursor-default"
                                                     title="Tooltip on top">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </button>
                                                 <span></span>
                                             @endif

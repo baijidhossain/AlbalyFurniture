@@ -112,7 +112,7 @@
                                                 <a class="btn btn-outline-danger btn-sm square-btn" href="javascript:"
                                                    title="{{translate('delete')}}"
                                                    onclick="form_alert('delete-{{$withdrawal_method->id}}','{{translate('want_to_delete_this_item?')}}')">
-                                                    <i class="tio-delete"></i>
+                                                    <i class="ri-delete-bin-5-line"></i>
                                                 </a>
                                                 <form action="{{route('admin.sellers.withdraw-method.delete',[$withdrawal_method->id])}}"
                                                       method="post" id="delete-{{$withdrawal_method->id}}">
