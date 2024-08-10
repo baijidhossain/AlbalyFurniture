@@ -124,7 +124,7 @@
         </h4>
     </div>
     <div>
-        <button class="close call-when-done" type="button" data-dismiss="modal" aria-label="Close">
+        <button class="close call-when-done" type="button" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>

@@ -2,7 +2,7 @@
     <button
         type="button"
         class="btn-close border-0"
-        data-dismiss="modal"
+        data-bs-dismiss="modal"
         aria-label="Close"
     ><i class="tio-clear"></i></button>
 </div>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="d-flex justify-content-center gap-3 mb-3">
-            <button type="button" class="fs-16 btn btn-secondary flex-grow-1" data-dismiss="modal">{{ translate('cancel') }}</button>
+            <button type="button" class="fs-16 btn btn-secondary flex-grow-1" data-bs-dismiss="modal">{{ translate('cancel') }}</button>
             <button type="submit" class="fs-16 btn btn--primary flex-grow-1">{{ translate('Activate') }}</button>
         </div>
     </form>

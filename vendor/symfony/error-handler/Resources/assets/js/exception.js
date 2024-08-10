@@ -112,12 +112,12 @@
         var toggles = document.querySelectorAll('.sf-toggle:not([data-processed=true])');
 
         for (var i = 0; i < toggles.length; i++) {
-            var elementSelector = toggles[i].getAttribute('data-toggle-selector');
+            var elementSelector = toggles[i].getAttribute('data-bs-toggle-selector');
             var element = document.querySelector(elementSelector);
 
             addClass(element, 'sf-toggle-content');
 
-            if (toggles[i].hasAttribute('data-toggle-initial') && toggles[i].getAttribute('data-toggle-initial') == 'display') {
+            if (toggles[i].hasAttribute('data-bs-toggle-initial') && toggles[i].getAttribute('data-bs-toggle-initial') == 'display') {
                 addClass(toggles[i], 'sf-toggle-on');
                 addClass(element, 'sf-toggle-visible');
             } else {
@@ -141,7 +141,7 @@
                     toggle = toggle.parentNode;
                 }
 
-                var element = document.querySelector(toggle.getAttribute('data-toggle-selector'));
+                var element = document.querySelector(toggle.getAttribute('data-bs-toggle-selector'));
 
                 toggleClass(toggle, 'sf-toggle-on');
                 toggleClass(toggle, 'sf-toggle-off');
@@ -149,17 +149,17 @@
                 toggleClass(element, 'sf-toggle-visible');
 
                 /* the toggle doesn't change its contents when clicking on it */
-                if (!toggle.hasAttribute('data-toggle-alt-content')) {
+                if (!toggle.hasAttribute('data-bs-toggle-alt-content')) {
                     return;
                 }
 
-                if (!toggle.hasAttribute('data-toggle-original-content')) {
-                    toggle.setAttribute('data-toggle-original-content', toggle.innerHTML);
+                if (!toggle.hasAttribute('data-bs-toggle-original-content')) {
+                    toggle.setAttribute('data-bs-toggle-original-content', toggle.innerHTML);
                 }
 
                 var currentContent = toggle.innerHTML;
-                var originalContent = toggle.getAttribute('data-toggle-original-content');
-                var altContent = toggle.getAttribute('data-toggle-alt-content');
+                var originalContent = toggle.getAttribute('data-bs-toggle-original-content');
+                var altContent = toggle.getAttribute('data-bs-toggle-alt-content');
                 toggle.innerHTML = currentContent !== altContent ? altContent : originalContent;
             });
 

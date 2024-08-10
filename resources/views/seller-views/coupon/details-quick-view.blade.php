@@ -1,4 +1,4 @@
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
     <i class="tio-clear"></i>
 </button>
 <div class="coupon__details">

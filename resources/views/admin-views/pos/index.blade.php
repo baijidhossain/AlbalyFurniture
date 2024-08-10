@@ -101,7 +101,7 @@
                                     @endforeach
                                 </select>
 
-                                <button class="btn btn-success rounded text-nowrap" id="add_new_customer" type="button" data-toggle="modal" data-target="#add-customer" title="Add New Customer">
+                                <button class="btn btn-success rounded text-nowrap" id="add_new_customer" type="button" data-toggle="modal" data-bs-target="#add-customer" title="Add New Customer">
                                     {{ translate('add_New_Customer')}}
                                 </button>
                             </div>
@@ -135,7 +135,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('print_Invoice')}}</h5>
-                    <button id="invoice_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button id="invoice_close" type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -164,7 +164,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('add_new_customer')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -245,7 +245,7 @@
         </div>
     </div>
 
-    <button class="d-none" id="hold-orders-modal-btn" type="button" data-toggle="modal" data-target="#hold-orders-modal"></button>
+    <button class="d-none" id="hold-orders-modal-btn" type="button" data-toggle="modal" data-bs-target="#hold-orders-modal"></button>
 
     {{-- Hold Orders Modal --}}
     <div class="modal fade" id="hold-orders-modal" tabindex="-1">
@@ -274,7 +274,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ translate('coupon_discount') }}</h5>
-                    <button id="coupon_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button id="coupon_close" type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -288,7 +288,7 @@
 
                     <div class="form-group">
                         <button class="btn btn--primary" onclick="coupon_discount();"
-                            data-dismiss="modal">{{ translate('submit') }}</button>
+                            data-bs-dismiss="modal">{{ translate('submit') }}</button>
                     </div>
                 </div>
             </div>
@@ -302,7 +302,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ translate('update_discount') }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -322,7 +322,7 @@
                         <input type="number" id="dis_amount" class="form-control" name="discount" placeholder="Ex: 500">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn--primary" onclick="extra_discount()" data-dismiss="modal">{{ translate('submit') }}</button>
+                        <button class="btn btn--primary" onclick="extra_discount()" data-bs-dismiss="modal">{{ translate('submit') }}</button>
                     </div>
                 </div>
             </div>
@@ -336,7 +336,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('update_tax')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -364,7 +364,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('short_cut_keys')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

@@ -121,7 +121,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLongTitle">{{ translate('wallet_payment') }}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 @php($customer_balance = auth('customer')->user()->wallet_balance)
                                                 @php($remain_balance = $customer_balance - $amount)
@@ -153,7 +153,7 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="update_cart_button fs-16 btn btn-secondary" data-dismiss="modal">{{ translate('close') }}</button>
+                                                        <button type="button" class="update_cart_button fs-16 btn btn-secondary" data-bs-dismiss="modal">{{ translate('close') }}</button>
                                                         <button type="submit" class="update_cart_button fs-16 btn btn-primary" {{$remain_balance>0? '':'disabled'}}>{{ translate('submit') }}</button>
                                                     </div>
                                                 </form>
@@ -169,7 +169,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLongTitle">{{ translate('offline_Payment') }}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <form action="{{route('offline-payment-checkout-complete')}}" method="post" class="needs-validation">
                                                     @csrf

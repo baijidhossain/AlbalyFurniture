@@ -37,7 +37,7 @@
                     <!-- Navbar Toggle -->
                     <button type="button" class="navbar-toggler btn btn-block btn-white mb-3"
                             aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu"
-                            data-toggle="collapse" data-target="#navbarVerticalNavMenu">
+                            data-toggle="collapse" data-bs-target="#navbarVerticalNavMenu">
                 <span class="d-flex justify-content-between align-items-center">
                   <span class="h5 mb-0">{{translate('nav_menu')}}</span>
 

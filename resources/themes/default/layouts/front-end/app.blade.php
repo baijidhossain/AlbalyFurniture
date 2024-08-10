@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="{{URL("/")}}/resources/themes/default/public/css/main-style.css">
   <link href="{{URL("/")}}/resources/themes/default/public/css/toastr.min.css" rel="stylesheet">
 
+  <link href="{{URL("/")}}/resources/themes/default/public/css/common-css.css" rel="stylesheet">
+
 
   @php($google_tag_manager_id = \App\CPU\Helpers::get_business_settings('google_tag_manager_id'))
   @if($google_tag_manager_id )
@@ -149,6 +151,7 @@
 
   <script src="{{URL("/")}}/resources/themes/default/public/js/toastr.min.js"></script>
 
+  
 
 <script>
   $(document).ready(function() {

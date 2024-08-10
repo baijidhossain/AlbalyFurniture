@@ -125,7 +125,7 @@
     <div class="navbar-sticky bg-light mobile-head">
         <div class="navbar navbar-expand-md navbar-light">
             <div class="container ">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand d-none d-sm-block {{Session::get('direction') === "rtl" ? 'mr-3' : 'mr-3'}} flex-shrink-0 __min-w-7rem" href="{{route('home')}}">
@@ -255,7 +255,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse"
                     style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}}; ">
                     <div class="w-100 d-md-none" style="text-align: {{Session::get('direction') === "rtl" ? 'left' : 'right'}};">
-                        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-bs-target="#navbarCollapse">
                             <i class="tio-clear __text-26px"></i>
                         </button>
                     </div>

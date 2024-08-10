@@ -4,13 +4,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{translate('ready_to_Leave')}}?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">{{translate('select_Logout_below_if_you_are_ready_to_end_your_current_session')}}.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">{{translate('cancel')}}</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">{{translate('cancel')}}</button>
                 <a class="btn btn--primary" href="{{route('seller.auth.logout')}}">{{translate('logout')}}</a>
             </div>
         </div>

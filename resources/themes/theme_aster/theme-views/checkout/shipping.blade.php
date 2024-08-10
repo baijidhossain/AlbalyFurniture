@@ -73,7 +73,7 @@
                                             <div class="modal-content border-0">
                                                 <div class="modal-header">
                                                     <h5 class="" id="contact_sellerModalLabel">{{translate('Saved_Addresses')}}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
 
                                                 <div class="modal-body custom-scrollbar">
@@ -294,7 +294,7 @@
                                                 <div class="modal-content border-0" style="max-width: 500px;">
                                                     <div class="modal-header">
                                                         <h5 class="" id="contact_sellerModalLabel">{{translate('Saved_Addresses')}}</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
 
                                                     <div class="modal-body custom-scrollbar">

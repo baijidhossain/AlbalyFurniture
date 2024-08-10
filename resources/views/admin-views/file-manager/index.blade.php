@@ -19,7 +19,7 @@
         <!-- Page Heading -->
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h5 class="mb-0">{{translate('file_manager')}}</h5>
-            <button type="button" class="btn btn--primary modalTrigger" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn--primary modalTrigger" data-toggle="modal" data-bs-target="#exampleModal">
                 <i class="ri-add-box-line"></i>
                 <span class="text">{{translate('add_New')}}</span>
             </button>
@@ -55,7 +55,7 @@
                                     @elseif($file['type']=='file')
                                     <!-- <a class="btn" href="{{asset('storage/app/'.$file['path'])}}" download> -->
                                         <button class="btn p-0 w-100" data-toggle="modal"
-                                                data-target="#imagemodal{{$key}}" title="{{$file['name']}}">
+                                                data-bs-target="#imagemodal{{$key}}" title="{{$file['name']}}">
                                             <span class="d-flex flex-column justify-content-center gallary-card aspect-1 overflow-hidden border rounded">
                                                 <img src="{{asset('storage/app/'.$file['path'])}}"
                                                      alt="{{$file['name']}}" class="h-auto w-100">
@@ -68,7 +68,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h4 class="modal-title" id="myModalLabel">{{$file['name']}}</h4>
-                                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                        <button type="button" class="close" data-bs-dismiss="modal"><span
                                                                 aria-hidden="true">&times;</span><span
                                                                 class="sr-only">{{translate('close')}}</span>
                                                         </button>
@@ -107,7 +107,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title"
                             id="exampleModalLabel">{{translate('upload_File')}} </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

@@ -81,7 +81,7 @@
                      style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">{{translate('withdraw_Request')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{translate('close')}}</button>
+                                    data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit"
                                         class="btn btn--primary">{{translate('request')}}</button>
                         </div>

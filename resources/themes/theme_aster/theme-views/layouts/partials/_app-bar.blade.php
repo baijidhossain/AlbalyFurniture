@@ -33,7 +33,7 @@
                 href="#"
                 class="d-flex align-items-center flex-column py-2 {{ Request::is('shop-cart') ? 'active' : '' }}"
                 data-toggle="collapse"
-                data-target="cart_dropdown"
+                data-bs-target="cart_dropdown"
             >
                 <div class="position-relative">
                     <i class="bi bi-bag fs-16"></i>

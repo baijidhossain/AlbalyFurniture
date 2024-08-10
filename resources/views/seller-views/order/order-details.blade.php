@@ -45,7 +45,7 @@
                                     <!-- order verificaiton button-->
                                     @if (isset($order->verification_images) && $order->verification_status ==1)
                                         <div>
-                                            <button class="btn btn--primary px-4" data-toggle="modal" data-target="#order_verification_modal"><i
+                                            <button class="btn btn--primary px-4" data-toggle="modal" data-bs-target="#order_verification_modal"><i
                                                 class="tio-verified"></i> {{translate('order_verification')}}
                                             </button>
                                         </div>
@@ -53,7 +53,7 @@
                                     <!-- order verificaiton button-->
                                     @if (isset($shipping_address['latitude']) && isset($shipping_address['longitude']))
                                     <div class="">
-                                        <button class="btn btn--primary px-4" data-toggle="modal" data-target="#locationModal"><i
+                                        <button class="btn btn--primary px-4" data-toggle="modal" data-bs-target="#locationModal"><i
                                                 class="tio-map"></i> {{translate('show_locations_on_map')}}</button>
                                     </div>
                                     @endif
@@ -179,7 +179,7 @@
                                                     </div>
                                                 </div>
                                                 @if($detail->product_all_status->digital_product_type == 'ready_after_sell')
-                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-toggle="modal" data-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
+                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-toggle="modal" data-bs-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
                                                         <i class="tio-file-outlined"></i> {{translate('file')}}
                                                     </button>
                                                 @endif
@@ -224,7 +224,7 @@
                                                             <input type="hidden" value="{{ $detail->id }}" name="order_id">
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                                             <button type="submit" class="btn btn--primary">{{translate('upload')}}</button>
                                                         </div>
                                                     </form>
@@ -542,7 +542,7 @@
                                     {{translate('shipping_address')}}
                                 </h4>
 
-                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-target="#shippingAddressUpdateModal">
+                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-bs-target="#shippingAddressUpdateModal">
                                     <i class="tio-edit"></i>
                                 </button>
                             </div>
@@ -602,7 +602,7 @@
                                     {{translate('billing_address')}}
                                 </h4>
 
-                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-target="#billingAddressUpdateModal">
+                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-bs-target="#billingAddressUpdateModal">
                                     <i class="tio-edit"></i>
                                 </button>
                             </div>
@@ -692,7 +692,7 @@
                 <div class="modal-content">
                     <div class="modal-header pb-4">
                         <h3 class="mb-0">{{translate('order_verification_images')}}</h3>
-                        <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
+                        <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
                     </div>
                     <div class="modal-body px-4 px-sm-5 pt-0">
                         <div class="d-flex flex-column align-items-center gap-2">
@@ -709,7 +709,7 @@
                                 @endforeach
                                 <div class="col-12">
                                     <div class="d-flex justify-content-end gap-3">
-                                        <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">{{translate('close')}}</button>
+                                        <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">{{translate('close')}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -728,7 +728,7 @@
             <div class="modal-content">
                 <div class="modal-header pb-4">
                     <h3 class="mb-0 text-center w-100">{{translate('shipping_address')}}</h3>
-                    <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
+                    <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
                 </div>
                 <div class="modal-body px-4 px-sm-5 pt-0">
                     <form action="{{route('seller.orders.address-update')}}" method="post">
@@ -803,7 +803,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex justify-content-end gap-3">
-                                        <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">{{translate('cancel')}}</button>
+                                        <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">{{translate('cancel')}}</button>
                                         <button type="submit" class="btn btn--primary px-5">{{translate('update')}}</button>
                                     </div>
                                 </div>
@@ -823,7 +823,7 @@
             <div class="modal-content">
                 <div class="modal-header pb-4">
                     <h3 class="mb-0 text-center w-100">{{translate('billing_address')}}</h3>
-                    <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
+                    <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
                 </div>
                 <div class="modal-body px-4 px-sm-5 pt-0">
                     <div class="d-flex flex-column align-items-center gap-2">
@@ -901,7 +901,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="d-flex justify-content-end gap-3">
-                                            <button type="button" class="btn btn-secondary px-5" data-dismiss="modal">{{translate('cancel')}}</button>
+                                            <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">{{translate('cancel')}}</button>
                                             <button type="submit" class="btn btn--primary px-5">{{translate('update')}}</button>
                                         </div>
                                     </div>
@@ -924,7 +924,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title"
                         id="locationModalLabel">{{translate('location_data')}}</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -947,7 +947,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{translate('update_third_party_delivery_info')}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

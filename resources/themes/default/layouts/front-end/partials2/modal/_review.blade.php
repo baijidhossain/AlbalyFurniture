@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header border-0 pb-0">
                 <h6 class="text-center text-capitalize">{{translate('submit_a_review')}}</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

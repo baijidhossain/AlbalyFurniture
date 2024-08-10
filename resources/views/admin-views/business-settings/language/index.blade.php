@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-sm-8 col-md-6 col-lg-4">
                                 <div class="d-flex gap-10 justify-content-sm-end">
-                                    <button class="btn btn--primary btn-icon-split" data-toggle="modal" data-target="#lang-modal">
+                                    <button class="btn btn--primary btn-icon-split" data-toggle="modal" data-bs-target="#lang-modal">
                                         <i class="ri-add-box-line"></i>
                                         <span class="text">{{translate('add_new_language')}}</span>
                                     </button>
@@ -116,7 +116,7 @@
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 @if($data['code']!='en')
                                                     <a class="dropdown-item" data-toggle="modal"
-                                                        data-target="#lang-modal-update-{{$data['code']}}">{{translate('update')}}</a>
+                                                        data-bs-target="#lang-modal-update-{{$data['code']}}">{{translate('update')}}</a>
                                                     @if ($data['default']==true)
                                                     <a class="dropdown-item"
                                                     href="javascript:" onclick="default_language_delete_alert()">{{translate('delete')}}</a>
@@ -146,7 +146,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">{{translate('new_language')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -191,7 +191,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{translate('close')}}</button>
+                                    data-bs-dismiss="modal">{{translate('close')}}</button>
                             <button type="submit" class="btn btn--primary">{{translate('add')}} <i
                                     class="fa fa-plus"></i></button>
                         </div>
@@ -207,7 +207,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">{{translate('new_language')}}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">{{translate('close')}}</button>
+                                        data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit" class="btn btn--primary">{{translate('update')}} <i
                                         class="fa fa-plus"></i></button>
                             </div>

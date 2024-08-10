@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-12">
                     <div class="d-flex justify-content-end gap-3">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                         <button type="submit" class="btn btn--primary">{{translate('submit')}}</button>
                     </div>
                 </div>

@@ -62,7 +62,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     {{\App\CPU\translate('Close')}}
                 </button>
                 <button type="button" class="btn btn--primary btn-upload-image-{{$modal_id}}" style="display: none">

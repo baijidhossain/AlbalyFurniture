@@ -9,7 +9,7 @@
             <div class="modal-header border-0 pb-0">
                 <button
                     type="button"
-                    class="btn-close"
+                    class="btn-bs-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                 ></button>

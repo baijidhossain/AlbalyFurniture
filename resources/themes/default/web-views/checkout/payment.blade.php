@@ -79,7 +79,7 @@
                                             <div>
                                                 <div class="card cursor-pointer">
                                                     <button class="btn btn-block click-if-alone d-flex gap-2 align-items-center" type="submit"
-                                                        data-toggle="modal" data-target="#wallet_submit_button">
+                                                        data-toggle="modal" data-bs-target="#wallet_submit_button">
                                                         <img width="20" src="{{asset('public/assets/front-end/img/icons/wallet-sm.png')}}"/>
                                                         <span class="fs-12">{{translate('pay_via_Wallet')}}</span>
                                                     </button>
@@ -170,7 +170,7 @@
             <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0 pb-0">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -203,7 +203,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">{{ translate('wallet_payment')}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -237,7 +237,7 @@
 
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate('close')}}</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ translate('close')}}</button>
                 <button type="submit" class="btn btn--primary" {{$remain_balance>0? '':'disabled'}}>{{ translate('submit')}}</button>
                 </div>
             </form>

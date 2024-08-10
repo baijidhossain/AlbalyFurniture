@@ -3,7 +3,7 @@
         {{ translate('history_of_Order_No:') }} {{ $histories[0]->order_id?? '##' }}
         <span class="badge badge-soft-dark radius-50 fz-12 ml-1">{{ $histories->count() }}</span>
     </h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
@@ -58,5 +58,5 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate('close') }}</button>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ translate('close') }}</button>
 </div>

@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow-lg">
             <div class="modal-header border-0 pb-0 d-flex justify-content-end">
-                <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
+                <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
             </div>
             <div class="modal-body px-4 px-sm-5 pt-0">
                 <div class="d-flex flex-column align-items-center text-center gap-2 mb-2">
@@ -11,8 +11,8 @@
                     <div class="text-center" id="toggle-message"></div>
                 </div>
                 <div class="d-flex justify-content-center gap-3">
-                    <button type="button" class="btn btn--primary min-w-120" data-dismiss="modal" id="toggle-ok-button" onclick="confirmToggle()">{{translate('ok')}}</button>
-                    <button type="button" class="btn btn-danger-light min-w-120" data-dismiss="modal">{{ translate('cancel') }}</button>
+                    <button type="button" class="btn btn--primary min-w-120" data-bs-dismiss="modal" id="toggle-ok-button" onclick="confirmToggle()">{{translate('ok')}}</button>
+                    <button type="button" class="btn btn-danger-light min-w-120" data-bs-dismiss="modal">{{ translate('cancel') }}</button>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow-lg">
             <div class="modal-header border-0 pb-0 d-flex justify-content-end">
-                <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
+                <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i class="tio-clear"></i></button>
             </div>
             <div class="modal-body px-4 px-sm-5 pt-0">
                 <div class="d-flex flex-column align-items-center text-center gap-2 mb-2">
@@ -35,8 +35,8 @@
                     <div class="text-center" id="toggle-status-message"></div>
                 </div>
                 <div class="d-flex justify-content-center gap-3">
-                    <button type="button" class="btn btn--primary min-w-120" data-dismiss="modal" id="toggle-status-ok-button" onclick="confirmStatusToggle()">{{translate('ok')}}</button>
-                    <button type="button" class="btn btn-danger-light min-w-120" data-dismiss="modal">{{ translate('cancel') }}</button>
+                    <button type="button" class="btn btn--primary min-w-120" data-bs-dismiss="modal" id="toggle-status-ok-button" onclick="confirmStatusToggle()">{{translate('ok')}}</button>
+                    <button type="button" class="btn btn-danger-light min-w-120" data-bs-dismiss="modal">{{ translate('cancel') }}</button>
                 </div>
             </div>
         </div>

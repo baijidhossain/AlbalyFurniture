@@ -445,7 +445,7 @@
                                                         @if($key == 0) checked @endif>
                                                     <label style="background: {{ $color }};"
                                                         for="{{ $product->id }}-color-{{ str_replace('#','',$color) }}"
-                                                        data-toggle="tooltip" onclick="focus_preview_image_by_color('{{ str_replace('#','',$color) }}')">
+                                                        data-bs-toggle="tooltip" onclick="focus_preview_image_by_color('{{ str_replace('#','',$color) }}')">
                                                     <span class="outline"></span></label>
                                                 </li>
                                             @endforeach
@@ -667,7 +667,8 @@
                         data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
                         aria-selected="false">
 
-                        Reviews 03
+                        Reviews {{ $total_reviews }}
+
                         <svg xmlns="http://www.w3.org/2000/svg" width="78" height="19" viewBox="0 0 78 19" fill="none">
                           <path
                             d="M66.918 10.9147C66.8987 10.9909 66.8754 11.0659 66.8482 11.1394C66.3343 12.5191 65.8568 13.9149 65.3832 15.3094C65.2835 15.6007 65.0431 15.8908 65.3278 16.3278C68.9295 13.4161 73.0932 11.4878 77.3487 9.65131C72.9717 7.73141 68.8104 5.59576 65.0804 2.61703C64.8556 3.06744 65.0978 3.36045 65.2072 3.6577C65.7259 5.06223 66.2433 6.47061 66.7965 7.85894C67.1854 8.84516 67.2283 9.92384 66.918 10.9147Z"
@@ -705,19 +706,22 @@
                     <!-- Tab Content -->
                     <div class="review-list">
 
-                          @foreach ($reviews_of_product as $item)
+                          @foreach ($reviews_of_product as $productReview)
                           <div class="review-card">
                             <div class="wrap-user">
 
                               <div class="user-img">
-                                <img src="{{asset("storage/app/public/profile")}}/{{(isset($item->user)?$item->user->image:'')}}" alt="review">
+                                <img class="rounded-circle __img-64 object-cover"
+                                onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                                src="{{asset("storage/app/public/profile")}}/{{(isset($productReview->user)?$productReview->user->image:'')}}"
+                                alt="{{isset($productReview->user)?$productReview->user->f_name:'not exist'}}" />
                               </div>
 
                               <div class="wrap-info">
                                 <div class="user-info">
                                   <div class="name-ratting">
                                     <div class="name-wrapper">
-                                      <h4 class="name">{{isset($item->user)?$item->user->f_name:translate('User_Not_Exist')}}</h4>
+                                      <h4 class="name">{{isset( $productReview->user )? $productReview->user->f_name:translate('User_Not_Exist')}}</h4>
 
                                       <div class="ratting">
 
@@ -737,263 +741,15 @@
                                         </div>
                                         @endif
 
-                                        <p class="pera-sm">({{ $total_reviews }})</p>
+                                        <p class="pera-sm">( {{ isset($productReview->rating) ? $productReview->rating : 0 }} / 5  )</p>
 
                                       </div>
-
-
-                                      {{-- <div class="row">
-                                        <div class="mt-4 rtl col-12 text-align-direction">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div>
-                                                        <div
-                                                            class="px-4 pb-3 mb-3 mr-0 mr-md-2 bg-white __review-overview __rounded-10 pt-3">
-                                                            <ul class="nav nav-tabs nav--tabs d-flex justify-content-center mt-3"
-                                                                role="tablist">
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link __inline-27 active " href="#overview"
-                                                                       data-toggle="tab" role="tab">
-                                                                        {{translate('overview')}}
-                                                                    </a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link __inline-27" href="#reviews" data-toggle="tab"
-                                                                       role="tab">
-                                                                        {{translate('reviews')}}
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="tab-content px-lg-3">
-                                                                <div class="tab-pane fade show active text-justify" id="overview"
-                                                                     role="tabpanel">
-                                                                    <div class="row pt-2 specification">
-                
-                                                                        @if($product->video_url != null && (str_contains($product->video_url, "youtube.com/embed/")))
-                                                                            <div class="col-12 mb-4">
-                                                                                <iframe width="420" height="315"
-                                                                                        src="{{$product->video_url}}">
-                                                                                </iframe>
-                                                                            </div>
-                                                                        @endif
-                                                                        @if ($product['details'])
-                                                                            <div
-                                                                                class="text-body col-lg-12 col-md-12 overflow-scroll fs-13 text-justify details-text-justify">
-                                                                                {!! $product['details'] !!}
-                                                                            </div>
-                                                                        @endif
-                
-                                                                    </div>
-                                                                    @if (!$product['details'] && ($product->video_url == null || !(str_contains($product->video_url, "youtube.com/embed/"))))
-                                                                        <div>
-                                                                            <div class="text-center text-capitalize py-5">
-                                                                                <img class="mw-90"
-                                                                                     src="{{theme_asset(path: 'public/assets/front-end/img/icons/nodata.svg')}}"
-                                                                                     alt="">
-                                                                                <p class="text-capitalize mt-2">
-                                                                                    <small>{{translate('product_details_not_found')}}
-                                                                                        !</small>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                
-                                                                <div class="tab-pane fade" id="reviews" role="tabpanel">
-                                                                    @if(count($product->reviews)==0 && $reviews_of_product->total() == 0)
-                                                                        <div>
-                                                                            <div class="text-center text-capitalize">
-                                                                                <img class="mw-100"
-                                                                                     src="{{theme_asset(path: 'public/assets/front-end/img/icons/empty-review.svg')}}"
-                                                                                     alt="">
-                                                                                <p class="text-capitalize">
-                                                                                    <small>{{translate('No_review_given_yet')}}!</small>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @else
-                                                                        <div class="row pt-2 pb-3">
-                                                                            <div class="col-lg-4 col-md-5 ">
-                                                                                <div
-                                                                                    class=" row d-flex justify-content-center align-items-center">
-                                                                                    <div
-                                                                                        class="col-12 d-flex justify-content-center align-items-center">
-                                                                                        <h2 class="overall_review mb-2 __inline-28">
-                                                                                            {{$overallRating[0]}}
-                                                                                        </h2>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="d-flex justify-content-center align-items-center star-rating ">
-                                                                                        @for($inc=1;$inc<=5;$inc++)
-                                                                                            @if ($inc <= (int)$overallRating[0])
-                                                                                                <i class="tio-star text-warning"></i>
-                                                                                            @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0] > ((int)$overallRating[0]))
-                                                                                                <i class="tio-star-half text-warning"></i>
-                                                                                            @else
-                                                                                                <i class="tio-star-outlined text-warning"></i>
-                                                                                            @endif
-                                                                                        @endfor
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="col-12 d-flex justify-content-center align-items-center mt-2">
-                                                                                        <span class="text-center">
-                                                                                            {{$reviews_of_product->total()}} {{translate('ratings')}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-8 col-md-7 pt-sm-3 pt-md-0">
-                                                                                <div
-                                                                                    class="d-flex align-items-center mb-2 font-size-sm">
-                                                                                    <div
-                                                                                        class="__rev-txt"><span
-                                                                                            class="d-inline-block align-middle text-body">{{translate('excellent')}}</span>
-                                                                                    </div>
-                                                                                    <div class="w-0 flex-grow">
-                                                                                        <div class="progress text-body __h-5px">
-                                                                                            <div class="progress-bar web--bg-primary"
-                                                                                                 role="progressbar"
-                                                                                                 style="width: <?php echo $widthRating = ($rating[0] != 0) ? ($rating[0] / $overallRating[1]) * 100 : (0); ?>%;"
-                                                                                                 aria-valuenow="60" aria-valuemin="0"
-                                                                                                 aria-valuemax="100"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-1 text-body">
-                                                                                        <span
-                                                                                            class=" {{Session::get('direction') === "rtl" ? 'mr-3 float-left' : 'ml-3 float-right'}} ">
-                                                                                            {{$rating[0]}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                
-                                                                                <div
-                                                                                    class="d-flex align-items-center mb-2 text-body font-size-sm">
-                                                                                    <div
-                                                                                        class="__rev-txt"><span
-                                                                                            class="d-inline-block align-middle ">{{translate('good')}}</span>
-                                                                                    </div>
-                                                                                    <div class="w-0 flex-grow">
-                                                                                        <div class="progress __h-5px">
-                                                                                            <div class="progress-bar web--bg-primary" role="progressbar"
-                                                                                                 style="width: <?php echo $widthRating = ($rating[1] != 0) ? ($rating[1] / $overallRating[1]) * 100 : (0); ?>%; background-color: #a7e453;"
-                                                                                                 aria-valuenow="27" aria-valuemin="0"
-                                                                                                 aria-valuemax="100"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-1">
-                                                                                        <span
-                                                                                            class="{{Session::get('direction') === "rtl" ? 'mr-3 float-left' : 'ml-3 float-right'}}">
-                                                                                                {{$rating[1]}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                
-                                                                                <div
-                                                                                    class="d-flex align-items-center mb-2 text-body font-size-sm">
-                                                                                    <div
-                                                                                        class="__rev-txt"><span
-                                                                                            class="d-inline-block align-middle ">{{translate('average')}}</span>
-                                                                                    </div>
-                                                                                    <div class="w-0 flex-grow">
-                                                                                        <div class="progress __h-5px">
-                                                                                            <div class="progress-bar web--bg-primary" role="progressbar"
-                                                                                                 style="width: <?php echo $widthRating = ($rating[2] != 0) ? ($rating[2] / $overallRating[1]) * 100 : (0); ?>%; background-color: #ffda75;"
-                                                                                                 aria-valuenow="17" aria-valuemin="0"
-                                                                                                 aria-valuemax="100"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-1">
-                                                                                        <span
-                                                                                            class="{{Session::get('direction') === "rtl" ? 'mr-3 float-left' : 'ml-3 float-right'}}">
-                                                                                            {{$rating[2]}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                
-                                                                                <div
-                                                                                    class="d-flex align-items-center mb-2 text-body font-size-sm">
-                                                                                    <div
-                                                                                        class="__rev-txt "><span
-                                                                                            class="d-inline-block align-middle">{{translate('below_Average')}}</span>
-                                                                                    </div>
-                                                                                    <div class="w-0 flex-grow">
-                                                                                        <div class="progress __h-5px">
-                                                                                            <div class="progress-bar web--bg-primary" role="progressbar"
-                                                                                                 style="width: <?php echo $widthRating = ($rating[3] != 0) ? ($rating[3] / $overallRating[1]) * 100 : (0); ?>%; background-color: #fea569;"
-                                                                                                 aria-valuenow="9" aria-valuemin="0"
-                                                                                                 aria-valuemax="100"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-1">
-                                                                                        <span
-                                                                                            class="{{Session::get('direction') === "rtl" ? 'mr-3 float-left' : 'ml-3 float-right'}}">
-                                                                                            {{$rating[3]}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                
-                                                                                <div
-                                                                                    class="d-flex align-items-center text-body font-size-sm">
-                                                                                    <div
-                                                                                        class="__rev-txt"><span
-                                                                                            class="d-inline-block align-middle ">{{translate('poor')}}</span>
-                                                                                    </div>
-                                                                                    <div class="w-0 flex-grow">
-                                                                                        <div class="progress __h-5px">
-                                                                                            <div class="progress-bar web--bg-primary" role="progressbar"
-                                                                                                 style="width: <?php echo $widthRating = ($rating[4] != 0) ? ($rating[4] / $overallRating[1]) * 100 : (0); ?>%;"
-                                                                                                 aria-valuenow="4" aria-valuemin="0"
-                                                                                                 aria-valuemax="100"></div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-1">
-                                                                                        <span
-                                                                                            class="{{Session::get('direction') === "rtl" ? 'mr-3 float-left' : 'ml-3 float-right'}}">
-                                                                                                {{$rating[4]}}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                
-                                                                        <div class="row pb-4 mb-3">
-                                                                            <div class="__inline-30">
-                                                                                <span
-                                                                                    class="text-capitalize">{{ translate('Product_review') }}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                
-                                                                    <div class="row pb-4">
-                                                                        <div class="col-12" id="product-review-list">
-                                                                            @include('web-views.partials._product-reviews')
-                                                                        </div>
-                
-                                                                        @if(count($product->reviews) > 2)
-                                                                            <div class="col-12">
-                                                                                <div
-                                                                                    class="card-footer d-flex justify-content-center align-items-center">
-                                                                                    <button class="btn text-white view_more_button web--bg-primary">
-                                                                                        {{ translate('view_more') }}
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> --}}
 
 
                                     </div>
                                     <div class="date">
                                       <p class="pera-sm">
-                                        April 14, 2023
+                                        {{isset($productReview->updated_at) ? $productReview->updated_at->format('M-d-Y') : ''}}
                                       </p>
                                     </div>
 
@@ -1001,13 +757,70 @@
                                  
                                 </div>
                                 <div class="user-comment">
-                                  <p class="pera"> {{ $item->comment }} </p>
+                                  <p class="pera"> {{$productReview->comment }} </p>
                                 </div>
 
                               </div>
                             </div>
                           </div>
                           @endforeach
+
+
+
+
+
+
+
+
+
+                          {{-- @foreach($reviews_of_product as $productReview)
+                        
+                            <div class="review-card ">
+                              <div class="col-md-3 d-flex mb-3 {{Session::get('direction') === "rtl" ? 'pl-5' : 'pr-5'}}">
+                                <div
+                                  class="media media-ie-fix  {{Session::get('direction') === "rtl" ? 'ml-4 pl-2' : 'mr-4 pr-2'}}">
+                                  <img class="rounded-circle __img-64 object-cover"
+                                    onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                                    src="{{asset("storage/app/public/profile")}}/{{(isset($productReview->user)?$productReview->user->image:'')}}"
+                                    alt="{{isset($productReview->user)?$productReview->user->f_name:'not exist'}}" />
+                                  <div
+                                    class="media-body {{Session::get('direction') === "rtl" ? 'pr-3' : 'pl-3'}} text-body">
+                                    <span class="font-size-sm mb-0 text-body"
+                                      style="font-weight: 700;font-size: 12px;">{{isset($productReview->user)?$productReview->user->f_name:'not exist'}}</span>
+                                    <div class="d-flex ">
+
+                                      <div class=" {{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}}">
+
+                                        <i class="sr-star czi-star-filled active"></i>
+
+                                      </div>
+                                      <div class="text-body text-nowrap" style="font-weight: 400;font-size: 15px;">
+                                        {{ isset($productReview->rating) ? $productReview->rating : 0 }} / 5 </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-7">
+                                <p class="mb-3 text-body __text-sm" style="word-wrap:break-word;">
+                                  {{isset($productReview->comment) ? $productReview->comment : ''}}</p>
+                                @if (isset($productReview->attachment) &&
+                                !empty(json_decode($productReview->attachment)))
+                                @foreach (json_decode($productReview->attachment) as $key => $photo)
+                                <img onclick="showInstaImage('{{asset("storage/app/public/review/$photo")}}')"
+                                  class="cz-image-zoom __img-70 rounded border"
+                                  onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                                  src="{{asset("storage/app/public/review/$photo")}}" alt="Product review">
+                                @endforeach
+                                @endif
+                              </div>
+                              <div class="col-md-2 text-body">
+                                <span
+                                  style="float: right;font-weight: 400;font-size: 13px;">{{isset($productReview->updated_at) ? $productReview->updated_at->format('M-d-Y') : ''}}</span>
+                              </div>
+                            </div>
+                         
+                          @endforeach --}}
+                          
 
                     </div>
                     <!-- End Tab contents -->
@@ -1024,10 +837,6 @@
 
       </div>
       <!-- End-of more details area-->
-
-
-
-
 
           {{-- <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab"
               tabindex="0">
@@ -1191,7 +1000,6 @@
             </div>
         </div> --}}
 
-
       <!-- Related Product S t a r t -->
           <section class="feature-area feature-bg position-relative">
             <div class="container">
@@ -1223,10 +1031,7 @@
           </section>
       <!-- End-of Related Product -->
 
-
     </main>
-
-
 
     <!-- Modal -->
     @include('layouts.front-end.partials.modal._chatting',['seller'=>$product->seller])
@@ -1235,7 +1040,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal">
                     </button>
                 </div>
                 <div class="modal-body pb-5">

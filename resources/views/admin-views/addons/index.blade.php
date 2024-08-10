@@ -18,7 +18,7 @@
 
             <div class="text-primary d-flex align-items-center gap-3 font-weight-bolder">
                 {{ translate('How_the_Setting_Works') }}
-                <div class="ripple-animation" data-toggle="modal" data-target="#settingModal">
+                <div class="ripple-animation" data-toggle="modal" data-bs-target="#settingModal">
                     <img src="{{asset('public/assets/back-end/img/icons/info.svg')}}" class="svg" alt="">
                 </div>
             </div>
@@ -30,7 +30,7 @@
                             <button
                                 type="button"
                                 class="btn-close border-0"
-                                data-dismiss="modal"
+                                data-bs-dismiss="modal"
                                 aria-label="Close"
                             ><i class="tio-clear"></i></button>
                         </div>
@@ -68,7 +68,7 @@
                                                         .
                                                     </p>
                                                     <button class="btn btn-primary px-10 mt-3"
-                                                            data-dismiss="modal">{{ translate('Got_It') }}</button>
+                                                            data-bs-dismiss="modal">{{ translate('Got_It') }}</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@
                             <div class="d-flex gap-2 gap-sm-3 align-items-center">
                                 @if ($data['is_published'] == 0)
                                     <button class="text-danger bg-transparent p-0 border-0" data-toggle="modal"
-                                            data-target="#deleteThemeModal_{{ $key }}"><img
+                                            data-bs-target="#deleteThemeModal_{{ $key }}"><img
                                             src="{{asset('public/assets/back-end/img/icons/delete.svg')}}" class="svg"
                                             alt=""></button>
 
@@ -182,7 +182,7 @@
                                                     <buttongit
                                                         type="button"
                                                         class="btn-close border-0"
-                                                        data-dismiss="modal"
+                                                        data-bs-dismiss="modal"
                                                         aria-label="Close"
                                                     ><i class="tio-clear"></i></button>
                                                 </div>
@@ -198,9 +198,9 @@
 
                                                     <div class="d-flex justify-content-center gap-3 mb-3">
                                                         <button type="button" class="fs-16 btn btn-secondary px-sm-5"
-                                                                data-dismiss="modal">{{ translate('cancel') }}</button>
+                                                                data-bs-dismiss="modal">{{ translate('cancel') }}</button>
                                                         <button type="submit" class="fs-16 btn btn-danger px-sm-5"
-                                                                data-dismiss="modal"
+                                                                data-bs-dismiss="modal"
                                                                 onclick="theme_delete('{{$addon}}')">{{ translate('delete') }}</button>
                                                     </div>
                                                 </div>
@@ -210,7 +210,7 @@
                                 @endif
 
                                     <button class="text-muted bg-transparent p-0 border-0" data-toggle="modal"
-                                            data-target="#shiftThemeModal_{{ $key }}"><img
+                                            data-bs-target="#shiftThemeModal_{{ $key }}"><img
                                             src="{{asset('public/assets/back-end/img/icons/check.svg')}}" class="svg {{ $data['is_published'] == 1 ? 'text--primary' : '' }}"
                                             alt=""></button>
 
@@ -222,7 +222,7 @@
                                                     <button
                                                         type="button"
                                                         class="btn-close border-0"
-                                                        data-dismiss="modal"
+                                                        data-bs-dismiss="modal"
                                                         aria-label="Close"
                                                     ><i class="tio-clear"></i></button>
                                                 </div>
@@ -241,9 +241,9 @@
                                                     @endif
                                                     <div class="d-flex justify-content-center gap-3 mb-3">
                                                         <button type="button" class="fs-16 btn btn-secondary px-sm-5"
-                                                                data-dismiss="modal">{{ translate('no') }}</button>
+                                                                data-bs-dismiss="modal">{{ translate('no') }}</button>
                                                         <button type="button" class="fs-16 btn btn--primary px-sm-5"
-                                                                data-dismiss="modal"
+                                                                data-bs-dismiss="modal"
                                                                 onclick="publish_addon('{{ $addon }}')">{{ translate('yes') }}</button>
                                                     </div>
                                                 </div>

@@ -168,7 +168,7 @@
                                 name="longitude" class="form-control"
                                 placeholder="{{ translate('ex')}} : 103.344322" id="longitude" value="{{$default_location?$default_location['lng']:0}}" required readonly>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit" class="btn btn--primary">{{translate('add_informations')}}  </button>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                         <div class="d-flex justify-content-between align-items-center mb-3 gap-2">
                             <h5 class="font-bold m-0">{{translate('addresses')}}</h5>
                             <button type="submit" class="btn btn--primary text-capitalize" data-toggle="modal"
-                                data-target="#exampleModal" id="add_new_address">
+                                data-bs-target="#exampleModal" id="add_new_address">
                                 <img src="{{asset('/public/assets/front-end/img/add-address-icon.png')}}" class="" alt="">
                                 {{translate('add_address')}}
                             </button>

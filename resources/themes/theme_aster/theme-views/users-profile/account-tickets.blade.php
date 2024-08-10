@@ -90,7 +90,7 @@
             <div class="modal-content">
                 <div class="modal-header px-sm-5">
                     <h1 class="modal-title fs-5" id="reviewModalLabel">{{translate('submit_new_ticket')}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="p-3 px-sm-5">
                     <span>{{translate('you_will_get_response')}}.</span>

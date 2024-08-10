@@ -1,5 +1,5 @@
 <div class="modal-header border-0 pb-0 d-flex justify-content-end">
-    <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close"><i
+    <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close"><i
             class="tio-clear"></i></button>
 </div>
 <div class="modal-body px-4 px-sm-5 text-center">

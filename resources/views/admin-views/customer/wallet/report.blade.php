@@ -15,7 +15,7 @@
                 {{translate('wallet')}}
             </h2>
             @if($customer_status == 1)
-                <button type="button" class="btn btn--primary" data-toggle="modal" data-target="#addFundModal">
+                <button type="button" class="btn btn--primary" data-toggle="modal" data-bs-target="#addFundModal">
                     {{translate('add_Fund')}}
                 </button>
             @endif
@@ -27,7 +27,7 @@
                 <div class="modal-content">
                     <div class="modal-header d-flex justify-content-between">
                         <h5 class="modal-title" id="exampleModalLongTitle">{{translate('add_Fund')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-3">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit" id="submit" class="btn btn--primary px-4">{{translate('submit')}}</button>
                             </div>
                         </form>

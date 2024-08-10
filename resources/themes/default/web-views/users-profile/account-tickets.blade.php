@@ -80,7 +80,7 @@
 
                         <div class="modal-footer p-0 border-0">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{translate('close')}}</button>
+                                    data-bs-dismiss="modal">{{translate('close')}}</button>
                             <button type="submit" class="btn btn--primary">{{translate('submit_a_ticket')}}</button>
                         </div>
                     </form>
@@ -108,7 +108,7 @@
                     <div class="p-md-3">
                         <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
                             <h5 class="mb-0">{{translate('support_ticket')}}</h5>
-                            <button type="submit" class="btn btn--primary float-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" data-toggle="modal" data-target="#open-ticket">
+                            <button type="submit" class="btn btn--primary float-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" data-toggle="modal" data-bs-target="#open-ticket">
                                 {{translate('add_new_ticket')}}
                             </button>
                         </div>
@@ -255,7 +255,7 @@
 
     <div class="bottom-sticky_offset"></div>
     <div class="bottom-sticky_ele bg-white d-md-none p-3">
-        <button type="submit" class="btn btn--primary w-100" data-toggle="modal" data-target="#open-ticket">
+        <button type="submit" class="btn btn--primary w-100" data-toggle="modal" data-bs-target="#open-ticket">
             {{translate('add_new_ticket')}}
         </button>
     </div>
@@ -264,7 +264,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -280,7 +280,7 @@
                         <a href="javascript:" class="btn btn-primary __rounded-10" id="delete-ticket-link">
                             {{translate('Remove')}}
                         </a>
-                        <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-dismiss="modal">
+                        <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-bs-dismiss="modal">
                             {{translate('Cancel')}}
                         </button>
                     </div>

@@ -6656,4 +6656,12 @@
   'deal_added_successfully' => 'Deal added successfully',
   'flash_Deal_Update' => 'Flash Deal Update',
   'upload_Image' => 'Upload Image',
+  'your_payment_has_been_successfully_processed_and_your_order' => 'Your payment has been successfully processed and your order',
+  'has_been_placed.' => 'Has been placed.',
+  'you_haven’t_any_conversation_yet' => 'You haven’t any conversation yet',
+  'my_Address' => 'My Address',
+  'add_informations' => 'Add informations',
+  'address_update_successfully' => 'Address update successfully',
+  'all_input_field_required' => 'All input field required',
+  'no_Coupon_Found' => 'No Coupon Found',
 );

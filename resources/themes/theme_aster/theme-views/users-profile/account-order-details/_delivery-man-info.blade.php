@@ -105,7 +105,7 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header px-sm-5">
                                                             <h1 class="modal-title fs-5" id="reviewModalLabel">{{translate('Submit_a_review')}}</h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <form action="{{route('submit-deliveryman-review')}}" method="post" enctype="multipart/form-data">
                                                             @csrf

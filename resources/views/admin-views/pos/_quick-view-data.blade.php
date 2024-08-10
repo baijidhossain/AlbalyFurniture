@@ -1,7 +1,7 @@
 <div class="modal-header p-2">
     <h4 class="modal-title product-title">
     </h4>
-    <button class="radius-50 border-0 font-weight-bold text-black-50" type="button" data-dismiss="modal" aria-label="Close">
+    <button class="radius-50 border-0 font-weight-bold text-black-50" type="button" data-bs-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>

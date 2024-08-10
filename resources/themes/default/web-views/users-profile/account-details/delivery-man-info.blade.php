@@ -224,13 +224,13 @@
 
                                         <div class="d-flex justify-content-end flex-wrap gap-3 gap-sm-3">
                                             <button type="button" class="btn btn-soft-info text-capitalize px-2 px-md-4" data-toggle="modal"
-                                                data-target="#chatting_modal">
+                                                data-bs-target="#chatting_modal">
                                                 <img src="{{asset('/public/assets/front-end/img/seller-info-chat.png')}}" alt="">
                                                 <span class="d-none d-md-inline-block">{{translate('chat_with_delivery_man')}}</span>
                                             </button>
                                             @if($order->order_type == 'default_type' && $order->order_status=='delivered' && $order->delivery_man_id)
                                                 <button type="button" class="btn btn-sm btn-warning px-2 px-md-4" data-toggle="modal"
-                                                    data-target="#submitReviewModal">
+                                                    data-bs-target="#submitReviewModal">
                                                     <i class="tio-star-half"></i>
                                                     @if(isset($order->delivery_man_review->comment) || isset($order->delivery_man_review->rating))
                                                         {{translate('Update_Review')}}
@@ -331,8 +331,8 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <h6 class="text-center text-capitalize">{{translate('submit_a_review')}}</h6>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        
                     </button>
                 </div>
 
@@ -413,7 +413,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-faded-info">
                         <h5 class="modal-title" id="exampleModalLongTitle">{{translate('Send_Message_to_Deliveryman')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>

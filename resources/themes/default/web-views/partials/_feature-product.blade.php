@@ -13,7 +13,7 @@
 @else
 <span class="for-discoutn-value-null"></span>
 @endif
-<a href="{{route('product',$product->slug)}}">
+<a href="{{route('product',"$product->slug")}}">
   <img src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$product['thumbnail']}}"
     onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'">
 </a>
@@ -44,7 +44,7 @@
     </div>
     @endif
     <div>
-      <a href="{{route('product',$product->slug)}}" class="text-capitalize fw-semibold">
+      <a href="{{route('product',"$product->slug")}}" class="text-capitalize fw-semibold">
         {{ Str::limit($product['name'], 23) }}
       </a>
     </div>
@@ -66,6 +66,7 @@
   </div>
   </div> --}}
 
+
   @php
       $temporary_close = \App\CPU\Helpers::get_business_settings('temporary_close');
       $inhouse_vacation = \App\CPU\Helpers::get_business_settings('vacation_add');
@@ -86,7 +87,7 @@
           @if($product->discount > 0)
           <h4 class="price discounted">{{\App\CPU\Helpers::currency_converter($product->unit_price)}}</h4>
           @endif
-
+       
           <h4 class="price text-color-primary">
             {{\App\CPU\Helpers::currency_converter($product->unit_price-(\App\CPU\Helpers::get_product_discount($product,$product->unit_price)))}}
           </h4>
@@ -114,36 +115,42 @@
 
       <div class="product-img-card feature-img-card">
 
-        <a class="zoomImg" href="{{route('product',$product->slug)}}">
+        <a class="zoomImg" href="{{route('product', "$product->slug")}}">
           <img src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$product['thumbnail']}}"
             onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'">
         </a>
 
       </div>
-      <a href="{{route('product',$product->slug)}}">
+      <a href="{{route('product', "$product->slug")}}">
         <h4 class="product-title line-clamp-1">{{ Str::limit($product['name'], 23) }}</h4>
       </a>
       <div class="product-review">
 
         @if($overallRating[0] != 0 )
+
         <div class="product-ratting">
-          @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
+          @for($inc=1;$inc<=5;$inc++) 
+          @if ($inc <=(int)$overallRating[0]) 
+          <i class="ri-star-s-fill text-warning"></i>
             @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
               ((int)$overallRating[0]))
-              <i class="ri-star-s-fill-half text-warning"></i>
+              <i class="ri-star-half-s-line text-warning"></i>
               @else
-              <i class="ri-star-s-half-fill text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
               @endif
               @endfor
+
+
         </div>
+
         @endif
 
-        <p class="count-ratting">Ratting ({{$product->reviews_count}})</p>
+        <p class="count-ratting">Ratting ({{$overallRating[0]}})</p>
 
       </div>
 
       <div class="cart-card feature-cart-card d-none d-md-block">
-        <a href="{{route('product',$product->slug)}}">
+        <a href="{{route('product',"$product->slug")}}">
           <h4 class="product-title line-clamp-1">{{ Str::limit($product['name'], 23) }}</h4>
         </a>
 
@@ -155,9 +162,9 @@
             @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
               @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
                 ((int)$overallRating[0]))
-                <i class="ri-star-s-fill-half text-warning"></i>
+                <i class="ri-star-half-s-line text-warning"></i>
                 @else
-                <i class="ri-star-s-half-fill text-warning"></i>
+                <i class="ri-star-s-line text-warning"></i>
                 @endif
                 @endfor
 

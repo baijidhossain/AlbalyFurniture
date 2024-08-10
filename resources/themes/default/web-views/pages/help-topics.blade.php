@@ -54,7 +54,7 @@
                                             </div>
                                             <div class="col-11">
                                                 <button class="btnF btn-link collapsed" data-toggle="collapse"
-                                                        data-target="#collapseTwo{{ $helps[$i]['id'] }}"
+                                                        data-bs-target="#collapseTwo{{ $helps[$i]['id'] }}"
                                                         aria-expanded="false" aria-controls="collapseTwo"
                                                         style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}}">
                                                     <li class="d-flex align-items-center border-bottom pb-3 mb-3">{{ $helps[$i]['question'] }}</li>
@@ -82,7 +82,7 @@
                                             </div>
                                             <div class="col-11">
                                                 <button class="btnF btn-link collapsed" data-toggle="collapse"
-                                                        data-target="#collapseTwo{{ $helps[$i]['id'] }}"
+                                                        data-bs-target="#collapseTwo{{ $helps[$i]['id'] }}"
                                                         aria-expanded="false" aria-controls="collapseTwo"
                                                         style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}}">
                                                     <li class="d-flex align-items-center border-bottom pb-3 mb-3">{{ $helps[$i]['question'] }}</li>

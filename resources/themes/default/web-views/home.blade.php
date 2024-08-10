@@ -31,7 +31,8 @@
 @section('content')
 	<main>
     @php($decimal_point_settings = !empty(\App\CPU\Helpers::get_business_settings('decimal_point_settings')) ? \App\CPU\Helpers::get_business_settings('decimal_point_settings') : 0)
-		<!-- Hero area S t a r t-->
+		
+    <!-- Hero area S t a r t-->
 		<section class="hero-area-bg hero-padding1">
 			<div class="container">
 				<div class="row">

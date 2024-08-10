@@ -240,7 +240,7 @@
                                                             <span class="text-muted text-capitalize">{{translate('payment_method')}}</span> : <span class="text-primary text-capitalize">{{translate($order['payment_method'])}}</span>
                                                         </div>
                                                         @if($order->payment_method == 'offline_payment' && isset($order->offline_payments))
-                                                            <button type="button" class="btn bg-light border border-primary-light mt-3 rounded-pill btn-sm text-capitalize" data-toggle="modal" data-target="#verifyViewModal">{{translate('see_payment_details')}}</button>
+                                                            <button type="button" class="btn bg-light border border-primary-light mt-3 rounded-pill btn-sm text-capitalize" data-bs-toggle="modal" data-bs-target="#verifyViewModal">{{translate('see_payment_details')}}</button>
                                                         @endif
                                                     </div>
                                                 </td>
@@ -390,7 +390,7 @@
                                                                                 <a class="btn btn-sm rounded btn--primary" onclick="digital_product_download('{{ route('digital-product-download', $detail->id) }}')" href="javascript:">{{translate('download')}} <i class="tio-download-from-cloud"></i></a>
                                                                             @else
 
-                                                                                <span class="" data-toggle="tooltip" data-placement="top" title="{{translate('product_not_uploaded_yet')}}">
+                                                                                <span class="" data-bs-toggle="tooltip" data-placement="top" title="{{translate('product_not_uploaded_yet')}}">
                                                                                     <a class="btn btn-sm rounded btn--primary disabled">{{translate('download')}} <i class="tio-download-from-cloud"></i></a>
                                                                                 </span>
                                                                             @endif
@@ -405,7 +405,7 @@
                                                                         @if($order->order_type == 'default_type')
                                                                             @if($order->order_status=='delivered')
                                                                                 @if (isset($detail->product))
-                                                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-toggle="modal" data-target="#submitReviewModal{{$detail->id}}">
+                                                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-bs-toggle="modal" data-bs-target="#submitReviewModal{{$detail->id}}">
                                                                                         @if (isset($detail->product->reviews_by_customer[0]))
                                                                                             <i class="tio-star-half"></i>{{translate('Update_Review')}}
                                                                                         @else
@@ -418,7 +418,7 @@
                                                                                     <button type="button" class="btn btn-sm rounded btn--primary" onclick="refund_details('{{route('refund-details',['id'=>$detail->id])}}')" >{{translate('refund_details')}}</button>
                                                                                 @endif
                                                                                 @if( $length <= $refund_day_limit && $detail->refund_request == 0)
-                                                                                    <button class="btn btn-sm rounded btn--primary"  data-toggle="modal" data-target="#refundModal{{$detail->id}}">{{translate('refund')}}</button>
+                                                                                    <button class="btn btn-sm rounded btn--primary"  data-bs-toggle="modal" data-bs-target="#refundModal{{$detail->id}}">{{translate('refund')}}</button>
                                                                                 @endif
                                                                             @endif
                                                                             <!--=====-->
@@ -515,7 +515,7 @@
                                                     <a class="btn btn-sm rounded btn--primary" onclick="digital_product_download('{{ route('digital-product-download', $detail->id) }}')" href="javascript:">{{translate('download')}} <i class="tio-download-from-cloud"></i></a>
                                                 @else
 
-                                                    <span class="" data-toggle="tooltip" data-placement="top" title="{{translate('product_not_uploaded_yet')}}">
+                                                    <span class="" data-bs-toggle="tooltip" data-placement="top" title="{{translate('product_not_uploaded_yet')}}">
                                                         <a class="btn btn-sm rounded btn--primary disabled">{{translate('download')}} <i class="tio-download-from-cloud"></i></a>
                                                     </span>
                                                 @endif
@@ -530,7 +530,7 @@
                                             @if($order->order_type == 'default_type')
                                                 @if($order->order_status=='delivered')
                                                 @if (isset($detail->product))
-                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-toggle="modal" data-target="#submitReviewModal{{$detail->id}}">
+                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-bs-toggle="modal" data-bs-target="#submitReviewModal{{$detail->id}}">
                                                         @if (isset($detail->product->reviews_by_customer[0]))
                                                             <i class="tio-star-half"></i>{{translate('Update_Review')}}
                                                         @else
@@ -542,7 +542,7 @@
                                                         <button type="button" class="btn btn-sm rounded btn--primary" onclick="refund_details('{{route('refund-details',['id'=>$detail->id])}}')" >{{translate('refund_details')}}</button>
                                                     @endif
                                                     @if( $length <= $refund_day_limit && $detail->refund_request == 0)
-                                                    <button class="btn btn-sm rounded btn--primary"  data-toggle="modal" data-target="#refundModal{{$detail->id}}">{{translate('refund')}}</button>
+                                                    <button class="btn btn-sm rounded btn--primary"  data-bs-toggle="modal" data-bs-target="#refundModal{{$detail->id}}">{{translate('refund')}}</button>
                                                 @endif
                                             @endif
                                                 <!--=====-->
@@ -715,7 +715,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content rtl">
                     <div class="modal-header d-flex justify-content-end  border-0 pb-0">
-                        <button type="button" class="close" data-dismiss="modal">
+                        <button type="button" class="close" data-bs-dismiss="modal">
                             <span aria-hidden="true" class="tio-clear"></span>
                         </button>
                     </div>
@@ -766,7 +766,7 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <h6 class="text-center text-capitalize m-0 flex-grow-1">{{translate('refund_details')}}</h6>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

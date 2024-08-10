@@ -43,7 +43,7 @@
                         </h5>
                         <div class="col-md-4 d-flex justify-content-md-end">
                             <button class="btn btn--primary" data-toggle="modal"
-                                    data-target="#refund-status">{{translate('change_refund_status')}}</button>
+                                    data-bs-target="#refund-status">{{translate('change_refund_status')}}</button>
                         </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{translate('change_refund_status')}}</h5>
-                <button id="payment_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button id="payment_close" type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>

@@ -17,7 +17,7 @@
                 </div>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-p btn-b float-right" data-toggle="modal"
-                            data-target="#exampleModal">{{translate('add_New_Address')}}
+                            data-bs-target="#exampleModal">{{translate('add_New_Address')}}
                     </button>
                 </div>
             </div>
@@ -187,7 +187,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="closeB" data-dismiss="modal">{{translate('close')}}</button>
+                                <button type="button" class="closeB" data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="button" class="btn btn-p"> {{translate('update_Information')}}</button>
                             </div>
                             </form>

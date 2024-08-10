@@ -3,7 +3,7 @@
     <div class="modal-content">
 
       <div class="modal-header border-0">
-        <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
+        <button type="button" class="btn-bs-close" data-bs-dismiss="modal"> </button>
       </div>
 
       <div class="modal-body pb-5">
@@ -30,7 +30,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header border-0">
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-bs-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
@@ -56,7 +56,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header border-0">
-        <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
+        <button type="button" class="btn-bs-close" data-bs-dismiss="modal"> </button>
       </div>
       <div class="modal-body pb-5">
         <div class="text-center">

@@ -154,6 +154,17 @@ class HomeController extends Controller
       ->first();
 
 
+    // foreach ($featured_products as $product) {
+
+    //   foreach ($product->reviews as $review) {
+    //   }
+
+    //   echo '<pre>';
+    //   print_r(count($product->reviews));
+    //   echo '</pre>';
+    // }
+
+    // die();
 
     return view(
       VIEW_FILE_NAMES['home'],

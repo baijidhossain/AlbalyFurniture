@@ -194,7 +194,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('cash_Withdraw')}}</h5>
-                    <button id="invoice_close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button id="invoice_close" type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -213,8 +213,8 @@
                     <div class="col-md-12 mb-3">
                         <center>
                             <form action="">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                <button class="btn btn--primary" data-toggle="modal" data-target="#exampleModal">{{translate('collect_Cash')}}</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button class="btn btn--primary" data-toggle="modal" data-bs-target="#exampleModal">{{translate('collect_Cash')}}</button>
                             </form>
                         </center>
                         <hr class="non-printable">

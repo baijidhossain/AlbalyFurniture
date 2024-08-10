@@ -152,7 +152,7 @@
                                                     </div>
                                                 </div>
                                                 @if($detail->product_all_status->digital_product_type == 'ready_after_sell')
-                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-toggle="modal" data-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
+                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-toggle="modal" data-bs-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
                                                         <i class="tio-file-outlined"></i> {{translate('file')}}
                                                     </button>
                                                 @endif
@@ -196,7 +196,7 @@
                                                                     @endif
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                                                     @if($detail->product_all_status->digital_product_type == 'ready_after_sell')
                                                                         <button type="submit" class="btn btn--primary">{{translate('upload')}}</button>
                                                                     @endif

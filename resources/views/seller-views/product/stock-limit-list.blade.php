@@ -118,7 +118,7 @@
                                     <td>
                                         <div class="d-flex align-items-center justify-content-center">
                                             {{$p['current_stock']}}
-                                            <button class="btn c1 btn-sm" id="{{ $p->id }}" onclick="update_quantity({{ $p->id }})" type="button" data-toggle="modal" data-target="#update-quantity"
+                                            <button class="btn c1 btn-sm" id="{{ $p->id }}" onclick="update_quantity({{ $p->id }})" type="button" data-toggle="modal" data-bs-target="#update-quantity"
                                                 title="{{ translate('update_quantity') }}">
                                                 <i class="ri-add-box-line-circle"></i>
                                             </button>
@@ -161,7 +161,7 @@
                             <div class="rest-part"></div>
                             <div class="d-flex justify-content-end gap-2 col-sm-12">
                                 <button class="btn btn--primary float-right" class="btn btn--primary" type="submit">{{translate('submit')}}</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">
                                     {{translate('close')}}
                                 </button>
                             </div>

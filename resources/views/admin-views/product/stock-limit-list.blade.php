@@ -104,7 +104,7 @@
 
                                             <button class="btn py-0 px-2 fz-18" id="{{ $p->id }}"
                                                     onclick="update_quantity({{ $p->id }})" type="button"
-                                                    data-toggle="modal" data-target="#update-quantity"
+                                                    data-toggle="modal" data-bs-target="#update-quantity"
                                                     title="{{ translate('update_quantity') }}">
                                                 <i class="ri-add-box-line-circle c1"></i>
                                             </button>
@@ -177,7 +177,7 @@
                         @csrf
                         <div class="rest-part"></div>
                         <div class="d-flex justify-content-end gap-10 flex-wrap align-items-center">
-                            <button type="button" class="btn btn-danger px-4" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn btn-danger px-4" data-bs-dismiss="modal" aria-label="Close">
                                 {{translate('close')}}
                             </button>
                             <button class="btn btn--primary" class="btn btn--primary px-4" type="submit">{{translate('submit')}}</button>

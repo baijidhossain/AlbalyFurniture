@@ -49,7 +49,7 @@
                             <h4 class="mb-0">{{translate('my_shop_info')}} </h4>
                         </div>
                         <div class="d-inline-flex gap-2">
-                            <button class="btn btn-block __inline-70" data-toggle="modal" data-target="#balance-modal">
+                            <button class="btn btn-block __inline-70" data-toggle="modal" data-bs-target="#balance-modal">
                                 {{translate('go_to_Vacation_Mode')}}
                             </button>
 
@@ -113,7 +113,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" class="close pt-0" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close pt-0" data-bs-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -139,7 +139,7 @@
                             </div>
 
                             <div class="text-end gap-5 mt-2">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit" class="btn btn--primary">{{translate('update')}}</button>
                             </div>
                         </div>

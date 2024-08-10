@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header border-0 pb-0">
                 <h6 class="text-center text-capitalize flex-grow-1 m-0">{{translate('refund_request')}}</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -98,7 +98,7 @@
                 <!-- form submit  -->
                 <form action="{{route('refund-store')}}"  method="post" enctype="multipart/form-data">
                     @csrf
-                    <h6 class="d-flex gap-2 align-items-center cursor-pointer" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <h6 class="d-flex gap-2 align-items-center cursor-pointer" data-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         {{translate('give_a_refund_reason')}} <i class="tio-chevron-down"></i>
                     </h6>
                     <div class="collapse" id="collapseExample">

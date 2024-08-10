@@ -17,16 +17,18 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
 
 @endphp
 
-
   <div class="product-card best-product-card">
     <div class="top-card">
       <div class="price-section">
 
+
+  
         @if($product->discount > 0)
         <h4 class="price discounted">{{\App\CPU\Helpers::currency_converter($product->unit_price)}}</h4>
         @endif
 
         <h4 class="price text-color-primary">
+          
           {{\App\CPU\Helpers::currency_converter($product->unit_price-(\App\CPU\Helpers::get_product_discount($product,$product->unit_price)))}}
         </h4>
 
@@ -74,7 +76,7 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
             ((int)$overallRating[0]))
             <i class="ri-star-s-fill-half text-warning"></i>
             @else
-            <i class="ri-star-s-half-fill text-warning"></i>
+            <i class="ri-star-s-line text-warning"></i>
             @endif
             @endfor
       </div>
@@ -92,12 +94,15 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
       <div class="product-review">
         @if($overallRating[0] != 0 )
         <div class="product-ratting">
-          @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
+          @for($inc=1;$inc<=5;$inc++) 
+          
+          @if ($inc <=(int)$overallRating[0]) 
+          <i class="ri-star-s-fill text-warning"></i>
             @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
               ((int)$overallRating[0]))
-              <i class="ri-star-s-fill-half text-warning"></i>
+              <i class="ri-star-half-s-line text-warning"></i>
               @else
-              <i class="ri-star-s-half-fill text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
               @endif
               @endfor
         </div>

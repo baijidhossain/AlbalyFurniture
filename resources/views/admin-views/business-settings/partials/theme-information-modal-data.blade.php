@@ -1,5 +1,5 @@
 <div class="modal-header border-0 pb-0 d-flex justify-content-end">
-    <button type="button" class="btn-close border-0" data-dismiss="modal" aria-label="Close" onclick="location.reload()"><i
+    <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close" onclick="location.reload()"><i
             class="tio-clear"></i></button>
 </div>
 <div class="modal-body px-4 px-sm-5 text-center">
@@ -56,6 +56,6 @@
 
     <div class="d-flex flex-column gap-2 justify-content-center align-items-center" id="notify_all_the_sellers_area">
         <button type="button" class="fs-16 btn btn--primary px-sm-5 w-fit-content" onclick="notify_all_the_sellers()">{{ translate('notify_All_the_Sellers') }}</button>
-        <button type="button" class="fs-16 btn btn-secondary px-sm-5 w-fit-content" data-dismiss="modal" onclick="location.reload()">{{ translate('skip') }}</button>
+        <button type="button" class="fs-16 btn btn-secondary px-sm-5 w-fit-content" data-bs-dismiss="modal" onclick="location.reload()">{{ translate('skip') }}</button>
     </div>
 </div>

@@ -122,7 +122,7 @@
                 <!--Price Sidebar-->
                 <div class="cz-sidebar __inline-35" id="shop-sidebar">
                     <div class="cz-sidebar-header bg-light">
-                        <button class="close {{Session::get('direction') === "rtl" ? 'mr-auto' : 'ml-auto'}}" type="button" data-dismiss="sidebar" aria-label="Close">
+                        <button class="close {{Session::get('direction') === "rtl" ? 'mr-auto' : 'ml-auto'}}" type="button" data-bs-dismiss="sidebar" aria-label="Close">
                             <i class="tio-clear"></i>
                         </button>
                     </div>

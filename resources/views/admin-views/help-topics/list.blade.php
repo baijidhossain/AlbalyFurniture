@@ -26,7 +26,7 @@
                     <div class="card-header">
                         <h5 class="mb-0">{{translate('help_topic_Table')}} </h5>
                         <button class="btn btn--primary btn-icon-split for-addFaq" data-toggle="modal"
-                                data-target="#addModal">
+                                data-bs-target="#addModal">
                             <i class="ri-add-box-line"></i>
                             <span class="text">{{translate('add_FAQ')}}  </span>
                         </button>
@@ -66,7 +66,7 @@
                                         <td>
                                             <div class="d-flex justify-content-center gap-10">
                                                 <a class="btn btn-outline--primary btn-sm edit"
-                                                   data-toggle="modal" data-target="#editModal"
+                                                   data-toggle="modal" data-bs-target="#editModal"
                                                    title="{{ translate('edit')}}"
                                                    data-id="{{ $help->id }}">
                                                     <i class="tio-edit"></i>
@@ -94,7 +94,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{translate('add_Help_Topic')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"> <span
                                 aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -138,7 +138,7 @@
                         </div>
                         <div class="modal-footer bg-whitesmoke br">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{translate('close')}}</button>
+                                    data-bs-dismiss="modal">{{translate('close')}}</button>
                             <button class="btn btn--primary">{{translate('save')}}</button>
                         </div>
                     </form>
@@ -154,7 +154,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{translate('edit_Modal_Help_Topic')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"> <span
                             aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -188,7 +188,7 @@
                     </div>
                     <div class="modal-footer bg-whitesmoke br">
                         <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">{{translate('close')}}</button>
+                                data-bs-dismiss="modal">{{translate('close')}}</button>
                         <button class="btn btn--primary">{{translate('update')}}</button>
                     </div>
                 </form>

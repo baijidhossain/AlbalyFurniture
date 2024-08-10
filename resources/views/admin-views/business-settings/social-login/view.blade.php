@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
-                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-target="#{{$socialLoginService['login_medium']}}-modal">
+                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-bs-target="#{{$socialLoginService['login_medium']}}-modal">
                                             {{translate('credential_setup')}}
                                             <img width="16" class="svg" src="{{asset('/public/assets/back-end/img/info-circle.svg')}}" loading="lazy" alt="">
                                         </button>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
-                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-target="#{{$appleLoginService['login_medium']}}-modal">
+                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-bs-target="#{{$appleLoginService['login_medium']}}-modal">
                                             {{translate('credential_setup')}}
                                             <img width="16" class="svg" src="{{asset('/public/assets/back-end/img/info-circle.svg')}}" loading="lazy" alt="">
                                         </button>
@@ -188,7 +188,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -209,7 +209,7 @@
                             <li>{{translate('enable_the_Google_login_option_in_your_application`s_settings_and_thoroughly_test_the_integration_before_deploying_it_to_a_live_environment')}}.</li>
                         </ol>
                         <div class="d-flex justify-content-center mt-4">
-                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-dismiss="modal">{{translate('got_it')}}</button>
+                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-bs-dismiss="modal">{{translate('got_it')}}</button>
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -244,7 +244,7 @@
 
                         </ol>
                         <div class="d-flex justify-content-center mt-4">
-                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-dismiss="modal">{{translate('got_it')}}</button>
+                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-bs-dismiss="modal">{{translate('got_it')}}</button>
                         </div>
                     </div>
                 </div>
@@ -256,7 +256,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -277,7 +277,7 @@
                             <li>{{translate('download_the_file_in_device_named')}} <b>{{ translate('AuthKey_KeyID.p8') }}</b> [{{translate('this_is_the_service_key_ID_file_and_also_after_AuthKey_that_is_the_key_ID')}}]</li>
                         </ol>
                         <div class="d-flex justify-content-center mt-4">
-                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-dismiss="modal">{{translate('got_it')}}</button>
+                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-bs-dismiss="modal">{{translate('got_it')}}</button>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                 <div class="modal-content" style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">{{translate('twitter_API_Set_up_Instructions')}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -298,7 +298,7 @@
                         {{translate('instruction_will_be_available_very_soon')}}
 
                         <div class="d-flex justify-content-center mt-4">
-                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-dismiss="modal">{{translate('got_it')}}</button>
+                            <button type="button" class="btn btn--primary text-capitalize px-5 px-sm-10" data-bs-dismiss="modal">{{translate('got_it')}}</button>
                         </div>
                     </div>
                 </div>

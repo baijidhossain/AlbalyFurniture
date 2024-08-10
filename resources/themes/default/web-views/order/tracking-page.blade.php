@@ -33,7 +33,7 @@
 
                         @if(session()->has('Error'))
                             <div class="alert alert-danger alert-block">
-                                <span type="" class="closet __closet" data-dismiss="alert">×</span>
+                                <span type="" class="closet __closet" data-bs-dismiss="alert">×</span>
                                 <strong>{{ session()->get('Error') }}</strong>
                             </div>
                         @endif

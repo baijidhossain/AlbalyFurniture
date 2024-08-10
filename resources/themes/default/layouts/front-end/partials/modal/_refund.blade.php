@@ -99,7 +99,7 @@
                 <!-- form submit  -->
                 <form action="{{route('refund-store')}}"  method="post" enctype="multipart/form-data">
                     @csrf
-                    <h6 class="d-flex gap-2 align-items-center cursor-pointer" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <h6 class="d-flex gap-2 align-items-center cursor-pointer" data-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         {{translate('give_a_refund_reason')}} <i class="tio-chevron-down"></i>
                     </h6>
                     <div class="collapse" id="collapseExample">

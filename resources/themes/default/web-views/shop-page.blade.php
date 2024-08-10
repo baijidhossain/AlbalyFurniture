@@ -152,7 +152,7 @@
                                         @if (auth('customer')->check())
                                             <div class="d-flex">
                                                 <button class="btn btn--primary __inline-70 rounded-10  text-capitalize chat-with-seller-button d-none d-sm-inline-block" data-toggle="modal"
-                                                        data-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
+                                                        data-bs-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
                                                     <img src="{{asset('/public/assets/front-end/img/shopview-chat.png')}}" loading="eager" class="" alt="">
                                                     <span class="d-none d-sm-inline-block">
                                                         {{translate('chat_with_seller')}}
@@ -160,7 +160,7 @@
                                                 </button>
 
                                                 <button class="btn bg-transparent border-0 __inline-70 rounded-10  text-capitalize chat-with-seller-button d-sm-inline-block d-md-none" data-toggle="modal"
-                                                        data-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
+                                                        data-bs-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
                                                     <img src="{{asset('/public/assets/front-end/img/icons/shopview-chat-blue.svg')}}" loading="eager" class="" alt="">
                                                 </button>
 
@@ -241,7 +241,7 @@
                     <!-- Categories Sidebar-->
                     <div class="__shop-page-sidebar">
                         <div class="cz-sidebar-header">
-                            <button class="close {{Session::get('direction') === "rtl" ? 'mr-auto' : 'ml-auto'}}" type="button" data-dismiss="sidebar" aria-label="Close">
+                            <button class="close {{Session::get('direction') === "rtl" ? 'mr-auto' : 'ml-auto'}}" type="button" data-bs-dismiss="sidebar" aria-label="Close">
                                 <i class="tio-clear"></i>
                             </button>
                         </div>
@@ -327,7 +327,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-faded-info">
                     <h5 class="modal-title" id="exampleModalLongTitle">{{translate('Send_Message_to_seller')}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">×</span>
                     </button>
                 </div>

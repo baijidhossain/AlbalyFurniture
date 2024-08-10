@@ -52,7 +52,7 @@
                             <div class="col-md-4">
                                 @if ($details->approved== 0)
                                     <button type="button" class="btn btn-success float-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" data-toggle="modal"
-                                            data-target="#exampleModal">{{translate('proceed')}}
+                                            data-bs-target="#exampleModal">{{translate('proceed')}}
                                         <i class="tio-arrow-forward"></i>
                                     </button>
                                 @else
@@ -133,7 +133,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">{{translate('withdraw_request_process')}}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}</button>
                                 <button type="submit" class="btn btn--primary">{{translate('submit')}}</button>
                             </div>
                         </form>

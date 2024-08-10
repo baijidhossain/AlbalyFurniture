@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header px-sm-5 pb-1">
                 <h5 class="" id="contact_sellerModalLabel">{{translate('contact_With_Seller')}}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-bs-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body px-sm-5">
                 <form action="{{route('messages_store')}}" method="post" id="contact_with_seller_form" data-success-message="{{translate('send_successfully')}}">

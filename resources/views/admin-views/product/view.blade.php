@@ -199,7 +199,7 @@
                     @if($product['added_by'] == 'seller' && ($product['request_status'] == 0 || $product['request_status'] == 1))
                     <div class="d-flex justify-content-sm-end flex-wrap gap-2 mb-3">
                         <div>
-                            <button class="btn btn-danger px-5" data-toggle="modal" data-target="#publishNoteModal">
+                            <button class="btn btn-danger px-5" data-toggle="modal" data-bs-target="#publishNoteModal">
                                 {{translate('reject')}}
                             </button>
 
@@ -478,7 +478,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{ translate('denied_note') }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -488,7 +488,7 @@
                         <textarea class="form-control" name="denied_note" rows="3"></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{translate('close')}}
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{translate('close')}}
                         </button>
                         <button type="submit" class="btn btn--primary">{{translate('save_changes')}}</button>
                     </div>
