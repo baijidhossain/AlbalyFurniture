@@ -2,8 +2,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" >
+                   
                 </button>
             </div>
             <div class="modal-body pb-5">
@@ -12,7 +12,7 @@
                     <h6 class="font-semibold mt-3 mb-4 mx-auto __max-w-220">{{translate('Product_has_been_removed_from_wishlist')}}</h6>
                 </div>
                 <div class="d-flex gap-3 justify-content-center">
-                    <a href="javascript:" class="btn btn--primary __rounded-10" data-dismiss="modal">
+                    <a href="javascript:" class="btn btn--primary __rounded-10" data-bs-dismiss="modal">
                         {{translate('Okay')}}
                     </a>
                 </div>
@@ -25,8 +25,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" >
+                    
                 </button>
             </div>
             <div class="modal-body pb-5">
@@ -35,7 +35,7 @@
                     <h6 class="font-semibold mt-3 mb-4 mx-auto __max-w-220" id="outof-stock-modal-message">{{translate('Out_of_stock')}}</h6>
                 </div>
                 <div class="d-flex gap-3 justify-content-center">
-                    <a href="javascript:" class="btn btn--primary __rounded-10" data-dismiss="modal">
+                    <a href="javascript:" class="btn btn--primary __rounded-10" data-bs-dismiss="modal">
                         {{translate('Okay')}}
                     </a>
                 </div>
@@ -48,8 +48,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
             <div class="modal-body pb-5">
@@ -58,7 +57,7 @@
                     <h6 class="font-semibold mt-3 mb-4 mx-auto __max-w-220">{{ translate('Product_added_to_wishlist') }}</h6>
                 </div>
                 <div class="d-flex gap-3 justify-content-center">
-                    <a href="javascript:" class="btn btn--primary __rounded-10" data-dismiss="modal">
+                    <a href="javascript:" class="btn btn--primary __rounded-10" data-bs-dismiss="modal">
                         {{ translate('Okay') }}
                     </a>
                 </div>
@@ -71,8 +70,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                   
                 </button>
             </div>
             <div class="modal-body pb-5">
@@ -84,7 +83,7 @@
                     </p>
                 </div>
                 <div class="d-flex gap-3 justify-content-center">
-                    <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-dismiss="modal">
+                    <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-bs-dismiss="modal">
                         {{translate('Cancel')}}
                     </button>
 
@@ -101,8 +100,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                   
                 </button>
             </div>
             <div class="modal-body pb-5">
@@ -117,7 +116,7 @@
                     <a href="javascript:" class="btn btn-primary __rounded-10" id="remove-address-link">
                         {{translate('Remove')}}
                     </a>
-                    <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-dismiss="modal">
+                    <button class="btn btn-soft-secondary bg--secondary __rounded-10" data-bs-dismiss="modal">
                         {{translate('Cancel')}}
                     </button>
                 </div>

@@ -3,8 +3,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-0 p-0">
-                    <button type="button" class="close __close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close __close" data-bs-dismiss="modal" aria-label="Close">
+                      
                     </button>
                 </div>
                 <div class="modal-body cursor-pointer __p-3px" onclick="location.href='{{$web_config['popup_banner']['url']}}'">

@@ -18,9 +18,6 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
 @endphp
 
 
-
-
-
   <div class="product-card best-product-card">
     <div class="top-card">
       <div class="price-section">
@@ -54,14 +51,12 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
 
     </div>
 
-
     <div class="product-img-card best-product-img-card">
       <a href="{{route('product',$product->slug)}}" class="zoomImg">
         <img class="__img-125px"
         src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$product['thumbnail']}}"
         onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"/>
       </a>
-
 
 
     </div>

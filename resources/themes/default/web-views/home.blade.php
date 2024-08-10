@@ -1,6 +1,7 @@
 @extends('layouts.front-end.app')
 
 @push('css')
+
   <style>
     .deals-banner .shape .highlight-title {
       margin-top: 32px;
@@ -13,6 +14,17 @@
       line-height: 1;
       margin-left: -15px;
     }
+
+    .deals-banner .shape .title {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--primary-title);
+      text-align: center;
+      margin-left: -10px;
+
+    }
+
   </style>
 @endpush
 
@@ -330,8 +342,6 @@
 		<!-- End-of categories-->
 
 
-
-
     @if(!empty($flash_deals))
     <!-- Deals area S t a r t -->
     <section class="deals-area section-bg">
@@ -347,6 +357,11 @@
                     <div class="shape-container">
                       <div class="shape">
                         <h4 class="highlight-title">Offer</h4>
+
+                        {{-- @if ($flash_deals->end_date < date("Y-m-d") )
+                        <h4 class="title text-danger">Expired</h4>
+                        @endif --}}
+
                       </div>
                     </div>
                   </div>
@@ -1040,7 +1055,6 @@
           othersStore.trigger("prev.owl.carousel", [600]);
       });
   </script>
-
 
   {{-- Product Details page scripts --}}
 

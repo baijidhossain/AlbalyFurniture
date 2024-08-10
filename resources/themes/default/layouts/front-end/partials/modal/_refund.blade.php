@@ -3,9 +3,10 @@
         <div class="modal-content">
             <div class="modal-header border-0 pb-0">
                 <h6 class="text-center text-capitalize flex-grow-1 m-0">{{translate('refund_request')}}</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                
+                <button type="button" class="close" data-bs-dismiss="modal" >
                 </button>
+
             </div>
 
             <div class="modal-body d-flex flex-column gap-3">
