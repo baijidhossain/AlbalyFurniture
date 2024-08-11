@@ -124,14 +124,14 @@
       <a href="{{route('product', "$product->slug")}}">
         <h4 class="product-title line-clamp-1">{{ Str::limit($product['name'], 23) }}</h4>
       </a>
+
       <div class="product-review">
 
-        @if($overallRating[0] != 0 )
-
         <div class="product-ratting">
-          @for($inc=1;$inc<=5;$inc++) 
-          @if ($inc <=(int)$overallRating[0]) 
-          <i class="ri-star-s-fill text-warning"></i>
+
+          @if($overallRating[0] != 0 )
+
+          @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
             @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
               ((int)$overallRating[0]))
               <i class="ri-star-half-s-line text-warning"></i>
@@ -140,14 +140,19 @@
               @endif
               @endfor
 
-
+              @else
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              @endif
         </div>
 
-        @endif
-
-        <p class="count-ratting">Ratting ({{$overallRating[0]}})</p>
+        <p class="count-ratting">({{ count($product->reviews ?? []) }})</p>
 
       </div>
+
 
       <div class="cart-card feature-cart-card d-none d-md-block">
         <a href="{{route('product',"$product->slug")}}">
@@ -156,8 +161,9 @@
 
         <div class="product-review">
 
-          @if($overallRating[0] != 0 )
           <div class="product-ratting">
+
+            @if($overallRating[0] != 0 )
 
             @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
               @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
@@ -168,10 +174,19 @@
                 @endif
                 @endfor
 
-          </div>
-          @endif
+                @else
 
-          <p class="count-ratting"> Ratting ({{$product->reviews_count}})</p>
+                <i class="ri-star-s-line text-warning"></i>
+                <i class="ri-star-s-line text-warning"></i>
+                <i class="ri-star-s-line text-warning"></i>
+                <i class="ri-star-s-line text-warning"></i>
+                <i class="ri-star-s-line text-warning"></i>
+                
+                @endif
+          </div>
+
+          <p class="count-ratting"> ({{ count($product->reviews ?? []) }}) </p>
+
         </div>
 
         <form id="add-to-cart-form-{{ $product->id }}" class="mb-2 add-to-cart-form">
@@ -207,8 +222,8 @@
                       max="{{$product['product_type'] == 'physical' ? $product->current_stock : 100}}">
 
                     <div class="btn-number  qty-btn ml-1 text-primary" type="button"
-                      product-type="{{ $product->product_type }}" data-type="plus" data-field="quantity"> <i
-                        class="ri-add-fill"></i>
+                      product-type="{{ $product->product_type }}" data-type="plus" data-field="quantity"> 
+                      <i class="ri-add-fill"></i>
                     </div>
 
                   </div>
@@ -228,12 +243,12 @@
       <= $seller_vacation_end_date))) || ($product->added_by == 'admin' && ($inhouse_temporary_close ||
         ($inhouse_vacation_status && $current_date >= $inhouse_vacation_start_date && $current_date <=
           $inhouse_vacation_end_date)))) <a href="javascript:void(0)" class="cart-btn" type="button" disabled>
-          {{translate('add_to_cart3')}} </a>
+          {{translate('add_to_cart')}} </a>
           @else
 
           <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('add-to-cart-form-{{ $product->id }}')"
             type="button">
-            {{translate('add_to_cart3')}}
+            {{translate('add_to_cart')}}
           </a>
           @endif
 

@@ -545,25 +545,30 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h4 class="title">Best Sell Products</h4>
+							<h4 class="title">Latest Product</h4>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
+
 						<div class="swiper featureSwiper-active">
+
 							<div class="swiper-wrapper">
 
-                @foreach($bestSellProduct as $product)
+                @foreach($latest_products as $product)
 
                 @include('web-views.partials._feature-product',['product'=>$product, 'decimal_point_settings'=>$decimal_point_settings])
 
                 @endforeach
-					
+
 							</div>
+
 							<div class="swiper-button-next swiper-common-btn"><i class="ri-arrow-right-s-line"></i></div>
 							<div class="swiper-button-prev swiper-common-btn"><i class="ri-arrow-left-s-line"></i></div>
+
 						</div>
+
 					</div>
 				</div>
 			</div>

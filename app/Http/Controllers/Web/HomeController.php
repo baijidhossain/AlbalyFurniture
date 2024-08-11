@@ -39,8 +39,7 @@ class HomeController extends Controller
     private DealOfTheDay $deal_of_the_day,
     private Banner       $banner,
     private MostDemanded $most_demanded,
-  ) {
-  }
+  ) {}
 
 
   public function index()
@@ -154,17 +153,7 @@ class HomeController extends Controller
       ->first();
 
 
-    // foreach ($featured_products as $product) {
 
-    //   foreach ($product->reviews as $review) {
-    //   }
-
-    //   echo '<pre>';
-    //   print_r(count($product->reviews));
-    //   echo '</pre>';
-    // }
-
-    // die();
 
     return view(
       VIEW_FILE_NAMES['home'],
@@ -834,9 +823,11 @@ class HomeController extends Controller
       'flash_deal_product.flash_deal' => function ($query) {
         return $query->whereDate('start_date', '<=', date('Y-m-d'))
           ->whereDate('end_date', '>=', date('Y-m-d'));
-      }, 'wish_list' => function ($query) {
+      },
+      'wish_list' => function ($query) {
         return $query->where('customer_id', Auth::guard('customer')->user()->id ?? 0);
-      }, 'compare_list' => function ($query) {
+      },
+      'compare_list' => function ($query) {
         return $query->where('user_id', Auth::guard('customer')->user()->id ?? 0);
       }
     ])->whereHas('flash_deal_product.feature_deal', function ($query) {
@@ -884,8 +875,10 @@ class HomeController extends Controller
     $footer_banner = $this->banner->where('banner_type', 'Footer Banner')->where('published', 1)->latest()->take(2)->get();
     // start best selling product end
     $best_sellling_products = $this->order_details->with([
-      'product.reviews', 'product.flash_deal_product.flash_deal',
-      'product.seller.shop', 'product.wish_list' => function ($query) {
+      'product.reviews',
+      'product.flash_deal_product.flash_deal',
+      'product.seller.shop',
+      'product.wish_list' => function ($query) {
         return $query->where('customer_id', Auth::guard('customer')->user()->id ?? 0);
       },
       'product.compare_list' => function ($query) {
@@ -976,14 +969,17 @@ class HomeController extends Controller
 
     //featured deal product start
     $featured_deals = $this->product->with([
-      'seller.shop', 'category',
+      'seller.shop',
+      'category',
       'flash_deal_product.feature_deal',
       'flash_deal_product.flash_deal' => function ($query) {
         return $query->whereDate('start_date', '<=', date('Y-m-d'))
           ->whereDate('end_date', '>=', date('Y-m-d'));
-      }, 'wish_list' => function ($query) {
+      },
+      'wish_list' => function ($query) {
         return $query->where('customer_id', Auth::guard('customer')->user()->id ?? 0);
-      }, 'compare_list' => function ($query) {
+      },
+      'compare_list' => function ($query) {
         return $query->where('user_id', Auth::guard('customer')->user()->id ?? 0);
       }
     ])->whereHas('flash_deal_product.feature_deal', function ($query) {
@@ -1065,7 +1061,9 @@ class HomeController extends Controller
       ->where('home_status', true)
       ->with(['product' => function ($query) {
         $query->with([
-          'category', 'reviews', 'rating',
+          'category',
+          'reviews',
+          'rating',
           'wish_list' => function ($query) {
             return $query->where('customer_id', Auth::guard('customer')->user()->id ?? 0);
           },

@@ -46,7 +46,7 @@ class ProductDetailsController extends Controller
     if ($product != null) {
       $overallRating = ProductManager::get_overall_rating($product->reviews);
       $wishlist_status = Wishlist::where(['product_id' => $product->id, 'customer_id' => auth('customer')->id()])->count();
-      $reviews_of_product = Review::where('product_id', $product->id)->latest()->paginate(2);
+      $reviews_of_product = Review::where('product_id', $product->id)->latest()->get();
       $rating = ProductManager::get_rating($product->reviews);
       $decimal_point_settings = Helpers::get_business_settings('decimal_point_settings');
       $more_product_from_seller = Product::active()->where('added_by', $product->added_by)->where('id', '!=', $product->id)->where('user_id', $product->user_id)->latest()->take(5)->get();
@@ -79,14 +79,6 @@ class ProductDetailsController extends Controller
       $compare_list = ProductCompare::where(['product_id' => $product->id, 'user_id' => auth('customer')->id()])->count();
       $categories =  Category::where('id', json_decode($product->category_ids, true))->get();
 
-
-      // echo "<pre>";
-
-      // print_r($reviews_of_product);
-
-      // echo "</pre>";
-
-      // die;
 
 
       return view(VIEW_FILE_NAMES['products_details'], compact(

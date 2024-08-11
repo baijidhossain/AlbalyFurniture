@@ -667,7 +667,7 @@
                         data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
                         aria-selected="false">
 
-                        Reviews {{ $total_reviews }}
+                        Reviews {{ $overallRating[1]}}
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="78" height="19" viewBox="0 0 78 19" fill="none">
                           <path
@@ -733,15 +733,15 @@
                                           <i class="ri-star-s-fill text-warning"></i>
                                             @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
                                               ((int)$overallRating[0]))
-                                              <i class="ri-star-s-fill-half text-warning"></i>
+                                              <i class="ri-star-half-s-line text-warning"></i>
                                               @else
-                                              <i class="ri-star-s-half-fill text-warning"></i>
+                                              <i class="ri-star-s-line text-warning"></i>
                                           @endif
                                           @endfor
                                         </div>
                                         @endif
 
-                                        <p class="pera-sm">( {{ isset($productReview->rating) ? $productReview->rating : 0 }} / 5  )</p>
+                                        <p class="pera-sm">( {{ $overallRating[0] ? $overallRating[0] : 0 }} / 5  )</p>
 
                                       </div>
 

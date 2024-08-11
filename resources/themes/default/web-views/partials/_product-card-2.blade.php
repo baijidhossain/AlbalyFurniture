@@ -22,7 +22,6 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
       <div class="price-section">
 
 
-  
         @if($product->discount > 0)
         <h4 class="price discounted">{{\App\CPU\Helpers::currency_converter($product->unit_price)}}</h4>
         @endif
@@ -69,20 +68,29 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
 
     <div class="product-review">
 
-      @if($overallRating[0] != 0 )
       <div class="product-ratting">
+
+        @if($overallRating[0] != 0 )
+
         @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
           @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
             ((int)$overallRating[0]))
-            <i class="ri-star-s-fill-half text-warning"></i>
+            <i class="ri-star-half-s-line text-warning"></i>
             @else
             <i class="ri-star-s-line text-warning"></i>
             @endif
             @endfor
-      </div>
-      @endif
 
-      <p class="count-ratting">Ratting ({{$product->reviews_count}})</p>
+            @else
+            <i class="ri-star-s-line text-warning"></i>
+            <i class="ri-star-s-line text-warning"></i>
+            <i class="ri-star-s-line text-warning"></i>
+            <i class="ri-star-s-line text-warning"></i>
+            <i class="ri-star-s-line text-warning"></i>
+            @endif
+      </div>
+
+      <p class="count-ratting">({{ count($product->reviews ?? []) }})</p>
 
     </div>
 
@@ -92,12 +100,12 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
       </a>
 
       <div class="product-review">
-        @if($overallRating[0] != 0 )
+
         <div class="product-ratting">
-          @for($inc=1;$inc<=5;$inc++) 
-          
-          @if ($inc <=(int)$overallRating[0]) 
-          <i class="ri-star-s-fill text-warning"></i>
+
+          @if($overallRating[0] != 0 )
+
+          @for($inc=1;$inc<=5;$inc++) @if ($inc <=(int)$overallRating[0]) <i class="ri-star-s-fill text-warning"></i>
             @elseif ($overallRating[0] != 0 && $inc <= (int)$overallRating[0] + 1.1 && $overallRating[0]>
               ((int)$overallRating[0]))
               <i class="ri-star-half-s-line text-warning"></i>
@@ -105,13 +113,20 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
               <i class="ri-star-s-line text-warning"></i>
               @endif
               @endfor
+
+              @else
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              <i class="ri-star-s-line text-warning"></i>
+              @endif
         </div>
-        @endif
-        <p class="count-ratting">Ratting ({{$product->reviews_count}})</p>
+
+        <p class="count-ratting"> ({{ count($product->reviews ?? []) }})</p>
+
       </div>
 
-
-  
       <form id="add-to-cart-form-{{ $product->id }}" class="mb-2 add-to-cart-form">
         @csrf
         <input type="hidden" name="id" value="{{ $product->id }}">
@@ -155,12 +170,25 @@ $overallRating = \App\CPU\ProductManager::get_overall_rating($product->reviews);
             </div>
       </form>
 
-      
-      
     </div>
 
     <div class="button-section d-block d-md-none">
-      <a href="javascript:void(0)" class=" cart-btn">Add to Cart</a>
+
+      @if(($product->added_by == 'seller' && ($seller_temporary_close || (isset($product->seller->shop) &&
+      $product->seller->shop->vacation_status && $current_date >= $seller_vacation_start_date && $current_date
+      <= $seller_vacation_end_date))) || ($product->added_by == 'admin' && ($inhouse_temporary_close ||
+        ($inhouse_vacation_status && $current_date >= $inhouse_vacation_start_date && $current_date <=
+          $inhouse_vacation_end_date)))) <a href="javascript:void(0)" class="cart-btn" type="button" disabled>
+          {{translate('add_to_cart')}} </a>
+          @else
+
+          <a href="javascript:void(0)" class="cart-btn" onclick="addToCart('add-to-cart-form-{{ $product->id }}')"
+            type="button">
+            {{translate('add_to_cart')}}
+          </a>
+          @endif
+
     </div>
+
   </div>
 

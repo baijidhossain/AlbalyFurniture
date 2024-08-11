@@ -401,7 +401,7 @@ class ProductManager
       if ($totalRating == 0) {
         $overallRating = 0;
       } else {
-        $overallRating = number_format($rating / $totalRating, 2);
+        $overallRating = number_format($rating / $totalRating, 1);
       }
     }
 

@@ -87,6 +87,20 @@
     padding-bottom: 7px;
     margin-bottom: 20px;
 }
+ .cart-btn {
+    padding: 9px 10px;
+}
+.qty-container, .featury-qty-container {
+    width: 115px;
+    padding: 9px 24px;
+    border-radius: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
 </style>
 
   @stack('css')
