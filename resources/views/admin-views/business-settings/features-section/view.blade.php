@@ -49,7 +49,7 @@
                 <div class="card">
                     <div class="card-header justify-content-between">
                         <h5 class="mb-0">{{ translate('features_Section') }} - {{ translate('middle') }}</h5>
-                        <span onclick="addThisFeaturesCard_middle()" class="btn btn--primary"><i class="ri-add-box-line pr-2"></i>{{ translate('add_New') }}</span>
+                        <span onclick="addThisFeaturesCard_middle()" class="btn btn--primary"><i class="ri-add-line pr-2"></i>{{ translate('add_New') }}</span>
                     </div>
                     <div class="card-body">
 
@@ -121,7 +121,7 @@
                 <div class="card">
                     <div class="card-header justify-content-between">
                         <h5 class="mb-0">{{ translate('features_Section') }} - {{ translate('bottom') }}</h5>
-                        <span onclick="addThisFeaturesCard_bottom()" class="btn btn--primary"><i class="ri-add-box-line pr-2"></i>{{ translate('add_New') }}</span>
+                        <span onclick="addThisFeaturesCard_bottom()" class="btn btn--primary"><i class="ri-add-line pr-2"></i>{{ translate('add_New') }}</span>
                     </div>
                     <div class="card-body">
                         <div class="row" id="features_Section_bottom_row">

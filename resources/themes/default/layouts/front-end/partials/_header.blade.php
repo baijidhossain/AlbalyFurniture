@@ -325,6 +325,9 @@
                 <kbd class="light-text"> Search </kbd>
               </button>
 
+              <input name="data_from" value="search" hidden>
+              <input name="page" value="1" hidden>
+
           </div>
       </form>
 

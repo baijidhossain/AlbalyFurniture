@@ -32,17 +32,17 @@
     <div class="container pb-5 mb-2 mb-md-4 rtl px-0 px-md-3"
          style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
         <div class="row mx-max-md-0">
-            <div class="col-md-12 mb-3 pt-3 px-max-md-0">
-                <div class="feature_header px-3 px-md-0">
-                    <span>{{ translate('payment_method')}}</span>
-                </div>
+
+            <div class="col-md-12 my-5">
+                <h3 class="font-weight-bold text-center text-lg-left">{{translate('payment_method')}}</h3>
             </div>
+
             <section class="col-lg-8 px-max-md-0">
                 <div class="checkout_details">
-                    <div class="px-3 px-md-0">
+                    {{-- <div class="px-3 px-md-0">
                         @include('web-views.partials._checkout-steps',['step'=>3])
-                    </div>
-                    <div class="card mt-3">
+                    </div> --}}
+                    <div class="card">
                         <div class="card-body">
 
                             <div class="gap-2 mb-4">
@@ -160,7 +160,10 @@
                 </div>
             </section>
             <!-- Sidebar-->
-            @include('web-views.partials._order-summary')
+            <div class="col-lg-4">
+              @include('web-views.partials._order-summary')
+            </div>
+           
         </div>
     </div>
 

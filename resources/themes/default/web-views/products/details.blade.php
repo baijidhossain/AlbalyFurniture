@@ -1036,7 +1036,7 @@
     <!-- Modal -->
     @include('layouts.front-end.partials.modal._chatting',['seller'=>$product->seller])
 
-    <div class="modal fade" id="remove-wishlist-modal">
+    {{-- <div class="modal fade" id="remove-wishlist-modal">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -1056,7 +1056,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @push('script')

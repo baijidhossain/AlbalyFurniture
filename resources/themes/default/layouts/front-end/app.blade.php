@@ -29,7 +29,15 @@
   <link rel="stylesheet" href="{{URL("/")}}/resources/themes/default/public/css/main-style.css">
   <link href="{{URL("/")}}/resources/themes/default/public/css/toastr.min.css" rel="stylesheet">
 
+  <link href="{{URL("/")}}/resources/themes/default/public/css/intlTelInput.css" rel="stylesheet">
+
+  <link href="{{URL("/")}}/resources/themes/default/public/css/lightgallery.min.css" rel="stylesheet">
+
+  {{-- Custom CSS --}}
+
   <link href="{{URL("/")}}/resources/themes/default/public/css/common-css.css" rel="stylesheet">
+
+
 
 
   @php($google_tag_manager_id = \App\CPU\Helpers::get_business_settings('google_tag_manager_id'))
@@ -87,9 +95,7 @@
     padding-bottom: 7px;
     margin-bottom: 20px;
 }
- .cart-btn {
-    padding: 9px 10px;
-}
+
 .qty-container, .featury-qty-container {
     width: 115px;
     padding: 9px 24px;
@@ -103,23 +109,12 @@
 }
 </style>
 
-  @stack('css')
+ @stack('css')
 
 </head>
 
 
 <body>
-
-  {{-- <div class="loading-page" id="preloader-active">
-    <div class="counter">
-      <img width="200"
-      src="{{asset('storage/app/public/company')}}/{{\App\CPU\Helpers::get_business_settings('loader_gif')}}"
-      onerror="this.src='{{asset('public/assets/front-end/img/loader.gif')}}'">
-      <span class="number">0%</span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </div>
-  </div> --}}
 
 
 <!-- Sign in / sign up modal-->
@@ -165,7 +160,15 @@
 
   <script src="{{URL("/")}}/resources/themes/default/public/js/toastr.min.js"></script>
 
-  
+  <script src="{{URL("/")}}/resources/themes/default/public/js/intlTelInput.js"></script>
+
+  <script src="{{URL("/")}}/resources/themes/default/public/js/country-picker-init.js"></script>
+
+  <script src="{{URL("/")}}/resources/themes/default/public/js/lightgallery.min.js"></script>
+
+  {{-- Custom js --}}
+  <script src="{{URL("/")}}/resources/themes/default/public/js/common-js.js"></script>
+
 
 <script>
   $(document).ready(function() {
@@ -194,9 +197,9 @@
           let eyeIcon = $(this).find('i');
           checkbox.change(function () {
               if (checkbox.is(':checked')) {
-                  eyeIcon.removeClass('tio-hidden').addClass('tio-invisible');
+                  eyeIcon.removeClass('ri-eye-off-line').addClass('ri-eye-line');
               } else {
-                  eyeIcon.removeClass('tio-invisible').addClass('tio-hidden');
+                  eyeIcon.removeClass('ri-eye-line').addClass('ri-eye-off-line');
               }
           });
       })
@@ -417,6 +420,7 @@
           console.log(response.data)
       });
   }
+
   /*new*/
   $("#add-to-cart-form").on("submit", function (e) {
       e.preventDefault();
@@ -526,8 +530,6 @@
       });
   }
 
-
-
   function updateCartQuantity(cart_id, product_id, action, event) {
       let remove_url = $("#remove_from_cart_url").data("url");
       let update_quantity_url = $("#update_quantity_url").data("url");
@@ -596,7 +598,7 @@
                               '<i class="ri-delete-bin-5-line-outlined text-danger fs-10"></i>'
                           )
                           : $(`.quantity__minus${cart_id}`).html(
-                              '<i class="ri-checkbox-indeterminate-line fs-10"></i>'
+                              '<i class="ri-subtract-line fs-10"></i>'
                           );
 
                       $(`.cartQuantity${cart_id}`).val(response["qty"]);
@@ -635,7 +637,7 @@
                           cart_quantity_of
                               .parent()
                               .find(".quantity__minus")
-                              .html('<i class="ri-checkbox-indeterminate-line fs-10"></i>');
+                              .html('<i class="ri-subtract-line fs-10"></i>');
                       }
                       if (
                           segment === "shop-cart" ||
@@ -649,6 +651,7 @@
           }
       }
   }
+
   $('#add-to-cart-form input').on('change', function () {
       getVariantPrice();
   });
@@ -705,6 +708,7 @@
       window.location = $(this).find("a").attr("href");
       return false;
   });
+  
 </script>
 
 @if ($errors->any())
@@ -877,17 +881,21 @@
 </script>
 
 <script>
+
   $('.filter-show-btn').on('click', function(){
       $('#shop-sidebar').toggleClass('show active');
   })
+
   $('.cz-sidebar-header .close').on('click', function(){
       $('#shop-sidebar').removeClass('show active');
   })
+
   $('.remove-address-by-modal').on('click', function (){
       let link = $(this).data('link');
       $('#remove-address-link').attr('href', link);
       $('#remove-address').modal('show');
   });
+
 </script>
 
 <script>

@@ -128,11 +128,11 @@
                                     </ul>
                                 </div>
                                 <a href="{{route('seller.product.stock-limit-list',['in_house', ''])}}" class="btn btn-info">
-                                    <i class="ri-add-box-line-circle"></i>
+                                    <i class="ri-add-line-circle"></i>
                                     <span class="text">{{translate('limited_Stocks')}}</span>
                                 </a>
                                 <a href="{{route('seller.product.add-new')}}" class="btn btn--primary">
-                                    <i class="ri-add-box-line"></i>
+                                    <i class="ri-add-line"></i>
                                     <span class="text">{{translate('add_new_product')}}</span>
                                 </a>
                             </div>

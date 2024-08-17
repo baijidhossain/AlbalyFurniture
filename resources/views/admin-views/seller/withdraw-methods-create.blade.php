@@ -16,7 +16,7 @@
                     {{translate('Withdrawal_Methods')}}
                 </h2>
                 <button class="btn btn--primary" id="add-more-field">
-                    <i class="ri-add-box-line"></i> {{translate('add_Fields')}}
+                    <i class="ri-add-line"></i> {{translate('add_Fields')}}
                 </button>
             </div>
         </div>

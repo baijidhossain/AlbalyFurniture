@@ -1,39 +1,80 @@
-<h3 class="mt-4 mb-3 text-center text-lg-left mobile-fs-20">{{ translate('shopping_cart')}}</h3>
-
 @php($shippingMethod=\App\CPU\Helpers::get_business_settings('shipping_method'))
 @php($cart=\App\Model\Cart::where(['customer_id' => (auth('customer')->check() ? auth('customer')->id() : session('guest_id'))])->get()->groupBy('cart_group_id'))
 
-<div class="row g-3 mx-max-md-0">
-    <!-- List of items-->
-    <section class="col-lg-8 px-max-md-0">
-        @if(count($cart)==0)
-            @php($physical_product = false)
-        @endif
-            <!-- for web -->
-            <div class="table-responsive d-none d-lg-block">
-                <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table __cart-table">
-                    <thead class="thead-light">
-                        <tr class="">
-                            <th class="font-weight-bold __w-45">
-                                <div class="pl-3">
-                                    {{translate('product')}}
-                                </div>
-                            </th>
-                            <th class="font-weight-bold pl-0 __w-15p text-capitalize">{{translate('unit_price')}}</th>
-                            <th class="font-weight-bold __w-15p">
-                                <span class="pl-3">{{translate('qty')}}</span>
-                            </th>
-                            <th class="font-weight-bold __w-15p text-end">
-                                <div class="pr-3">
-                                    {{translate('total')}}
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-                @foreach($cart as $group_key=>$group)
-                    <div class="card __card cart_information __cart-table mb-3">
-                        <?php
+@push('css')
+<style>
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=url]:focus,
+  input[type=password]:focus,
+  input[type=search]:focus,
+  input[type=tel]:focus,
+  input[type=number]:focus,
+  textarea:focus,
+  input[type=button]:focus,
+  input[type=reset]:focus,
+  input[type=submit]:focus,
+  select:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0.1rem solid var(--primary-color);
+    border-radius: 3px;
+  }
+
+  .cursore-pointer {
+    cursor: pointer;
+  }
+</style>
+    
+@endpush
+
+<div class="row my-5">
+
+  <div class="col-lg-8">
+
+    <div class="card mb-3">
+
+      <div class="card-header py-4">
+        <div class="d-flex align-items-center justify-content-between ">
+          <h5 class="mb-0">{{translate('Shopping_card')}}</h5>
+    
+          <button class="profile-aside-btn btn btn--primary px-2 rounded px-2 py-1 d-lg-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7 9.81219C7 9.41419 6.842 9.03269 6.5605 8.75169C6.2795 8.47019 5.898 8.31219 5.5 8.31219C4.507 8.31219 2.993 8.31219 2 8.31219C1.602 8.31219 1.2205 8.47019 0.939499 8.75169C0.657999 9.03269 0.5 9.41419 0.5 9.81219V13.3122C0.5 13.7102 0.657999 14.0917 0.939499 14.3727C1.2205 14.6542 1.602 14.8122 2 14.8122H5.5C5.898 14.8122 6.2795 14.6542 6.5605 14.3727C6.842 14.0917 7 13.7102 7 13.3122V9.81219ZM14.5 9.81219C14.5 9.41419 14.342 9.03269 14.0605 8.75169C13.7795 8.47019 13.398 8.31219 13 8.31219C12.007 8.31219 10.493 8.31219 9.5 8.31219C9.102 8.31219 8.7205 8.47019 8.4395 8.75169C8.158 9.03269 8 9.41419 8 9.81219V13.3122C8 13.7102 8.158 14.0917 8.4395 14.3727C8.7205 14.6542 9.102 14.8122 9.5 14.8122H13C13.398 14.8122 13.7795 14.6542 14.0605 14.3727C14.342 14.0917 14.5 13.7102 14.5 13.3122V9.81219ZM12.3105 7.20869L14.3965 5.12269C14.982 4.53719 14.982 3.58719 14.3965 3.00169L12.3105 0.915687C11.725 0.330188 10.775 0.330188 10.1895 0.915687L8.1035 3.00169C7.518 3.58719 7.518 4.53719 8.1035 5.12269L10.1895 7.20869C10.775 7.79419 11.725 7.79419 12.3105 7.20869ZM7 2.31219C7 1.91419 6.842 1.53269 6.5605 1.25169C6.2795 0.970186 5.898 0.812187 5.5 0.812187C4.507 0.812187 2.993 0.812187 2 0.812187C1.602 0.812187 1.2205 0.970186 0.939499 1.25169C0.657999 1.53269 0.5 1.91419 0.5 2.31219V5.81219C0.5 6.21019 0.657999 6.59169 0.939499 6.87269C1.2205 7.15419 1.602 7.31219 2 7.31219H5.5C5.898 7.31219 6.2795 7.15419 6.5605 6.87269C6.842 6.59169 7 6.21019 7 5.81219V2.31219Z"
+                fill="white" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    
+      <div class="card-body p-0">
+    
+        <div class="table-responsive">
+    
+          <table class="table">
+    
+            <thead >
+              <tr class="">
+    
+                  <th>Product</th>
+    
+                  <th>Unit price</th>
+    
+                  <th class="text-center">Qty</th>
+    
+                  <th>Total</th>
+    
+              </tr>
+    
+              </thead>
+    
+            <tbody>
+
+              @foreach($cart as $group_key=>$group)
+
+                       <?php
                             $physical_product = false;
                             $total_shipping_cost = 0;
                             foreach ($group as $row) {
@@ -45,520 +86,228 @@
                                 }
                             }
 
-                        ?>
+                         ?>
+
+
+                          @foreach($group as $cart_key=>$cartItem)
+                          @if ($shippingMethod=='inhouse_shipping')
+                                  <?php
+                                      $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
+                                      $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
+                                  ?>
+                          @else
+                                  <?php
+                                  if ($cartItem->seller_is == 'admin') {
+                                      $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
+                                      $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
+                                  } else {
+                                      $seller_shipping = \App\Model\ShippingType::where('seller_id', $cartItem->seller_id)->first();
+                                      $shipping_type = isset($seller_shipping) == true ? $seller_shipping->shipping_type : 'order_wise';
+                                  }
+                                  ?>
+                          @endif
+
+                      
+                          @endforeach
 
                         @foreach($group as $cart_key=>$cartItem)
-                            @if ($shippingMethod=='inhouse_shipping')
-                                    <?php
-                                        $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
-                                        $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
-                                    ?>
-                            @else
-                                    <?php
-                                    if ($cartItem->seller_is == 'admin') {
-                                        $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
-                                        $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
-                                    } else {
-                                        $seller_shipping = \App\Model\ShippingType::where('seller_id', $cartItem->seller_id)->first();
-                                        $shipping_type = isset($seller_shipping) == true ? $seller_shipping->shipping_type : 'order_wise';
-                                    }
-                                    ?>
-                            @endif
 
-                            @if($cart_key==0)
-                                <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2 px-0">
-                                    @php($verify_status = \App\CPU\OrderManager::minimum_order_amount_verify($request, $group_key))
-                                    @if($cartItem->seller_is=='admin')
-                                        <a href="{{route('shopView',['id'=>0])}}" class="text-primary d-flex align-items-center gap-2">
-                                            <img src="{{asset('public/assets/front-end/img/cart-store.png')}}" alt="">
-                                            {{\App\CPU\Helpers::get_business_settings('company_name')}}
-                                            @if ($verify_status['minimum_order_amount'] > $verify_status['amount'])
-                                                <span class="pl-1 text-danger pulse-button" data-toggle="tooltip" data-placement="right"
-                                                    onclick="minimum_Order_Amount_message(this.getAttribute('data-title'))"
-                                                    data-title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif" title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif">
-                                                    <i class="czi-security-announcement"></i>
-                                                </span>
-                                            @endif
-                                        </a>
-                                    @else
-                                        <a href="{{route('shopView',['id'=>$cartItem->seller_id])}}" class="text-primary d-flex align-items-center gap-2">
-                                            <img src="{{asset('public/assets/front-end/img/cart-store.png')}}" alt="">
-                                            {{\App\Model\Shop::where(['seller_id'=>$cartItem['seller_id']])->first()->name}}
-                                            @if ($verify_status['minimum_order_amount'] > $verify_status['amount'])
-                                                <span class="pl-1 text-danger pulse-button" data-toggle="tooltip" data-placement="right"
-                                                    onclick="minimum_Order_Amount_message(this.getAttribute('data-title'))"
-                                                    data-title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif" title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif">
-                                                    <i class="czi-security-announcement"></i>
-                                                </span>
-                                            @endif
-                                        </a>
-                                    @endif
+                        @php($product = $cartItem->all_product)
 
-                                @php($choosen_shipping=\App\Model\CartShipping::where(['cart_group_id'=>$cartItem['cart_group_id']])->first())
-
-                                <!--  shipping dropdown -->
-                                <div class=" bg-white select-method-border rounded">
-                                @if($physical_product && $shippingMethod=='sellerwise_shipping' && $shipping_type == 'order_wise')
-                                    @if(isset($choosen_shipping)==false)
-                                        @php($choosen_shipping['shipping_method_id']=0)
-                                    @endif
-                                    @php( $shippings=\App\CPU\Helpers::get_shipping_methods($cartItem['seller_id'],$cartItem['seller_is']))
-                                        @if($physical_product && $shippingMethod=='sellerwise_shipping' && $shipping_type == 'order_wise')
-
-                                        <div class="d-sm-flex">
-                                            @isset($choosen_shipping['shipping_cost'])
-                                                <div class="text-sm-nowrap mx-sm-2 mt-sm-2 mb-1">
-                                                    <span class="font-weight-bold">{{translate('shipping_cost')}}</span> :<span>{{App\CPU\Helpers::currency_converter($choosen_shipping['shipping_cost'])}}</span>
-                                                </div>
-                                            @endisset
-
-                                            <!-- chosen shipping method-->
-                                            <select class="form-control fs-13 font-weight-bold text-capitalize border-aliceblue max-240px" onchange="set_shipping_id(this.value,'{{$cartItem['cart_group_id']}}')">
-                                                <option>{{translate('choose_shipping_method')}}</option>
-                                                @foreach($shippings as $shipping)
-                                                    <option value="{{$shipping['id']}}" {{$choosen_shipping['shipping_method_id']==$shipping['id']?'selected':''}}>
-                                                        {{translate('shipping_method')}} : {{$shipping['title'].' ( '.$shipping['duration'].' ) '.\App\CPU\Helpers::currency_converter($shipping['cost'])}}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        @endif
-                                @else
-                                    @if ($shipping_type != 'order_wise')
-                                        <div class="">
-                                            <span class="font-weight-bold">{{translate('total_shipping_cost')}}</span> : <span>{{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}</span>
-                                        </div>
-                                    @elseif($shipping_type == 'order_wise' && $choosen_shipping)
-                                        <div class="">
-                                            <span class="font-weight-bold">{{translate('total_shipping_cost')}}</span> : <span>{{\App\CPU\Helpers::currency_converter($choosen_shipping->shipping_cost)}}</span>
-                                        </div>
-                                    @endif
-                                @endif
-
-                                </div>
-                                <!-- end shipping dropdown -->
-                                </div>
-                            @endif
-                        @endforeach
-                        <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table __cart-table">
-                            <tbody>
-                            <?php
-                                $physical_product = false;
-                                foreach ($group as $row) {
-                                    if ($row->product_type == 'physical') {
-                                        $physical_product = true;
-                                    }
-                                }
-                            ?>
-                            @foreach($group as $cart_key=>$cartItem)
-                            @php($product = $cartItem->all_product)
-                            @php($product_status = $cartItem->all_product->status)
-                                <tr>
-                                    <td class="__w-45">
-                                        <div class="d-flex gap-3">
-                                            <div class="">
-                                                <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}" class="position-relative overflow-hidden">
-                                                    <img class="rounded __img-62 {{ $product_status == 0?'blur-section':'' }}"
-                                                            onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
-                                                            src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$cartItem['thumbnail']}}"
-                                                            alt="Product">
-                                                    @if ($product_status == 0)
-                                                        <span class="temporary-closed position-absolute text-center p-2">
-                                                            <span>{{ translate('N/A') }}</span>
-                                                        </span>
-                                                    @endif
-                                                </a>
-                                            </div>
-                                            <div class="d-flex flex-column gap-1">
-                                                <div class="text-break __line-2 __w-18rem {{ $product_status == 0?'blur-section':'' }}">
-                                                    <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}">{{$cartItem['name']}}</a>
-                                                </div>
-
-                                                <div class="d-flex flex-wrap gap-2 {{ $product_status == 0?'blur-section':'' }}">
-                                                    @foreach(json_decode($cartItem['variations'],true) as $key1 =>$variation)
-                                                        <div class="">
-                                                            <span class="__text-12px text-capitalize">
-                                                                <span class="text-muted">{{$key1}} </span> : <span class="fw-semibold">{{$variation}}</span>
-                                                            </span>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                                @if ( $shipping_type != 'order_wise')
-                                                    <div class="d-flex flex-wrap gap-2 {{ $product_status == 0?'blur-section':'' }}">
-                                                        <span class="fw-semibold"> {{translate('shipping_cost')}}</span>:<span>{{ \App\CPU\Helpers::currency_converter($cartItem['shipping_cost']) }}</span>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="{{ $product_status == 0?'blur-section':'' }} __w-15p">
-                                        <div class="text-center">
-                                            <div class="fw-semibold">{{ \App\CPU\Helpers::currency_converter($cartItem['price']-$cartItem['discount']) }}</div>
-                                            <span class="text-nowrap fs-10">
-                                                @if ($cartItem->tax_model === "exclude")
-                                                    ({{translate('tax')}} : {{\App\CPU\Helpers::currency_converter($cartItem['tax']*$cartItem['quantity'])}})
-                                                @else
-                                                    ({{translate('tax_included')}})
-                                                @endif
-                                             </span>
-                                        </div>
-                                    </td>
-                                    <td class="__w-15p text-center">
-                                        <!-- Qty update -->
-                                        @php($minimum_order=\App\CPU\ProductManager::get_product($cartItem['product_id']))
-                                        @if ($product_status == 1)
-                                            <div class="qty d-flex justify-content-center align-itmes-center gap-3">
-                                                <span class="qty_minus " onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-1', '{{ $cartItem['quantity'] == $product->minimum_order_qty ? 'delete':'minus' }}')">
-                                                    <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line text-danger' : 'ri-checkbox-indeterminate-line' }}"></i>
-                                                </span>
-                                                <input type="text" class="qty_input cartQuantity{{ $cartItem['id'] }}" value="{{$cartItem['quantity']}}" name="quantity[{{ $cartItem['id'] }}]" id="cart_quantity_web{{$cartItem['id']}}"
-                                                    onchange="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '0')" data-min="{{ isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1 }}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                                                <span class="qty_plus" onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '1')">
-                                                    <i class="ri-add-box-line"></i>
-                                                </span>
-                                            </div>
-                                        @else
-                                        <div class="qty d-flex justify-content-center align-itmes-center gap-3">
-                                            <span onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-{{$cartItem['quantity']}}', 'delete')">
-                                                <i class="ri-delete-bin-5-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
-                                            </span>
-                                        </div>
-                                        @endif
-                                    </td>
-                                    <td class="__w-15p text-end {{ $product_status == 0?'blur-section':'' }}">
-                                        <div>
-                                            {{ \App\CPU\Helpers::currency_converter(($cartItem['price']-$cartItem['discount'])*$cartItem['quantity']) }}
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <!-- free delivery section -->
-                        @php($free_delivery_status = \App\CPU\OrderManager::free_delivery_order_amount($group[0]->cart_group_id))
-                        @if ($free_delivery_status['status'] && (session()->missing('coupon_type') || session('coupon_type') !='free_delivery'))
-                            <div class="free-delivery-area px-3 mb-3 mb-lg-2">
-                                <div class="d-flex align-items-center gap-8">
-                                    <img class="__w-30px" src="{{ asset('public/assets/front-end/img/icons/free-shipping.png') }}" alt="" >
-                                    @if ($free_delivery_status['amount_need'] <= 0)
-                                        <span class="text-muted fs-12 mt-1">{{ translate('you_Get_Free_Delivery_Bonus') }}</span>
-                                    @else
-                                    <span class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ \App\CPU\Helpers::currency_converter($free_delivery_status['amount_need']) }}</span>
-                                    <span class="text-muted fs-12 mt-1">{{ translate('add_more_for_free_delivery') }}</span>
-                                    @endif
-                                </div>
-                                <div class="progress free-delivery-progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{ $free_delivery_status['percentage'] }}%" aria-valuenow="{{ $free_delivery_status['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        @endif
-                        <!-- end of free delivery section -->
-                    </div>
-                @endforeach
-            </div>
-            <!-- end web -->
-            <!-- Mobile -->
-            @foreach($cart as $group_key=>$group)
-            <div class="cart_information mb-3 pb-3 w-100 d-lg-none">
-                <?php
-                    $physical_product = false;
-                    $total_shipping_cost = 0;
-                    foreach ($group as $row) {
-                        if ($row->product_type == 'physical') {
-                            $physical_product = true;
-                        }
-                        if ($row->product_type == 'physical' && $row->shipping_type != "order_wise") {
-                            $total_shipping_cost += $row->shipping_cost;
-                        }
-                    }
-
-                ?>
-
-                @foreach($group as $cart_key=>$cartItem)
-                    @if ($shippingMethod=='inhouse_shipping')
-                            <?php
-                                $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
-                                $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
-                            ?>
-                    @else
-                            <?php
-                            if ($cartItem->seller_is == 'admin') {
-                                $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
-                                $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
-                            } else {
-                                $seller_shipping = \App\Model\ShippingType::where('seller_id', $cartItem->seller_id)->first();
-                                $shipping_type = isset($seller_shipping) == true ? $seller_shipping->shipping_type : 'order_wise';
-                            }
-                            ?>
-                    @endif
-
-                    @if($cart_key==0)
-                        <div class="card-header d-flex flex-column gap-2 border-0 justify-content-between align-items-center">
-                            @php($verify_status = \App\CPU\OrderManager::minimum_order_amount_verify($request, $group_key))
-                            @if($cartItem->seller_is=='admin')
-                                <a href="{{route('shopView',['id'=>0])}}" class="text-primary d-flex align-items-center gap-2">
-                                    <img src="{{asset('public/assets/front-end/img/cart-store.png')}}">
-                                    {{\App\CPU\Helpers::get_business_settings('company_name')}}
-                                    @if ($verify_status['minimum_order_amount'] > $verify_status['amount'])
-                                        <span class="pl-1 text-danger pulse-button" data-toggle="tooltip" data-placement="right"
-                                            onclick="minimum_Order_Amount_message(this.getAttribute('data-title'))"
-                                            data-title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif" title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif">
-                                            <i class="czi-security-announcement"></i>
-                                        </span>
-                                    @endif
-                                </a>
-                            @else
-                                <a href="{{route('shopView',['id'=>$cartItem->seller_id])}}" class="text-primary d-flex align-items-center gap-2">
-                                    <img src="{{asset('public/assets/front-end/img/cart-store.png')}}">
-                                    {{\App\Model\Shop::where(['seller_id'=>$cartItem['seller_id']])->first()->name}}
-                                    @if ($verify_status['minimum_order_amount'] > $verify_status['amount'])
-                                        <span class="pl-1 text-danger pulse-button" data-toggle="tooltip" data-placement="right"
-                                            onclick="minimum_Order_Amount_message(this.getAttribute('data-title'))"
-                                            data-title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif" title="{{ translate('minimum_Order_Amount') }} {{ \App\CPU\Helpers::currency_converter($verify_status['minimum_order_amount']) }} {{ translate('for') }} @if($cartItem->seller_is=='admin') {{\App\CPU\Helpers::get_business_settings('company_name')}} @else {{ \App\CPU\get_shop_name($cartItem['seller_id']) }} @endif">
-                                            <i class="czi-security-announcement"></i>
-                                        </span>
-                                    @endif
-                                </a>
-                            @endif
-
-
-                            <!--  shipping dropdown -->
-                            <div class=" bg-white select-method-border rounded">
-                                @if($physical_product && $shippingMethod=='sellerwise_shipping' && $shipping_type == 'order_wise')
-                                    @php($choosen_shipping=\App\Model\CartShipping::where(['cart_group_id'=>$cartItem['cart_group_id']])->first())
-                                    @if(isset($choosen_shipping)==false)
-                                        @php($choosen_shipping['shipping_method_id']=0)
-                                    @endif
-                                    @php( $shippings=\App\CPU\Helpers::get_shipping_methods($cartItem['seller_id'],$cartItem['seller_is']))
-                                        @if($physical_product && $shippingMethod=='sellerwise_shipping' && $shipping_type == 'order_wise')
-
-                                            <div class="d-sm-flex">
-                                            <!-- choosen shipping method-->
-                                                <select class="form-control fs-13 font-weight-bold text-capitalize border-aliceblue max-240px" onchange="set_shipping_id(this.value,'{{$cartItem['cart_group_id']}}')">
-                                                    <option>{{translate('choose_shipping_method')}}</option>
-                                                    @foreach($shippings as $shipping)
-                                                        <option value="{{$shipping['id']}}" {{$choosen_shipping['shipping_method_id']==$shipping['id']?'selected':''}}>
-                                                            {{translate('shipping_method')}} : {{$shipping['title'].' ( '.$shipping['duration'].' ) '.\App\CPU\Helpers::currency_converter($shipping['cost'])}}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            @isset($choosen_shipping['shipping_cost'])
-                                                <div class="text-sm-nowrap mt-2 text-center fs-12">
-                                                    <span class="font-weight-bold">{{translate('shipping_cost')}}</span> :<span>{{App\CPU\Helpers::currency_converter($choosen_shipping['shipping_cost'])}}</span>
-                                                </div>
-                                            @endisset
-                                        @endif
-                                @else
-                                    @if ($shipping_type != 'order_wise')
-                                        <div class="text-sm-nowrap text-center fs-12">
-                                            <span class="font-weight-bold">{{translate('total_shipping_cost')}}</span> : <span>{{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}</span>
-                                        </div>
-                                    @elseif($shipping_type == 'order_wise' && $choosen_shipping)
-                                        <div class="text-sm-nowrap text-center fs-12">
-                                            <span class="font-weight-bold">{{translate('total_shipping_cost')}}</span> : <span>{{\App\CPU\Helpers::currency_converter($choosen_shipping->shipping_cost)}}</span>
-                                        </div>
-                                    @endif
-                                @endif
-                            </div>
-                            <!-- end shipping dropdown -->
-                        </div>
-                    @endif
-                @endforeach
-
-                <?php
-                    $physical_product = false;
-                    foreach ($group as $row) {
-                        if ($row->product_type == 'physical') {
-                            $physical_product = true;
-                        }
-                    }
-                ?>
-                @foreach($group as $cart_key=>$cartItem)
-                @php($product = $cartItem->all_product)
-                @php($product_status = $cartItem->all_product->status)
-                    <div class="d-flex justify-content-between gap-3 p-3 fs-12  {{count($group)-1 == $cart_key ? '' :'border-bottom border-aliceblue'}}">
-                        <div class="d-flex gap-3">
-                            <div class="">
-                                <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}" class="position-relative overflow-hidden">
-                                    <img class="rounded __img-48 {{ $product_status == 0?'blur-section':'' }}"
-                                            onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
-                                            src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$cartItem['thumbnail']}}"
-                                            alt="Product">
-                                    @if ($product_status == 0)
-                                        <span class="temporary-closed position-absolute text-center p-2">
-                                            <span>{{ translate('N/A') }}</span>
-                                        </span>
-                                    @endif
-                                </a>
-                            </div>
-                            <div class="d-flex flex-column gap-1">
-                                <div class="text-break __line-2 {{ $product_status == 0?'blur-section':'' }}">
-                                    <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}">{{$cartItem['name']}}</a>
-                                </div>
-
-                                <div class="d-flex flex-wrap column-gap-2 {{ $product_status == 0?'blur-section':'' }}">
-                                    @foreach(json_decode($cartItem['variations'],true) as $key1 =>$variation)
-                                        <div class="">
-                                            <span class="__text-12px text-capitalize">
-                                               <span class="text-muted"> {{$key1}} </span> : <span class="fw-semibold">{{$variation}}</span>
-                                            </span>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-wrap column-gap-2">
-                                    <div class="text-nowrap text-muted">{{translate('unit_price')}} :</div>
-                                    <div class="text-start d-flex gap-1 flex-wrap">
-                                        <div class="fw-semibold">{{ \App\CPU\Helpers::currency_converter($cartItem['price']-$cartItem['discount']) }}</div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex gap-2">
-                                    <div class="text-nowrap text-muted">{{translate('total')}} :</div>
-                                    <div class="fw-semibold">
-                                        {{ \App\CPU\Helpers::currency_converter(($cartItem['price']-$cartItem['discount'])*$cartItem['quantity']) }}
-
-                                    </div>
-                                    <span class="text-nowrap fs-10 mt-1px">
-                                        @if ($cartItem->tax_model === "exclude")
-                                            ({{translate('tax')}} : {{\App\CPU\Helpers::currency_converter($cartItem['tax']*$cartItem['quantity'])}})
-                                        @else
-                                            ({{translate('tax_included')}})
-                                        @endif
-                                    </span>
-                                </div>
-                                @if ( $shipping_type != 'order_wise')
-                                    <div class="d-flex flex-wrap gap-2 {{ $product_status == 0?'blur-section':'' }}">
-                                        <span class="text-muted"> {{translate('shipping_cost')}}</span>:<span class="fw-semibold">{{ \App\CPU\Helpers::currency_converter($cartItem['shipping_cost']) }}</span>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div>
-                            <!-- Qty update -->
-                            @php($minimum_order=\App\CPU\ProductManager::get_product($cartItem['product_id']))
-                            @if ($product_status == 1)
-                                <div class="qty d-flex flex-column align-items-center gap-3">
-                                    <span class="qty_plus" onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '1')">
-                                        <i class="ri-add-box-line"></i>
-                                    </span>
-                                    <input type="number" class="qty_input cartQuantity{{ $cartItem['id'] }}" value="{{$cartItem['quantity']}}" name="quantity[{{ $cartItem['id'] }}]" id="cart_quantity_mobile{{$cartItem['id']}}"
-                                    onchange="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '0')" data-min="{{ isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1 }}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                                    <span class="qty_minus " onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-1', '{{ $cartItem['quantity'] == $product->minimum_order_qty ? 'delete':'minus' }}')">
-                                        <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line text-danger' : 'ri-checkbox-indeterminate-line' }}"></i>
-                                    </span>
-                                </div>
-                            @else
-                            <div class="qty d-flex flex-column align-items-center gap-3">
-                                <span class="" onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-{{$cartItem['quantity']}}', 'delete')">
-                                    <i class="ri-delete-bin-5-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
-                                </span>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                @endforeach
-
-                <!-- free delivery section -->
-                @php($free_delivery_status = \App\CPU\OrderManager::free_delivery_order_amount($group[0]->cart_group_id))
-                @if ($free_delivery_status['status'] && (session()->missing('coupon_type') || session('coupon_type') !='free_delivery'))
-                    <div class="free-delivery-area px-3 mb-3 mb-lg-2">
-                        <div class="d-flex align-items-center gap-8">
-                            <img class="__w-30px" src="{{ asset('public/assets/front-end/img/icons/free-shipping.png') }}" alt="" >
-                            @if ($free_delivery_status['amount_need'] <= 0)
-                                <span class="text-muted fs-12 mt-1">{{ translate('you_Get_Free_Delivery_Bonus') }}</span>
-                            @else
-                            <span class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ \App\CPU\Helpers::currency_converter($free_delivery_status['amount_need']) }}</span>
-                            <span class="text-muted fs-12 mt-1">{{ translate('add_more_for_free_delivery') }}</span>
-                            @endif
-                        </div>
-                        <div class="progress free-delivery-progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ $free_delivery_status['percentage'] }}%" aria-valuenow="{{ $free_delivery_status['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                @endif
-                <!-- end of free delivery section -->
-            </div>
-        @endforeach
-        <!-- End Mobile -->
-
-
-            @if($shippingMethod=='inhouse_shipping')
-                <?php
-                    $physical_product = false;
-                    foreach($cart as $group_key=>$group){
+                            
+                        <?php
+                        $physical_product = false;
                         foreach ($group as $row) {
                             if ($row->product_type == 'physical') {
                                 $physical_product = true;
                             }
                         }
-                    }
-                ?>
+                    ?>
+                   
+                   
+                    @php($product_status = $cartItem->all_product->status)
+                        <tr>
+                            <td class="align-middle">
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="">
+                                        <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}" class="position-relative overflow-hidden">
+                                            <img class="rounded __img-62 {{ $product_status == 0?'blur-section':'' }}"
+                                                    onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
+                                                    src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$cartItem['thumbnail']}}"
+                                                    alt="Product" width="64">
+                                            @if ($product_status == 0)
+                                                <span class="temporary-closed position-absolute text-center p-2">
+                                                    <span>{{ translate('N/A') }}</span>
+                                                </span>
+                                            @endif
+                                        </a>
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                        <div class="text-break __line-2 __w-18rem {{ $product_status == 0?'blur-section':'' }}">
+                                            <a href="{{ $product_status == 1 ? route('product',$cartItem['slug']) : 'javascript:'}}">{{$cartItem['name']}}</a>
+                                        </div>
 
-                <?php
-                    $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
-                    $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
-                ?>
-                @if ($shipping_type == 'order_wise' && $physical_product)
-                    @php($shippings=\App\CPU\Helpers::get_shipping_methods(1,'admin'))
-                    @php($choosen_shipping=\App\Model\CartShipping::where(['cart_group_id'=>$cartItem['cart_group_id']])->first())
+                                        <div class="d-flex flex-wrap gap-2 {{ $product_status == 0?'blur-section':'' }}">
+                                            @foreach(json_decode($cartItem['variations'],true) as $key1 =>$variation)
+                                                <div class="">
+                                                    <span class="__text-12px text-capitalize">
+                                                        <span class="text-muted">{{$key1}} </span> : <span class="fw-semibold">{{$variation}}</span>
+                                                    </span>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        @if ( $shipping_type != 'order_wise')
+                                            <div class="d-flex flex-wrap gap-2 {{ $product_status == 0?'blur-section':'' }}">
+                                                <span class="fw-semibold"> {{translate('shipping_cost')}}</span>:<span>{{ \App\CPU\Helpers::currency_converter($cartItem['shipping_cost']) }}</span>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle">
+                                
+                                    <div class="fw-semibold">{{ \App\CPU\Helpers::currency_converter($cartItem['price']-$cartItem['discount']) }}</div>
+                                    <span class="text-nowrap fs-10">
+                                        @if ($cartItem->tax_model === "exclude")
+                                            ({{translate('tax')}} : {{\App\CPU\Helpers::currency_converter($cartItem['tax']*$cartItem['quantity'])}})
+                                        @else
+                                            ({{translate('tax_included')}})
+                                        @endif
+                                     </span>
+                              
+                            </td>
+                            <td class="align-middle">
+                                <!-- Qty update -->
+                                @php($minimum_order=\App\CPU\ProductManager::get_product($cartItem['product_id']))
+                                @if ($product_status == 1)
+                                    <div class="qty text-center d-flex align-items-center justify-content-center">
+                                        <span class="cursore-pointer qty_minus " onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-1', '{{ $cartItem['quantity'] == $product->minimum_order_qty ? 'delete':'minus' }}')">
+                                            <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-close-line text-danger' : 'ri-subtract-line' }}"></i>
+                                        </span>
+                                        <input type="text" class="text-center qty_input cartQuantity{{ $cartItem['id'] }}" value="{{$cartItem['quantity']}}" name="quantity[{{ $cartItem['id'] }}]" id="cart_quantity_web{{$cartItem['id']}}"
+                                            onchange="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '0')" data-min="{{ isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1 }}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                        <span class="cursore-pointer qty_plus" onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '1')">
+                                            <i class="ri-add-line"></i>
+                                        </span>
+                                    </div>
+                                @else
+                                <div class="qty">
+                                    <span onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-{{$cartItem['quantity']}}', 'delete')">
+                                        <i class="ri-close-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
+                                    </span>
+                                </div>
+                                @endif
+                            </td>
+                            <td class="align-middle">
+                                <div>
+                                    {{ \App\CPU\Helpers::currency_converter(($cartItem['price']-$cartItem['discount'])*$cartItem['quantity']) }}
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
 
-                    @if(isset($choosen_shipping)==false)
-                        @php($choosen_shipping['shipping_method_id']=0)
-                    @endif
-                    <div class="px-3 px-md-0 mb-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <select class="form-control border-aliceblue" onchange="set_shipping_id(this.value,'all_cart_group')">
-                                    <option>{{translate('choose_shipping_method')}}</option>
-                                    @foreach($shippings as $shipping)
-                                        <option
-                                            value="{{$shipping['id']}}" {{$choosen_shipping['shipping_method_id']==$shipping['id']?'selected':''}}>
-                                            {{translate('shipping_method')}} : {{$shipping['title'].' ( '.$shipping['duration'].' ) '.\App\CPU\Helpers::currency_converter($shipping['cost'])}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            @endif
+              @endforeach
+    
 
-            @if( $cart->count() == 0)
-            <div class="card mb-4">
-                <div class="card-body py-5">
-                    <div class="py-md-4">
-                        <div class="text-center text-capitalize">
-                            <img class="mb-3 mw-100" src="{{asset('/public/assets/front-end/img/icons/empty-cart.svg')}}" alt="">
-                            <p class="text-capitalize">{{translate('Your_Cart_is_Empty')}}!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endif
+              @if( $cart->count() == 0)
 
+              <tr>
+                <td colspan="10">
+                  <div class="text-center">
+                    <img class="mb-3 mw-100" src="{{asset('/public/assets/front-end/img/icons/empty-cart.svg')}}"
+                      alt="">
+                    <p class="text-capitalize">{{translate('Your_Cart_is_Empty')}}!</p>
+                  </div>
+                </td>
+              </tr>
 
-        <div class="px-3 px-md-0 mt-3 mt-md-0">
-            <form  method="get">
-                <div class="mb-lg-3">
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="phoneLabel" class="form-label input-label">{{translate('order_note')}} <span
-                                                class="input-label-secondary">({{translate('optional')}})</span></label>
-                            <textarea class="form-control w-100 border-aliceblue" id="order_note" name="order_note">{{ session('order_note')}}</textarea>
-                        </div>
-                    </div>
-                </div>
-            </form>
+              @endif
+       
+            </tbody>
+          </table>
+
         </div>
-    </section>
 
-    <!-- Sidebar-->
-    @include('web-views.partials._order-summary')
+      </div>
+
+    </div>
 
 
+    <div class="card">
+      <div class="card-body">
+
+        @if($shippingMethod=='inhouse_shipping')
+        <div>
+ 
+          <?php
+                      $physical_product = false;
+                      foreach($cart as $group_key=>$group){
+                          foreach ($group as $row) {
+                              if ($row->product_type == 'physical') {
+                                  $physical_product = true;
+                              }
+                          }
+                      }
+                  ?>
+
+          <?php
+                      $admin_shipping = \App\Model\ShippingType::where('seller_id', 0)->first();
+                      $shipping_type = isset($admin_shipping) == true ? $admin_shipping->shipping_type : 'order_wise';
+                  ?>
+          @if ($shipping_type == 'order_wise' && $physical_product)
+          @php($shippings=\App\CPU\Helpers::get_shipping_methods(1,'admin'))
+          @php($choosen_shipping=\App\Model\CartShipping::where(['cart_group_id'=>$cartItem['cart_group_id']])->first())
+
+          @if(isset($choosen_shipping)==false)
+          @php($choosen_shipping['shipping_method_id']=0)
+          @endif
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-12">
+                <select class="form-control border-aliceblue"
+                  onchange="set_shipping_id(this.value,'all_cart_group')">
+                  <option>{{translate('choose_shipping_method')}}</option>
+                  @foreach($shippings as $shipping)
+                  <option value="{{$shipping['id']}}"
+                    {{$choosen_shipping['shipping_method_id']==$shipping['id']?'selected':''}}>
+                    {{translate('shipping_method')}} :
+                    {{$shipping['title'].' ( '.$shipping['duration'].' ) '.\App\CPU\Helpers::currency_converter($shipping['cost'])}}
+                  </option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+          </div>
+          @endif
+        </div>
+        @endif
+
+        <div>
+          <form method="get">
+            <div class="mb-lg-3">
+              <div class="row">
+                <div class="col-12">
+                  <label for="phoneLabel" class="form-label input-label">{{translate('order_note')}} <span
+                      class="input-label-secondary">({{translate('optional')}})</span></label>
+                  <textarea class="form-control w-100 border-aliceblue" id="order_note"
+                    name="order_note">{{ session('order_note')}}</textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-lg-4">
+        @include('web-views.partials._order-summary')
+  </div>
+  
 </div>
+
 
 @push('script')
     <script>
@@ -643,9 +392,9 @@
             $('.qty_input').each(function () {
                 var qty = $(this);
                 if (qty.val() == 1) {
-                    qty.siblings('.qty_minus').html('<i class="ri-delete-bin-5-line text-danger fs-12"></i>')
+                    qty.siblings('.qty_minus').html('<i class="ri-close-line text-danger fs-12"></i>')
                 } else {
-                    qty.siblings('.qty_minus').html('<i class="ri-checkbox-indeterminate-line"></i>')
+                    qty.siblings('.qty_minus').html('<i class="ri-subtract-line"></i>')
                 }
             });
         }

@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <a href="{{route('seller.delivery-man.add')}}" class="btn btn--primary">
-                    <i class="ri-add-box-line-circle"></i> {{translate('add_deliveryman')}}
+                    <i class="ri-add-line-circle"></i> {{translate('add_deliveryman')}}
                 </a>
             </div>
             <!-- End Header -->

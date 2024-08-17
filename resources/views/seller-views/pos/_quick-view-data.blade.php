@@ -158,14 +158,14 @@
                                         <button type="button" class="btn-number"
                                                 data-type="minus" data-field="quantity"
                                                 disabled="disabled">
-                                                <i class="ri-checkbox-indeterminate-line"></i>
+                                                <i class="ri-subtract-line"></i>
                                         </button>
                                         <input type="text" name="quantity"
                                             class="form-control input-number text-center cart-qty-field"
                                             placeholder="1" value="1" min="1" max="100">
                                         <button type="button" class="btn-number" data-type="plus"
                                                 data-field="quantity">
-                                                <i class="ri-add-box-line"></i>
+                                                <i class="ri-add-line"></i>
                                         </button>
                                     </span>
                                 </div>
@@ -189,13 +189,13 @@
                                 <div class="d-flex align-items-center">
                                     <span class="product-quantity-group">
                                         <button type="button" class="btn-number in-cart-quantity-minus" onclick="getVariantForAlreayInCart('minus')">
-                                                <i class="ri-checkbox-indeterminate-line"></i>
+                                                <i class="ri-subtract-line"></i>
                                         </button>
                                         <input type="text" name="quantity_in_cart"
                                             class="form-control input-number text-center in-cart-quantity-field"
                                             placeholder="1" value="1" min="1" max="100">
                                         <button type="button" class="btn-number in-cart-quantity-plus" onclick="getVariantForAlreayInCart('plus')">
-                                                <i class="ri-add-box-line"></i>
+                                                <i class="ri-add-line"></i>
                                         </button>
                                     </span>
                                 </div>

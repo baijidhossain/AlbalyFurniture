@@ -29,7 +29,7 @@
                         <img width="20" src="{{asset('/public/assets/back-end/img/payment-card.png')}}" alt="">
                         <h5 class="mb-0">{{ translate('payment_Information') }}</h5>
                     </div>
-                    <a href="javascript:" onclick="add_input_fields_group()" class="btn btn--primary text-capitalize"><i class="ri-add-box-line"></i> {{ translate('add_new_field') }} </a>
+                    <a href="javascript:" onclick="add_input_fields_group()" class="btn btn--primary text-capitalize"><i class="ri-add-line"></i> {{ translate('add_new_field') }} </a>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -80,7 +80,7 @@
                         <img width="20" src="{{asset('/public/assets/back-end/img/payment-card-fill.png')}}" alt="">
                         <h5 class="mb-0">{{ translate('required_Information_from_Customer') }}</h5>
                     </div>
-                    <a href="javascript:" onclick="add_customer_input_fields_group()" class="btn btn--primary text-capitalize"><i class="ri-add-box-line"></i> {{ translate('add_new_field') }} </a>
+                    <a href="javascript:" onclick="add_customer_input_fields_group()" class="btn btn--primary text-capitalize"><i class="ri-add-line"></i> {{ translate('add_new_field') }} </a>
                 </div>
                 <div class="card-body">
                     <div class="customer-input-fields-section" id="customer-input-fields-section">

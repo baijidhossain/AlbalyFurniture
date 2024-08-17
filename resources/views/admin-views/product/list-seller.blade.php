@@ -34,7 +34,7 @@
                         <div class="card-header">
                             <h5>{{translate('product_table')}}</h5>
                             <a href="{{route('admin.product.add-new')}}" class="btn btn--primary  float-right">
-                                <i class="ri-add-box-line-circle"></i>
+                                <i class="ri-add-line-circle"></i>
                                 <span class="text">{{translate('add_new_product')}}</span>
                             </a>
                         </div>
@@ -104,7 +104,7 @@
                                             </a>
                                             <a class="btn btn-danger btn-sm" href="javascript:"
                                                onclick="form_alert('product-{{$p['id']}}','{{translate('want_to_delete_this_item')}} ?')">
-                                                <i class="ri-add-box-line-to-trash"></i> {{translate('delete')}}
+                                                <i class="ri-add-line-to-trash"></i> {{translate('delete')}}
                                             </a>
                                             <form action="{{route('admin.product.delete',[$p['id']])}}"
                                                   method="post" id="product-{{$p['id']}}">

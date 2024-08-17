@@ -51,7 +51,7 @@
                                 <!-- End Search -->
                             </div>
                             <div class="col-sm-4 col-md-6 col-lg-8 d-flex justify-content-end">
-                                <a href="{{route('admin.business-settings.payment-method.offline.new')}}" class="btn btn--primary"><i class="ri-add-box-line"></i> {{ translate('add_New_Method') }}</a>
+                                <a href="{{route('admin.business-settings.payment-method.offline.new')}}" class="btn btn--primary"><i class="ri-add-line"></i> {{ translate('add_New_Method') }}</a>
                             </div>
                         </div>
                         <!-- End Row -->

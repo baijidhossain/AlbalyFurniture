@@ -56,7 +56,7 @@
                                     </ul>
                                 </div>
                                 <a href="{{route('admin.sellers.seller-add')}}" type="button" class="btn btn--primary text-nowrap">
-                                    <i class="ri-add-box-line"></i>
+                                    <i class="ri-add-line"></i>
                                     {{translate('add_new_seller')}}
                                 </a>
                             </div>

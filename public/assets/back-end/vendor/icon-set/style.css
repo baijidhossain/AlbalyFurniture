@@ -45,23 +45,23 @@
   font-size: 1.75rem;
 }
 
-.ri-add-box-line-circle-outlined:before {
+.ri-add-line-circle-outlined:before {
   content: "\e900";
 }
 
-.ri-add-box-line-circle:before {
+.ri-add-line-circle:before {
   content: "\e901";
 }
 
-.ri-add-box-line-square-outlined:before {
+.ri-add-line-square-outlined:before {
   content: "\e902";
 }
 
-.ri-add-box-line-square:before {
+.ri-add-line-square:before {
   content: "\e903";
 }
 
-.ri-add-box-line:before {
+.ri-add-line:before {
   content: "\e904";
 }
 
@@ -365,23 +365,23 @@
   content: "\e94f";
 }
 
-.ri-checkbox-indeterminate-line-circle-outlined:before {
+.ri-subtract-line-circle-outlined:before {
   content: "\e950";
 }
 
-.ri-checkbox-indeterminate-line-circle:before {
+.ri-subtract-line-circle:before {
   content: "\e951";
 }
 
-.ri-checkbox-indeterminate-line-square-outlined:before {
+.ri-subtract-line-square-outlined:before {
   content: "\e952";
 }
 
-.ri-checkbox-indeterminate-line-square:before {
+.ri-subtract-line-square:before {
   content: "\e953";
 }
 
-.ri-checkbox-indeterminate-line:before {
+.ri-subtract-line:before {
   content: "\e954";
 }
 
@@ -2329,7 +2329,7 @@
   content: "\eb3a";
 }
 
-.ri-add-box-line-photo:before {
+.ri-add-line-photo:before {
   content: "\eb3b";
 }
 
@@ -4181,11 +4181,11 @@
   content: "\ed09";
 }
 
-.ri-add-box-line-event:before {
+.ri-add-line-event:before {
   content: "\ed0a";
 }
 
-.ri-add-box-line-to-trash:before {
+.ri-add-line-to-trash:before {
   content: "\ed0b";
 }
 
@@ -4453,7 +4453,7 @@
   content: "\ed4d";
 }
 
-.ri-checkbox-indeterminate-line-from-trash:before {
+.ri-subtract-line-from-trash:before {
   content: "\ed4e";
 }
 

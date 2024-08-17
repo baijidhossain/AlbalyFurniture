@@ -156,7 +156,7 @@
   content: "\ea0e";
 }
 
-.ri-add-box-line:before {
+.ri-add-line:before {
   content: "\ea0f";
 }
 
@@ -1648,7 +1648,7 @@
   content: "\eb83";
 }
 
-.ri-checkbox-indeterminate-line:before {
+.ri-subtract-line:before {
   content: "\eb84";
 }
 
@@ -2296,7 +2296,7 @@
   content: "\ec25";
 }
 
-.ri-delete-bin-6-line:before {
+.ri-subtract-line:before {
   content: "\ec26";
 }
 
@@ -2312,7 +2312,7 @@
   content: "\ec29";
 }
 
-.ri-checkbox-indeterminate-line:before {
+.ri-subtract-line:before {
   content: "\ec2a";
 }
 

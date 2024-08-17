@@ -165,7 +165,7 @@ class ProductListController extends Controller
       'max_price' => $request['max_price'],
     ];
 
-    $products = $fetched->paginate(3)->appends($data);
+    $products = $fetched->paginate(6)->appends($data);
 
     if ($request->ajax()) {
 
@@ -189,10 +189,10 @@ class ProductListController extends Controller
       }
     }
 
-    echo "<pre>";
-    print_r($products);
-    echo "</pre>";
-    die();
+    // echo "<pre>";
+    // print_r($products->links());
+    // echo "</pre>";
+    // die();
 
     return view(VIEW_FILE_NAMES['products_view_page'], compact('products', 'data'));
   }

@@ -579,22 +579,7 @@
 @endsection
 
 @push('script')
-  <script>
-      /*--flash deal Progressbar --*/
-      function update_flash_deal_progress_bar(){
-          const current_time_stamp = new Date().getTime();
-          const start_date = new Date('{{$web_config['flash_deals']['start_date'] ?? ''}}').getTime();
-          const countdownElement = document.querySelector('.cz-countdown');
-          const get_end_time = countdownElement.getAttribute('data-countdown');
-          const end_time = new Date(get_end_time).getTime();
-          let time_progress = ((current_time_stamp - start_date) / (end_time - start_date))*100;
-          const progress_bar = document.querySelector('.flash-deal-progress-bar');
-          progress_bar.style.width = time_progress + '%';
-      }
-          update_flash_deal_progress_bar();
-          setInterval(update_flash_deal_progress_bar, 10000);
-      /*-- end flash deal Progressbar --*/
-  </script>
+
 
   <!-- Owl Carousel -->
   <script src="{{asset('public/assets/front-end')}}/js/owl.carousel.min.js"></script>
@@ -1168,6 +1153,8 @@
 
   <script>
     $(function() {
+
+      
       // Set the start and end dates
       var startDate = new Date("{{ $flash_deals->start_date }}").getTime();
       var endDate = new Date("{{ $flash_deals->end_date }}").getTime();

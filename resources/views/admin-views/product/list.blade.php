@@ -151,7 +151,7 @@
                                     <span class="text">{{translate('limited_Sotcks')}}</span>
                                 </a>
                                 <a href="{{route('admin.product.add-new')}}" class="btn btn--primary">
-                                    <i class="ri-add-box-line"></i>
+                                    <i class="ri-add-line"></i>
                                     <span class="text">{{translate('add_new_product')}}</span>
                                 </a>
                             @endif

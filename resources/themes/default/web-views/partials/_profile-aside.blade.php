@@ -1,9 +1,13 @@
 
 <div class="col-lg-3">
     <div class="profile-aside-overlay d-lg-none"></div>
-    <div class="__customer-sidebar" id="shop-sidebar">
+    <div class="__customer-sidebar  user-profile-aside" id="shop-sidebar">
         <div class="d-flex justify-content-end d-lg-none">
-            <button class="profile-aside-close-btn btn"><i class="tio-clear fs-5"></i></button>
+            <button class="profile-aside-close-btn btn">
+              
+              <i class="ri-close-circle-line"></i>
+            
+            </button>
         </div>
         <div>
             <div>

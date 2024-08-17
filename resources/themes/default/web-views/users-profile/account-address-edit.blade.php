@@ -2,10 +2,10 @@
 
 @section('title', translate('my_Address'))
 
-@push('css_or_js')
-    <link rel="stylesheet" media="screen"
-          href="{{asset('public/assets/front-end')}}/vendor/nouislider/distribute/nouislider.min.css"/>
-    <link rel="stylesheet" href="{{ asset('public/assets/front-end/css/bootstrap-select.min.css') }}">
+@push('css')
+
+    <link rel="stylesheet" media="screen" href="{{asset('public/assets/front-end')}}/vendor/nouislider/distribute/nouislider.min.css"/>
+    <link rel="stylesheet" href="{{ asset('public/assets/front-end/css/bootstrap-select.min.css') }}"> 
 
     <style>
         .cz-sidebar-body h3:hover + .divider-role {
@@ -50,6 +50,7 @@
             top: 41px !important;
         }
     </style>
+
 @endpush
 
 @section('content')
@@ -61,118 +62,176 @@
         <section class="col-lg-9 col-md-8">
 
             <div class="card">
+
+              <dir class="card-header my-3">
+                <h5 class="mb-0">{{translate('update_address')}}</h5>
+              </dir>
+
                 <div class="card-body">
-                    <h5 class="mb-0">{{translate('UPDATE_ADDRESSES')}}</h5>
-                    <form action="{{route('address-update')}}" method="post">
-                        @csrf
-                        <div class="row pb-1">
-                            <div class="col-md-6">
-                                <!-- Nav pills -->
-                                <input type="hidden" name="id" value="{{$shippingAddress->id}}">
-                                <ul class="donate-now">
-                                    <li class="address_type_li">
-                                        <input type="radio" class="address_type" id="a25" name="addressAs" value="permanent"  {{ $shippingAddress->address_type == 'permanent' ? 'checked' : ''}} />
-                                        <label for="a25" class="component">{{translate('permanent')}}</label>
-                                    </li>
-                                    <li class="address_type_li">
-                                        <input type="radio" class="address_type" id="a50" name="addressAs" value="home" {{ $shippingAddress->address_type == 'home' ? 'checked' : ''}} />
-                                        <label for="a50" class="component">{{translate('home')}}</label>
-                                    </li>
-                                    <li class="address_type_li">
-                                        <input type="radio" class="address_type" id="a75" name="addressAs" value="office" {{ $shippingAddress->address_type == 'office' ? 'checked' : ''}}/>
-                                        <label for="a75" class="component">{{translate('office')}}</label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Nav pills -->
-                                <input type="hidden" id="is_billing" value="{{$shippingAddress->is_billing}}">
-                                <ul class="donate-now">
-                                    <li class="address_type_bl">
-                                        <input type="radio" class="bill_type" id="b25" name="is_billing" value="0"  {{ $shippingAddress->is_billing == '0' ? 'checked' : ''}} />
-                                        <label for="b25" class="component">{{translate('shipping')}}</label>
-                                    </li>
-                                    <li class="address_type_bl">
-                                        <input type="radio" class="bill_type" id="b50" name="is_billing" value="1" {{ $shippingAddress->is_billing == '1' ? 'checked' : ''}} />
-                                        <label for="b50" class="component">{{translate('billing')}}</label>
-                                    </li>
+                    
+                  <form action="{{route('address-update')}}" method="post">
 
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Tab panes -->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="person_name">{{translate('contact_person_name')}}</label>
-                                <input class="form-control" type="text" id="person_name"
-                                    name="name"
-                                    value="{{$shippingAddress->contact_person_name}}"
-                                    required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="own_phone">{{translate('phone')}}</label>
-                                <input class="form-control" type="text" id="own_phone" name="phone" value="{{$shippingAddress->phone}}" required="required">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="city">{{translate('city')}}</label>
+                      @csrf
 
-                                <input class="form-control" type="text" id="city" name="city" value="{{$shippingAddress->city}}" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="zip_code">{{translate('zip_code')}}</label>
-                                @if($zip_restrict_status)
-                                    <select name="zip" class="form-control selectpicker" data-live-search="true" id="" required>
-                                        @foreach($delivery_zipcodes as $zip)
-                                            <option value="{{ $zip->zipcode }}" {{ $zip->zipcode == $shippingAddress->zip? 'selected' : ''}}>{{ $zip->zipcode }}</option>
-                                        @endforeach
-                                    </select>
-                                @else
-                                    <input class="form-control" type="text" id="zip_code" name="zip" value="{{$shippingAddress->zip}}" required>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="city">{{translate('country')}}</label>
-                                <select name="country" class="form-control selectpicker" data-live-search="true" id="" required>
-                                    @if($country_restrict_status)
-                                        @foreach($delivery_countries as $country)
-                                            <option value="{{$country['name']}}" {{ $country['name'] == $shippingAddress->country? 'selected' : ''}}>{{$country['name']}}</option>
-                                        @endforeach
-                                    @else
-                                        @foreach(COUNTRIES as $country)
-                                            <option value="{{ $country['name'] }}" {{ $shippingAddress->country == $country['name']? 'selected' : '' }}>{{ $country['name'] }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
-                            </div>
+                      <div class="row mb-3">
+
+                        <div class="col-md-6">
+                          <!-- Nav pills -->
+                          <input type="hidden" name="id" value="{{$shippingAddress->id}}">
+                          <ul class="donate-now d-flex align-items-center gap-2">
+                            <li class="address_type_li">
+                              <input type="radio" class="address_type" id="a25" name="addressAs" value="permanent"
+                                {{ $shippingAddress->address_type == 'permanent' ? 'checked' : ''}} />
+                              <label for="a25" class="component">{{translate('permanent')}}</label>
+                            </li>
+                            <li class="address_type_li">
+                              <input type="radio" class="address_type" id="a50" name="addressAs" value="home"
+                                {{ $shippingAddress->address_type == 'home' ? 'checked' : ''}} />
+                              <label for="a50" class="component">{{translate('home')}}</label>
+                            </li>
+                            <li class="address_type_li">
+                              <input type="radio" class="address_type" id="a75" name="addressAs" value="office"
+                                {{ $shippingAddress->address_type == 'office' ? 'checked' : ''}} />
+                              <label for="a75" class="component">{{translate('office')}}</label>
+                            </li>
+                          </ul>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="own_address">{{translate('address')}}</label>
-                                <textarea class="form-control" id="address"
-                                    type="text"  name="address" required>{{$shippingAddress->address}}</textarea>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <input id="pac-input" class="controls rounded __inline-46" title="{{translate('search_your_location_here')}}" type="text" placeholder="{{translate('search_here')}}"/>
-                                <div class="__h-200px" id="location_map_canvas"></div>
-                            </div>
+                        <div class="col-md-6">
+                          <!-- Nav pills -->
+                          <input type="hidden" id="is_billing" value="{{$shippingAddress->is_billing}}">
+
+                          <ul class="donate-now d-flex gap-2 align-items-center">
+                            <li class="address_type_bl">
+                              <input type="radio" class="bill_type" id="b25" name="is_billing" value="0"
+                                {{ $shippingAddress->is_billing == '0' ? 'checked' : ''}} />
+                              <label for="b25" class="component">{{translate('shipping')}}</label>
+                            </li>
+                            <li class="address_type_bl">
+                              <input type="radio" class="bill_type" id="b50" name="is_billing" value="1"
+                                {{ $shippingAddress->is_billing == '1' ? 'checked' : ''}} />
+                              <label for="b50" class="component">{{translate('billing')}}</label>
+                            </li>
+
+                          </ul>
+
                         </div>
-                        @php($shipping_latitude=$shippingAddress->latitude)
-                        @php($shipping_longitude=$shippingAddress->longitude)
-                        <input type="hidden" id="latitude"
-                            name="latitude" class="form-control d-inline"
-                            placeholder="{{ translate('ex')}} : -94.22213" value="{{$shipping_latitude??0}}" required readonly>
-                        <input type="hidden"
-                            name="longitude" class="form-control"
-                            placeholder="{{ translate('ex')}} : 103.344322" id="longitude" value="{{$shipping_longitude??0}}" required readonly>
-                        <div class="modal-footer">
-                            <a href="{{ route('account-address') }}" class="closeB btn btn-secondary">{{translate('close')}}</a>
-                            <button type="submit" class="btn btn--primary">{{translate('update')}}  </button>
+
+                      </div>
+
+                      <!-- Tab panes -->
+
+                      <div class="row mb-3">
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="person_name">{{translate('contact_person_name')}}</label>
+                            <input class="form-control" type="text" id="person_name" name="name"
+                              value="{{$shippingAddress->contact_person_name}}" required>
+                          </div>
                         </div>
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="own_phone">{{translate('phone')}}</label>
+                            <input class="form-control" type="text" id="own_phone" name="phone" value="{{$shippingAddress->phone}}"
+                              required="required">
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="row mb-3">
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="city">{{translate('city')}}</label>
+                            <input class="form-control" type="text" id="city" name="city" value="{{$shippingAddress->city}}" required>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="zip_code">{{translate('zip_code')}}</label>
+                            @if($zip_restrict_status)
+                            <select name="zip" class="form-control selectpicker select2" data-live-search="true" id="" required>
+                              @foreach($delivery_zipcodes as $zip)
+                              <option value="{{ $zip->zipcode }}" {{ $zip->zipcode == $shippingAddress->zip? 'selected' : ''}}>
+                                {{ $zip->zipcode }}
+                              </option>
+                              @endforeach
+                            </select>
+                            @else
+                            <input class="form-control" type="text" id="zip_code" name="zip" value="{{$shippingAddress->zip}}" required>
+                            @endif
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                  
+                        <div class="mb-3">
+                          <div class="form-group">
+                            <label for="city">{{translate('country')}}</label>
+                            <select name="country" class="form-control selectpicker " data-live-search="true" id=""
+                              required>
+                              @if($country_restrict_status)
+                              @foreach($delivery_countries as $country)
+                              <option value="{{$country['name']}}" {{ $country['name'] == $shippingAddress->country? 'selected' : ''}}>
+                                {{$country['name']}}</option>
+                              @endforeach
+                              @else
+                              @foreach(COUNTRIES as $country)
+                              <option value="{{ $country['name'] }}" {{ $shippingAddress->country == $country['name']? 'selected' : '' }}>
+                                {{ $country['name'] }}</option>
+                              @endforeach
+                              @endif
+                            </select>
+                          </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="form-group">
+                            <label for="own_address">{{translate('address')}}</label>
+                            <textarea class="form-control" id="address" type="text" name="address"
+                              required>{{$shippingAddress->address}}</textarea>
+                          </div>
+
+                        </div>
+
+              
+                      {{-- <div class="row mb-3">
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input id="pac-input" class="controls rounded __inline-46" title="{{translate('search_your_location_here')}}"
+                              type="text" placeholder="{{translate('search_here')}}" />
+                            <div class="__h-200px" id="location_map_canvas"></div>
+                          </div>
+                        </div>
+
+                      </div> --}}
+
+
+                      @php($shipping_latitude=$shippingAddress->latitude)
+
+                      @php($shipping_longitude=$shippingAddress->longitude)
+
+                      <input type="hidden" id="latitude" name="latitude" class="form-control d-inline"
+                        placeholder="{{ translate('ex')}} : -94.22213" value="{{$shipping_latitude??0}}" required readonly>
+
+                      <input type="hidden" name="longitude" class="form-control" placeholder="{{ translate('ex')}} : 103.344322"
+                        id="longitude" value="{{$shipping_longitude??0}}" required readonly>
+
+                      <div class="modal-footer">
+                        <a href="{{ route('account-address') }}" class="close  btn btn-secondary me-2">{{translate('close')}}</a>
+                        <button type="submit" class="btn btn--primary">{{translate('update')}} </button>
+                      </div>
+
                     </form>
                 </div>
             </div>
@@ -185,6 +244,9 @@
 @push('script')
 <script src="https://maps.googleapis.com/maps/api/js?key={{\App\CPU\Helpers::get_business_settings('map_api_key')}}&libraries=places&v=3.49"></script>
 <script src="{{ asset('public/assets/front-end/js/bootstrap-select.min.js') }}"></script>
+
+
+
 <script>
 
     function initAutocomplete() {
@@ -284,5 +346,20 @@
     $(document).on("keydown", "input", function(e) {
       if (e.which==13) e.preventDefault();
     });
+
 </script>
+
+ <!-- Bootstrap JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Bootstrap Select JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+
+ <!-- Initialize the select picker -->
+ <script>
+   $(document).ready(function () {
+     $('.selectpicker').selectpicker();
+   });
+ </script>
+
 @endpush

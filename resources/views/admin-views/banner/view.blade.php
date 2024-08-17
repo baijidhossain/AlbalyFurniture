@@ -249,7 +249,7 @@
                                     <div class="col-sm-12 col-md-3">
                                         <div id="banner-btn">
                                             <button id="main-banner-add" class="btn btn--primary text-nowrap text-capitalize">
-                                                <i class="ri-add-box-line"></i>
+                                                <i class="ri-add-line"></i>
                                                 {{ translate('add_banner')}}
                                             </button>
                                         </div>

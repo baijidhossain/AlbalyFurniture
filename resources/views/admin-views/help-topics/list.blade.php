@@ -27,7 +27,7 @@
                         <h5 class="mb-0">{{translate('help_topic_Table')}} </h5>
                         <button class="btn btn--primary btn-icon-split for-addFaq" data-toggle="modal"
                                 data-bs-target="#addModal">
-                            <i class="ri-add-box-line"></i>
+                            <i class="ri-add-line"></i>
                             <span class="text">{{translate('add_FAQ')}}  </span>
                         </button>
                     </div>

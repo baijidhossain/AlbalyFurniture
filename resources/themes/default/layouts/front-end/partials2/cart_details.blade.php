@@ -209,18 +209,18 @@
                                         @if ($product_status == 1)
                                             <div class="qty d-flex justify-content-center align-itmes-center gap-3">
                                                 <span class="qty_minus " onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-1', '{{ $cartItem['quantity'] == $product->minimum_order_qty ? 'delete':'minus' }}')">
-                                                    <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line text-danger' : 'ri-checkbox-indeterminate-line' }}"></i>
+                                                    <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-close-line text-danger' : 'ri-subtract-line' }}"></i>
                                                 </span>
                                                 <input type="text" class="qty_input cartQuantity{{ $cartItem['id'] }}" value="{{$cartItem['quantity']}}" name="quantity[{{ $cartItem['id'] }}]" id="cart_quantity_web{{$cartItem['id']}}"
                                                     onchange="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '0')" data-min="{{ isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1 }}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                                 <span class="qty_plus" onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '1')">
-                                                    <i class="ri-add-box-line"></i>
+                                                    <i class="ri-add-line"></i>
                                                 </span>
                                             </div>
                                         @else
                                         <div class="qty d-flex justify-content-center align-itmes-center gap-3">
                                             <span onclick="updateCartQuantityList('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-{{$cartItem['quantity']}}', 'delete')">
-                                                <i class="ri-delete-bin-5-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
+                                                <i class="ri-close-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
                                             </span>
                                         </div>
                                         @endif
@@ -441,18 +441,18 @@
                             @if ($product_status == 1)
                                 <div class="qty d-flex flex-column align-items-center gap-3">
                                     <span class="qty_plus" onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '1')">
-                                        <i class="ri-add-box-line"></i>
+                                        <i class="ri-add-line"></i>
                                     </span>
                                     <input type="number" class="qty_input cartQuantity{{ $cartItem['id'] }}" value="{{$cartItem['quantity']}}" name="quantity[{{ $cartItem['id'] }}]" id="cart_quantity_mobile{{$cartItem['id']}}"
                                     onchange="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '0')" data-min="{{ isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1 }}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                     <span class="qty_minus " onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-1', '{{ $cartItem['quantity'] == $product->minimum_order_qty ? 'delete':'minus' }}')">
-                                        <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line text-danger' : 'ri-checkbox-indeterminate-line' }}"></i>
+                                        <i class="{{ $cartItem['quantity'] == (isset($cartItem->product->minimum_order_qty) ? $cartItem->product->minimum_order_qty : 1) ? 'ri-close-line text-danger' : 'ri-subtract-line' }}"></i>
                                     </span>
                                 </div>
                             @else
                             <div class="qty d-flex flex-column align-items-center gap-3">
                                 <span class="" onclick="updateCartQuantityListMobile('{{ $product->minimum_order_qty }}', '{{$cartItem['id']}}', '-{{$cartItem['quantity']}}', 'delete')">
-                                    <i class="ri-delete-bin-5-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
+                                    <i class="ri-close-line text-danger" data-toggle="tooltip" data-title="{{translate('product_not_available_right_now')}}"></i>
                                 </span>
                             </div>
                             @endif
@@ -507,7 +507,7 @@
                     @if(isset($choosen_shipping)==false)
                         @php($choosen_shipping['shipping_method_id']=0)
                     @endif
-                    <div class="px-3 px-md-0 mb-3">
+                    <div class=" mb-3">
                         <div class="row">
                             <div class="col-12">
                                 <select class="form-control border-aliceblue" onchange="set_shipping_id(this.value,'all_cart_group')">
@@ -643,9 +643,9 @@
             $('.qty_input').each(function () {
                 var qty = $(this);
                 if (qty.val() == 1) {
-                    qty.siblings('.qty_minus').html('<i class="ri-delete-bin-5-line text-danger fs-12"></i>')
+                    qty.siblings('.qty_minus').html('<i class="ri-close-line text-danger fs-12"></i>')
                 } else {
-                    qty.siblings('.qty_minus').html('<i class="ri-checkbox-indeterminate-line"></i>')
+                    qty.siblings('.qty_minus').html('<i class="ri-subtract-line"></i>')
                 }
             });
         }

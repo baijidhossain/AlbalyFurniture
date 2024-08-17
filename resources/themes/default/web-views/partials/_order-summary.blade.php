@@ -1,4 +1,4 @@
-@push('css_or_js')
+@push('css')
 <style>
     .cart_title {
         font-weight: 400 !important;
@@ -31,7 +31,8 @@
 </style>
 @endpush
 
-<aside class="col-lg-4 pt-4 pt-lg-2 px-max-md-0">
+<div class="card">
+  <div class="card-body">
     <div class="__cart-total __cart-total_sticky">
         <div class="cart_total p-0">
             @php($shippingMethod=\App\CPU\Helpers::get_business_settings('shipping_method'))
@@ -60,35 +61,36 @@
 
             @if($total_discount_on_product > 0)
             <h6 class="text-center text-primary mb-4 d-flex align-items-center justify-content-center gap-2">
-                <img src="{{asset('public/assets/front-end/img/icons/offer.svg')}}" alt="">
+                <img src="{{asset('public/assets/front-end/img/icons/offer.svg')}}" width="30">
                 {{translate('you_have_Saved')}} <strong>{{\App\CPU\Helpers::currency_converter($total_discount_on_product)}}!</strong>
             </h6>
             @endif
 
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-2">
                 <span class="cart_title">{{translate('sub_total')}}</span>
                 <span class="cart_value">
                     {{\App\CPU\Helpers::currency_converter($sub_total)}}
                 </span>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-2">
                 <span class="cart_title">{{translate('tax')}}</span>
                 <span class="cart_value">
                     {{\App\CPU\Helpers::currency_converter($total_tax)}}
                 </span>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-2">
                 <span class="cart_title">{{translate('shipping')}}</span>
                 <span class="cart_value">
                     {{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}
                 </span>
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-2">
                 <span class="cart_title">{{translate('discount_on_product')}}</span>
                 <span class="cart_value">
                     - {{\App\CPU\Helpers::currency_converter($total_discount_on_product)}}
                 </span>
             </div>
+
             @php($coupon_dis=0)
             @if(auth('customer')->check())
                 @if(session()->has('coupon_discount'))
@@ -104,8 +106,8 @@
                     <div class="pt-2">
                         <form class="needs-validation coupon-code-form" action="javascript:" method="post" novalidate id="coupon-code-ajax">
                             <div class="d-flex form-control rounded-pill pl-3 p-1">
-                                <img width="24" src="{{asset('public/assets/front-end/img/icons/coupon.svg')}}" alt="">
-                                <input class="input_code border-0 px-2 text-dark bg-transparent outline-0 w-100" type="text" name="code" placeholder="{{translate('coupon_code')}}" required>
+                                <img width="24" src="{{asset('public/assets/front-end/img/icons/coupon.svg')}}" width="30">
+                                <input class="input_code border-0 px-2 bg-transparent outline-0 w-100" type="text" name="code" placeholder="{{translate('coupon_code')}}" required>
                                 <button class="btn btn--primary rounded-pill text-uppercase py-1 fs-12" type="button" onclick="couponCode()">{{translate('apply')}}</button>
                             </div>
                             <div class="invalid-feedback">{{translate('please_provide_coupon_code')}}</div>
@@ -121,6 +123,7 @@
                 {{\App\CPU\Helpers::currency_converter($sub_total+$total_tax+$total_shipping_cost-$coupon_dis-$total_discount_on_product-$order_wise_shipping_discount)}}
                 </span>
             </div>
+
         </div>
         @php($company_reliability = \App\CPU\Helpers::get_business_settings('company_reliability'))
         @if($company_reliability != null)
@@ -130,7 +133,7 @@
                         @if ($value['status'] == 1 && !empty($value['title']))
                             <div class="col-sm-3 px-0 text-center mobile-padding">
                                 <img class="order-summery-footer-image" src="{{asset("/storage/app/public/company-reliability").'/'.$value['image']}}"
-                                onerror="this.src='{{asset('/public/assets/front-end/img').'/'.$value['item'].'.png'}}'" alt="">
+                                onerror="this.src='{{asset('/public/assets/front-end/img').'/'.$value['item'].'.png'}}'" width="30">
                                 <div class="deal-title">{{translate($value['title'] ?? 'title_not_found')}}</div>
                             </div>
                         @endif
@@ -141,52 +144,56 @@
 
         <div class="mt-4">
             @if($web_config['guest_checkout_status'] || auth('customer')->check())
-                <a onclick="checkout()" class="btn btn--primary btn-block proceed_to_next_button {{$cart->count() <= 0 ? 'disabled' : ''}}" >{{translate('proceed_to_Next')}}</a>
+                <a onclick="checkout()" class="w-100 btn btn--primary btn-block proceed_to_next_button {{$cart->count() <= 0 ? 'disabled' : ''}}" >{{translate('proceed_to_Next')}}</a>
             @else
-                <a href="{{route('customer.auth.login')}}" class="btn btn--primary btn-block proceed_to_next_button {{$cart->count() <= 0 ? 'disabled' : ''}}" >{{translate('proceed_to_Next')}}</a>
+                <a href="{{route('customer.auth.login')}}" class="w-100 btn btn--primary btn-block proceed_to_next_button {{$cart->count() <= 0 ? 'disabled' : ''}}" >{{translate('proceed_to_Next')}}</a>
             @endif
         </div>
         @if( $cart->count() != 0)
 
             <div class="d-flex justify-content-center mt-3">
-                <a href="{{route('home')}}" class="d-flex align-items-center gap-2 text-primary font-weight-bold">
+                <a href="{{route('home')}}" class="btn btn--primary w-100">
                     <i class="tio-back-ui fs-12"></i> {{translate('continue_Shopping')}}
                 </a>
             </div>
         @endif
 
     </div>
-</aside>
 
-<div class="bottom-sticky3 bg-white p-3 shadow-sm w-100 d-lg-none">
-    <div class="d-flex justify-content-center align-items-center fs-14 mb-2">
-        <div class="product-description-label fw-semibold text-capitalize">{{translate('total_price')}} : </div>
-        &nbsp; <strong  class="text-base">{{\App\CPU\Helpers::currency_converter($sub_total+$total_tax+$total_shipping_cost-$coupon_dis-$total_discount_on_product-$order_wise_shipping_discount)}}</strong>
-    </div>
-    @if($web_config['guest_checkout_status'] || auth('customer')->check())
-        <a onclick="checkout()" class="btn btn--primary btn-block proceed_to_next_button text-capitalize {{$cart->count() <= 0 ? 'disabled' : ''}}">{{translate('proceed_to_next')}}</a>
-    @else
-        <a href="{{route('customer.auth.login')}}" class="btn btn--primary btn-block proceed_to_next_button text-capitalize {{$cart->count() <= 0 ? 'disabled' : ''}}">{{translate('proceed_to_next')}}</a>
-    @endif
+
+  {{-- <div class="bottom-sticky3 bg-white p-3 shadow-sm w-100 d-lg-none">
+      <div class="d-flex justify-content-center align-items-center fs-14 mb-2">
+          <div class="product-description-label fw-semibold text-capitalize">{{translate('total_price')}} : </div>
+          &nbsp; <strong  class="text-base">{{\App\CPU\Helpers::currency_converter($sub_total+$total_tax+$total_shipping_cost-$coupon_dis-$total_discount_on_product-$order_wise_shipping_discount)}}</strong>
+      </div>
+      @if($web_config['guest_checkout_status'] || auth('customer')->check())
+          <a onclick="checkout()" class="btn btn--primary btn-block proceed_to_next_button text-capitalize {{$cart->count() <= 0 ? 'disabled' : ''}}">{{translate('proceed_to_next')}}</a>
+      @else
+          <a href="{{route('customer.auth.login')}}" class="btn btn--primary btn-block proceed_to_next_button text-capitalize {{$cart->count() <= 0 ? 'disabled' : ''}}">{{translate('proceed_to_next')}}</a>
+      @endif
+  </div> --}}
+
 </div>
-@push('script')
-    <script>
-        $(document).ready(function() {
-            const $stickyElement = $('.bottom-sticky3');
-            const $offsetElement = $('.__cart-total_sticky');
+</div>
 
-            $(window).on('scroll', function() {
-                const elementOffset = $offsetElement.offset().top;
-                const scrollTop = $(window).scrollTop();
-                console.log("scrollTop:", scrollTop, "elementOffset:", elementOffset);
+  @push('script')
+      <script>
+          $(document).ready(function() {
+              const $stickyElement = $('.bottom-sticky3');
+              const $offsetElement = $('.__cart-total_sticky');
 
-                if (scrollTop >= elementOffset) {
-                    $stickyElement.addClass('stick');
-                } else {
-                    $stickyElement.removeClass('stick');
-                }
-            });
-        });
+              $(window).on('scroll', function() {
+                  const elementOffset = $offsetElement.offset().top;
+                  const scrollTop = $(window).scrollTop();
+                  console.log("scrollTop:", scrollTop, "elementOffset:", elementOffset);
 
-    </script>
-@endpush
+                  if (scrollTop >= elementOffset) {
+                      $stickyElement.addClass('stick');
+                  } else {
+                      $stickyElement.removeClass('stick');
+                  }
+              });
+          });
+
+      </script>
+  @endpush

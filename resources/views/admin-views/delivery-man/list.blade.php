@@ -61,7 +61,7 @@
                                     </ul>
                                 </div>
                                 <a href="{{route('admin.delivery-man.add')}}" class="btn btn--primary text-nowrap">
-                                    <i class="ri-add-box-line"></i>
+                                    <i class="ri-add-line"></i>
                                     {{translate('add_Delivery_Man')}}
                                 </a>
                             </div>

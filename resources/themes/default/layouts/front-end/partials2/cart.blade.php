@@ -79,12 +79,12 @@
                                     @if( isset($product->status) && $product->status == 1)
                                         <div class="__quantity">
                                             <div class="quantity__minus cart-qty-btn" onclick="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '-1', 'minus')">
-                                                <i class="{{ $cartItem['quantity'] == (isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line-outlined text-danger fs-10' : 'ri-checkbox-indeterminate-line fs-10' }}"></i>
+                                                <i class="{{ $cartItem['quantity'] == (isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1) ? 'ri-delete-bin-5-line-outlined text-danger fs-10' : 'ri-subtract-line fs-10' }}"></i>
                                             </div>
                                             <input type="text" class="quantity__qty cart-qty-input form-control p-0 text-center cartQuantity{{$cartItem['id']}}" value="{{$cartItem['quantity']}}" name="quantity" id="cartQuantity{{$cartItem['id']}}"
                                                 onchange="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '0')" data-min="{{ isset($product->minimum_order_qty) ? $product->minimum_order_qty : 1 }}" autocomplete="off" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                             <div class="quantity__plus cart-qty-btn" onclick="updateCartQuantity('{{ $cartItem['id'] }}','{{ $cartItem['product_id'] }}', '1')">
-                                                <i class="ri-add-box-line"></i>
+                                                <i class="ri-add-line"></i>
                                             </div>
                                         </div>
                                     @else

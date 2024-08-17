@@ -760,7 +760,7 @@
                                 '<i class="ri-delete-bin-5-line-outlined text-danger fs-10"></i>'
                             )
                             : $(`.quantity__minus${cart_id}`).html(
-                                '<i class="ri-checkbox-indeterminate-line fs-10"></i>'
+                                '<i class="ri-subtract-line fs-10"></i>'
                             );
 
                         $(`.cartQuantity${cart_id}`).val(response["qty"]);
@@ -799,7 +799,7 @@
                             cart_quantity_of
                                 .parent()
                                 .find(".quantity__minus")
-                                .html('<i class="ri-checkbox-indeterminate-line fs-10"></i>');
+                                .html('<i class="ri-subtract-line fs-10"></i>');
                         }
                         if (
                             segment === "shop-cart" ||

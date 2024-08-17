@@ -128,7 +128,7 @@
 
                                     <div id="banner-btn">
                                         <button id="main-banner-add" class="btn btn--primary text-nowrap">
-                                            <i class="ri-add-box-line"></i>
+                                            <i class="ri-add-line"></i>
                                             {{ translate('add_banner')}}
                                         </button>
                                     </div>

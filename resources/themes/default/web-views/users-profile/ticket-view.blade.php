@@ -19,18 +19,22 @@
                     </button>
                 </div>
 
-                <div class="__card">
-                    <div class="card-header border-0 p-2 p-sm-3">
+                <div class="card">
+                  
+                    <div class="card-header ">
                         <div class="bg-section rounded d-flex gap-2 align-items-start justify-content-between p-3 ">
-                            <div class="support_ticket_head-media media flex-wrap gap-2 gap-sm-3">
+
+                            <div class="support_ticket_head-media media d-flex flex-wrap gap-2 gap-sm-3">
+
                                 <div class="rounded-circle overflow-hidden">
                                     <img onerror="this.src='{{ asset('public/assets/front-end/img/image-place-holder.png') }}'"
                                     src="{{asset('storage/app/public/profile')}}/{{\App\CPU\customer_info()->image}}" class="rounded other-store-logo" width="50"  alt="img/products">
                                 </div>
+
                                 <div class="media-body">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex gap-2 align-items-center">
-                                            <h6 class="text-capitalize m-0">{{ \App\CPU\customer_info()->f_name }} {{ \App\CPU\customer_info()->l_name }}</h6>
+                                            <h6 class="text-capitalize m-0"> <span class="text-capitalize"> Name: </span>   {{ \App\CPU\customer_info()->f_name }} {{ \App\CPU\customer_info()->l_name }}</h6>
                                             <div class="d-none d-sm-block">
                                                 <span
                                                     @if($ticket->priority == 'Urgent')
@@ -67,7 +71,9 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
                             @if($ticket->status != 'close')
                                 <a href="{{route('support-ticket.close',[$ticket['id']])}}" class="btn btn-outline-danger d-none d-sm-inline-block">{{ translate('close_this_ticket') }}</a>
                                 <a href="{{route('support-ticket.close',[$ticket['id']])}}" class="btn btn-outline-danger btn-sm d-sm-none">{{ translate('close') }}</a>
@@ -75,19 +81,20 @@
                         </div>
                     </div>
 
-                    <div class="__media-wrapper p-2 p-sm-3 d-flex flex-column-reverse">
+                    <div class="card-body">
 
                         @foreach($ticket->conversations as $conversation)
 
                             @if($conversation['admin_id'])
                                 @php($admin=\App\Model\Admin::where('id',$conversation['admin_id'])->first())
-                                <div class="media gap-3">
-                                    <div class="media-body d-flex">
+                                <div class="media gap-3 mb-4">
+                                    <div class="media-body d-flex gap-2">
 
-                                        <img class="rounded-circle __img-40 mt-2" style="text-align: {{Session::get('direction') === "rtl" ? 'left' : 'right'}};"
+                                        <img class="rounded-circle __img-40 "
                                             onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
                                             src="{{asset('storage/app/public/admin/'.$admin['image'])}}"
-                                            alt=""/>
+                                            alt=""  width="60" />
+
                                         <div class="mx-1 __incoming-msg">
 
                                             @if ($conversation['admin_message'])
@@ -119,7 +126,7 @@
                                     </div>
                                 </div>
                             @else
-                                <div class="media  ">
+                                <div class="media  mb-4">
                                     <div class="media-body __outgoing-msg">
                                         @if ($conversation['customer_message'])
                                             <div class="d-flex justify-content-end">
@@ -179,7 +186,8 @@
                         </div>
 
                     </div>
-                    <div class="card-footer py-0 px-0">
+
+                    <div class="card-footer bg-white">
                         <form class="needs-validation" href="{{route('support-ticket.comment',[$ticket['id']])}}" enctype="multipart/form-data"
                             method="post" novalidate>
                             @csrf
@@ -194,7 +202,7 @@
                                     </label>
                                 </div>
                                 <div class="w-0 flex-grow-1">
-                                    <textarea class="form-control ticket-view-control px-0 py-3" name="comment" rows="8" placeholder="{{translate('write_your_message_here')}}..." ></textarea>
+                                    <textarea class="form-control ticket-view-control px-0 " name="comment" rows="2" placeholder="{{translate('write_your_message_here')}}..." ></textarea>
 
                                     <div class="d-flex gap-3 flex-wrap filearray"></div>
                                     <div id="selected-files-container"></div>

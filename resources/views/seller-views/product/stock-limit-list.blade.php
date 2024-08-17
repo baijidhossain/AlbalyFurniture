@@ -120,7 +120,7 @@
                                             {{$p['current_stock']}}
                                             <button class="btn c1 btn-sm" id="{{ $p->id }}" onclick="update_quantity({{ $p->id }})" type="button" data-toggle="modal" data-bs-target="#update-quantity"
                                                 title="{{ translate('update_quantity') }}">
-                                                <i class="ri-add-box-line-circle"></i>
+                                                <i class="ri-add-line-circle"></i>
                                             </button>
                                         </div>
                                     </td>

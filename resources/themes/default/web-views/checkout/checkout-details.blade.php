@@ -19,7 +19,7 @@
 
 @section('content')
 
-    <div class="container pb-5 mb-2 mb-md-4 rtl __inline-54" style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
+    <div class="container pb-5 mb-2 mb-md-4 rtl __inline-54">
         <div class="row">
             <div class="col-md-12 mb-5 pt-5">
                 <div class="feature_header __feature_header">
@@ -27,9 +27,10 @@
                 </div>
             </div>
             <section class="col-lg-8">
-                <div class="checkout_details">
+            <div class="checkout_details">
                 @include('web-views.partials._checkout-steps',['step'=>1])
-                <!-- Shipping methods table-->
+                <!-- Shipping methods table--> 
+                
                     <h2 class="h4 pb-3 mb-2 mt-5">{{translate('authentication')}}</h2>
                     <!-- Autor info-->
                     @if(auth('customer')->check())
@@ -233,7 +234,10 @@
                 </div>
             </section>
             <!-- Sidebar-->
-            @include('web-views.partials._order-summary')
+            <div class="col-lg-4">
+              @include('web-views.partials._order-summary')
+          </div>
+
         </div>
     </div>
 @endsection
