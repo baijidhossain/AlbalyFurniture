@@ -38,8 +38,6 @@
   <link href="{{URL("/")}}/resources/themes/default/public/css/common-css.css" rel="stylesheet">
 
 
-
-
   @php($google_tag_manager_id = \App\CPU\Helpers::get_business_settings('google_tag_manager_id'))
   @if($google_tag_manager_id )
   <!-- Google Tag Manager -->
