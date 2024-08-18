@@ -79,7 +79,7 @@
                                             <div>
                                                 <div class="card cursor-pointer">
                                                     <button class="btn btn-block click-if-alone d-flex gap-2 align-items-center" type="submit"
-                                                        data-toggle="modal" data-bs-target="#wallet_submit_button">
+                                                        data-bs-toggle="modal" data-bs-target="#wallet_submit_button">
                                                         <img width="20" src="{{asset('public/assets/front-end/img/icons/wallet-sm.png')}}"/>
                                                         <span class="fs-12">{{translate('pay_via_Wallet')}}</span>
                                                     </button>

@@ -34,11 +34,11 @@
 </div>
 
 <div class="order-details-nav overflow-auto nav-menu gap-3 gap-xl-30 mb-4 text-capitalize">
-    <button onclick="location.href='{{ route('account-order-details', ['id'=>$order->id]) }}'" class="{{Request::is('account-order-details')  ? 'active' :''}}">{{translate('order_summary')}}</button>
-    <button onclick="location.href='{{ route('account-order-details-seller-info', ['id'=>$order->id]) }}'" class="{{Request::is('account-order-details-seller-info')  ? 'active' :''}}">{{translate('seller_info')}}</button>
-    <button onclick="location.href='{{ route('account-order-details-delivery-man-info', ['id'=>$order->id]) }}'" class="{{Request::is('account-order-details-delivery-man-info')  ? 'active' :''}}">{{translate('delivery_man_info')}}</button>
+    <button onclick="location.href='{{ route('account-order-details', ['id'=>$order->id]) }}'" class="btn {{Request::is('account-order-details')  ? 'active' :''}}">{{translate('order_summary')}}</button>
+    <button onclick="location.href='{{ route('account-order-details-seller-info', ['id'=>$order->id]) }}'" class="btn {{Request::is('account-order-details-seller-info')  ? 'active' :''}}">{{translate('seller_info')}}</button>
+    <button onclick="location.href='{{ route('account-order-details-delivery-man-info', ['id'=>$order->id]) }}'" class="btn {{Request::is('account-order-details-delivery-man-info')  ? 'active' :''}}">{{translate('delivery_man_info')}}</button>
     @if($order->order_type != 'POS')
-    <button onclick="location.href='{{ route('account-order-details-reviews', ['id'=>$order->id]) }}'"class="{{Request::is('account-order-details-reviews')  ? 'active' :''}}" >{{translate('reviews')}}</button>
+    <button onclick="location.href='{{ route('account-order-details-reviews', ['id'=>$order->id]) }}'"class="btn {{Request::is('account-order-details-reviews')  ? 'active' :''}}" >{{translate('reviews')}}</button>
     @endif
-    <button onclick="location.href='{{ route('track-order.order-wise-result-view',['order_id'=>$order['id']])}}'" class="{{Request::is('track-order/order-wise-result-view*')  ? 'active' :''}}">{{translate('track_order')}}</button>
+    <button onclick="location.href='{{ route('track-order.order-wise-result-view',['order_id'=>$order['id']])}}'" class="btn {{Request::is('track-order/order-wise-result-view*')  ? 'active' :''}}">{{translate('track_order')}}</button>
 </div>

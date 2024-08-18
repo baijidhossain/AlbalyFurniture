@@ -6696,4 +6696,5 @@
   'Authentic Products' => 'Authentic Products',
   'address_updated_successfully!' => 'Address updated successfully!',
   'update_address' => 'Update address',
+  'your_deliveryman_is_coming' => 'Your deliveryman is coming',
 );

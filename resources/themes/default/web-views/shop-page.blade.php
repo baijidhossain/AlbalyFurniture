@@ -151,7 +151,7 @@
                                     @if($seller_id!=0)
                                         @if (auth('customer')->check())
                                             <div class="d-flex">
-                                                <button class="btn btn--primary __inline-70 rounded-10  text-capitalize chat-with-seller-button d-none d-sm-inline-block" data-toggle="modal"
+                                                <button class="btn btn--primary __inline-70 rounded-10  text-capitalize chat-with-seller-button d-none d-sm-inline-block" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
                                                     <img src="{{asset('/public/assets/front-end/img/shopview-chat.png')}}" loading="eager" class="" alt="">
                                                     <span class="d-none d-sm-inline-block">
@@ -159,7 +159,7 @@
                                                     </span>
                                                 </button>
 
-                                                <button class="btn bg-transparent border-0 __inline-70 rounded-10  text-capitalize chat-with-seller-button d-sm-inline-block d-md-none" data-toggle="modal"
+                                                <button class="btn bg-transparent border-0 __inline-70 rounded-10  text-capitalize chat-with-seller-button d-sm-inline-block d-md-none" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal" {{ ($shop->temporary_close || ($shop->vacation_status && date('Y-m-d') >= date('Y-m-d', strtotime($shop->vacation_start_date)) && date('Y-m-d') <= date('Y-m-d', strtotime($shop->vacation_end_date)))) ? 'disabled' : '' }}>
                                                     <img src="{{asset('/public/assets/front-end/img/icons/shopview-chat-blue.svg')}}" loading="eager" class="" alt="">
                                                 </button>

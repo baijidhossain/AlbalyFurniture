@@ -139,7 +139,7 @@
                 <div class="d-flex gap-2 justify-content-between">
                     <dt class="title-color text-capitalize font-weight-normal">{{translate('extra_Discount')}} :</dt>
                     <dd>
-                        <button id="extra_discount" class="btn btn-sm p-0" type="button" data-toggle="modal" data-bs-target="#add-discount">
+                        <button id="extra_discount" class="btn btn-sm p-0" type="button" data-bs-toggle="modal" data-bs-target="#add-discount">
                             <i class="tio-edit"></i>
                         </button>
                         {{\App\CPU\BackEndHelper::set_symbol(\App\CPU\BackEndHelper::usd_to_currency($extra_discount))}}
@@ -149,7 +149,7 @@
                 <div class="d-flex justify-content-between">
                     <dt class="title-color gap-2 text-capitalize font-weight-normal">{{translate('coupon_Discount')}} :</dt>
                     <dd>
-                        <button id="coupon_discount" class="btn btn-sm p-0" type="button" data-toggle="modal" data-bs-target="#add-coupon-discount">
+                        <button id="coupon_discount" class="btn btn-sm p-0" type="button" data-bs-toggle="modal" data-bs-target="#add-coupon-discount">
                             <i class="tio-edit"></i>
                         </button>
                         {{\App\CPU\BackEndHelper::set_symbol(\App\CPU\BackEndHelper::usd_to_currency($coupon_discount))}}
@@ -213,7 +213,7 @@
                     <i class="fa fa-times-circle"></i>
                     {{translate('cancel_Order')}}
                 </span>
-                <button id="submit_order" type="button" class="btn btn--primary btn-block m-0" data-toggle="modal" data-bs-target="#paymentModal"  onclick="form_submit()">
+                <button id="submit_order" type="button" class="btn btn--primary btn-block m-0" data-bs-toggle="modal" data-bs-target="#paymentModal"  onclick="form_submit()">
                     <i class="fa fa-shopping-bag"></i>
                     {{translate('place_Order')}}
                 </button>

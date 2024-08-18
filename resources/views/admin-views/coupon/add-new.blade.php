@@ -214,7 +214,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex gap-10 justify-content-center">
-                                            <button class="btn btn-outline--primary square-btn btn-sm mr-1" onclick="get_details(this)" data-id="{{ $c['id'] }}" data-toggle="modal" data-bs-target="#exampleModalCenter">
+                                            <button class="btn btn-outline--primary square-btn btn-sm mr-1" onclick="get_details(this)" data-id="{{ $c['id'] }}" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <img src="{{asset('/public/assets/back-end/img/eye.svg')}}" class="svg" alt="">
                                             </button>
                                             <a class="btn btn-outline--primary btn-sm edit"

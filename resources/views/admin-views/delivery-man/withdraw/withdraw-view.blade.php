@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md-4">
                                 @if ($details->approved== 0)
-                                    <button type="button" class="btn btn-success float-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" data-toggle="modal"
+                                    <button type="button" class="btn btn-success float-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">{{translate('proceed')}}
                                         <i class="tio-arrow-forward"></i>
                                     </button>

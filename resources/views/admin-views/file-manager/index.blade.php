@@ -19,7 +19,7 @@
         <!-- Page Heading -->
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h5 class="mb-0">{{translate('file_manager')}}</h5>
-            <button type="button" class="btn btn--primary modalTrigger" data-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn--primary modalTrigger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="ri-add-line"></i>
                 <span class="text">{{translate('add_New')}}</span>
             </button>
@@ -54,7 +54,7 @@
                                         </a>
                                     @elseif($file['type']=='file')
                                     <!-- <a class="btn" href="{{asset('storage/app/'.$file['path'])}}" download> -->
-                                        <button class="btn p-0 w-100" data-toggle="modal"
+                                        <button class="btn p-0 w-100" data-bs-toggle="modal"
                                                 data-bs-target="#imagemodal{{$key}}" title="{{$file['name']}}">
                                             <span class="d-flex flex-column justify-content-center gallary-card aspect-1 overflow-hidden border rounded">
                                                 <img src="{{asset('storage/app/'.$file['path'])}}"

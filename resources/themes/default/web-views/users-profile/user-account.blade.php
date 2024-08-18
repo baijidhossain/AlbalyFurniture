@@ -97,10 +97,10 @@
                                             <label class="password-toggle-btn">
                                                 <input class="custom-control-input" type="checkbox"
                                                         style="display: none">
-                                                <i class="ri-eye-off-line password-toggle-indicator password"
+                                                {{-- <i class="ri-eye-off-line password-toggle-indicator password"
                                                     onChange="checkPasswordMatch()"></i>
                                                 <span
-                                                    class="sr-only">{{translate('show_password')}} </span>
+                                                    class="sr-only">{{translate('show_password')}} </span> --}}
                                             </label>
                                         </div>
                                     </div>
@@ -114,9 +114,9 @@
                                                 <label class="password-toggle-btn">
                                                     <input class="custom-control-input" type="checkbox"
                                                             style="display: none">
-                                                    <i class="ri-eye-off-line password-toggle-indicator "
+                                                    {{-- <i class="ri-eye-off-line password-toggle-indicator "
                                                         onChange="checkPasswordMatch()"></i><span
-                                                        class="sr-only">{{translate('show_password')}} </span>
+                                                        class="sr-only">{{translate('show_password')}} </span> --}}
                                                 </label>
                                             </div>
                                         </div>

@@ -9,7 +9,7 @@
                 </div>
                 <a href="javascript:"
                     class="btn btn--primary px-4"
-                    data-toggle="modal" data-bs-target="#balance-modal">
+                    data-bs-toggle="modal" data-bs-target="#balance-modal">
                     {{translate('withdraw')}}
                 </a>
             </div>

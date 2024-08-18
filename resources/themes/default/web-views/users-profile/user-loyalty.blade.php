@@ -76,7 +76,7 @@
                                     </ul>
                                     <div class="mt-3 text-center d-none d-sm-block">
                                         @if ($wallet_status == 1 && $loyalty_point_status == 1)
-                                        <button type="button" class="btn btn-sm rounded btn--primary" data-toggle="modal" data-bs-target="#convertToCurrency">
+                                        <button type="button" class="btn btn-sm rounded btn--primary" data-bs-toggle="modal" data-bs-target="#convertToCurrency">
                                             <span>
                                             <svg width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_1029_2558)">
@@ -100,7 +100,7 @@
                             <div class="col-md-6">
                                 <div class="text-center d-sm-none">
                                     @if ($wallet_status == 1 && $loyalty_point_status == 1)
-                                    <button type="button" class="btn btn-sm rounded btn--primary" data-toggle="modal" data-bs-target="#convertToCurrency">
+                                    <button type="button" class="btn btn-sm rounded btn--primary" data-bs-toggle="modal" data-bs-target="#convertToCurrency">
                                         <span>
                                         <svg width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_1029_2558)">
@@ -203,7 +203,7 @@
     <div class="bottom-sticky4_js"></div>
     <div class="bottom-sticky4 bg-white d-md-none p-3">
         @if ($wallet_status == 1 && $loyalty_point_status == 1)
-            <button type="button" class="btn rounded btn--primary w-100" data-toggle="modal" data-bs-target="#convertToCurrency">
+            <button type="button" class="btn rounded btn--primary w-100" data-bs-toggle="modal" data-bs-target="#convertToCurrency">
                 <span>
                 <svg width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1029_2558)">

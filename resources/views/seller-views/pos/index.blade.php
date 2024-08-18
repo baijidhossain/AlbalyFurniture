@@ -109,7 +109,7 @@
                                     @endforeach
                                 </select>
 
-                                <button class="btn btn-success rounded text-nowrap" id="add_new_customer" type="button" data-toggle="modal" data-bs-target="#add-customer" title="Add New Customer">
+                                <button class="btn btn-success rounded text-nowrap" id="add_new_customer" type="button" data-bs-toggle="modal" data-bs-target="#add-customer" title="Add New Customer">
                                     {{ translate('add_New_Customer')}}
                                 </button>
                             </div>
@@ -254,7 +254,7 @@
         </div>
     </div>
 
-    <button class="d-none" id="hold-orders-modal-btn" type="button" data-toggle="modal" data-bs-target="#hold-orders-modal"></button>
+    <button class="d-none" id="hold-orders-modal-btn" type="button" data-bs-toggle="modal" data-bs-target="#hold-orders-modal"></button>
 
     {{-- Hold Orders Modal --}}
     <div class="modal fade" id="hold-orders-modal" tabindex="-1">

@@ -61,7 +61,7 @@
                             <tbody>
                             @foreach($wallerHistory as $wallerHistories)
                             <tr>
-                                <td class="py-3"><a class="nav-link-style font-weight-medium font-size-sm" href="#order-details" data-toggle="modal">{{$wallerHistories['transaction_id']}}</a></td>
+                                <td class="py-3"><a class="nav-link-style font-weight-medium font-size-sm" href="#order-details" data-bs-toggle="modal">{{$wallerHistories['transaction_id']}}</a></td>
                                 <td class="py-3">{{$wallerHistories['transaction_type']}}</td>
                                 <td class="py-3"><span class="badge badge-info m-0">{{$wallerHistories['transaction_method']}}</span></td>
                                 <td class="py-3">{{$wallerHistories['transaction_amount']}}</td>

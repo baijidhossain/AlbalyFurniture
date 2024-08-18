@@ -240,7 +240,7 @@
                                         <div class="d-flex gap-10 justify-content-center">
                                             <button class="btn btn-outline-info btn-sm square-btn"
                                                     onclick="get_details(this)" data-id="{{ $coupon['id'] }}"
-                                                    data-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                                 <i class="tio-invisible"></i>
                                             </button>
                                             @if($coupon->added_by=='seller' || ($coupon->added_by=='admin' && $coupon->coupon_bearer=='seller' && $coupon->seller_id==auth('seller')->id()))

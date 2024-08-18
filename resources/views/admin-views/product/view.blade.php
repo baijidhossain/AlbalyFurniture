@@ -199,7 +199,7 @@
                     @if($product['added_by'] == 'seller' && ($product['request_status'] == 0 || $product['request_status'] == 1))
                     <div class="d-flex justify-content-sm-end flex-wrap gap-2 mb-3">
                         <div>
-                            <button class="btn btn-danger px-5" data-toggle="modal" data-bs-target="#publishNoteModal">
+                            <button class="btn btn-danger px-5" data-bs-toggle="modal" data-bs-target="#publishNoteModal">
                                 {{translate('reject')}}
                             </button>
 

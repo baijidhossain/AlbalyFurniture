@@ -68,7 +68,7 @@
                         <p class="mb-0">{{translate('created_at')}} {{ date('d M, Y', strtotime($admin['updated_at']) )}}</p>
                     </div>
                     <div class="d-flex flex-wrap gap-3">
-                        <button class="btn btn-outline--primary" data-toggle="modal" data-bs-target="#vacation_mode_modal">
+                        <button class="btn btn-outline--primary" data-bs-toggle="modal" data-bs-target="#vacation_mode_modal">
                             {{translate('go_to_Vacation_Mode')}}
                         </button>
                         <a href="{{ route('admin.product-settings.inhouse-shop') }}?action=edit" class="btn btn--primary d-flex gap-2 align-items-center"><i class="tio-edit"></i>{{translate('edit_shop')}}</a>

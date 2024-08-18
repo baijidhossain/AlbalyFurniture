@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-sm-8 col-md-6 col-lg-4">
                                 <div class="d-flex gap-10 justify-content-sm-end">
-                                    <button class="btn btn--primary btn-icon-split" data-toggle="modal" data-bs-target="#lang-modal">
+                                    <button class="btn btn--primary btn-icon-split" data-bs-toggle="modal" data-bs-target="#lang-modal">
                                         <i class="ri-add-line"></i>
                                         <span class="text">{{translate('add_new_language')}}</span>
                                     </button>
@@ -115,7 +115,7 @@
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 @if($data['code']!='en')
-                                                    <a class="dropdown-item" data-toggle="modal"
+                                                    <a class="dropdown-item" data-bs-toggle="modal"
                                                         data-bs-target="#lang-modal-update-{{$data['code']}}">{{translate('update')}}</a>
                                                     @if ($data['default']==true)
                                                     <a class="dropdown-item"

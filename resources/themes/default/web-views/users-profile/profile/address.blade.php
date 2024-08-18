@@ -208,7 +208,7 @@
         </div>
 
         <div class="mt-3">
-            <button type="submit" class="btn btn-p btn-b float-right" data-toggle="modal" data-bs-target="#exampleModal">
+            <button type="submit" class="btn btn-p btn-b float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 {{translate('add_New_Address')}}
             </button>
         </div>

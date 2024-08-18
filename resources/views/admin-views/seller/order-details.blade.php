@@ -56,7 +56,7 @@
                                     <!-- order verificaiton button-->
                                     @if (count($order->verification_images)>0 && $order->verification_status ==1)
                                         <div>
-                                            <button class="btn btn--primary px-4" data-toggle="modal" data-bs-target="#order_verification_modal"><i
+                                            <button class="btn btn--primary px-4" data-bs-toggle="modal" data-bs-target="#order_verification_modal"><i
                                                     class="tio-verified"></i> {{translate('order_verification')}}
                                             </button>
                                         </div>
@@ -64,7 +64,7 @@
                                     <!-- order verificaiton button-->
                                     <div class="">
                                         @if (isset($shipping_address['latitude']) && isset($shipping_address['longitude']))
-                                            <button class="btn btn--primary px-4" data-toggle="modal" data-bs-target="#locationModal"><i
+                                            <button class="btn btn--primary px-4" data-bs-toggle="modal" data-bs-target="#locationModal"><i
                                                     class="tio-map"></i> {{translate('show_locations_on_map')}}</button>
                                         @else
                                             <button class="btn btn-warning px-4">
@@ -203,7 +203,7 @@
                                                     </div>
                                                 </div>
                                                 @if($detail->product_all_status->digital_product_type == 'ready_after_sell')
-                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-toggle="modal" data-bs-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
+                                                    <button type="button" class="btn btn-sm btn--primary mt-2" title="File Upload" data-bs-toggle="modal" data-bs-target="#fileUploadModal-{{ $detail->id }}" onclick="modalFocus('fileUploadModal-{{ $detail->id }}')">
                                                         <i class="tio-file-outlined"></i> {{translate('file')}}
                                                     </button>
                                                 @endif
@@ -535,7 +535,7 @@
                                         {{translate('shipping_address')}}
                                     </h4>
 
-                                    <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-bs-target="#shippingAddressUpdateModal">
+                                    <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-bs-toggle="modal" data-bs-target="#shippingAddressUpdateModal">
                                         <i class="tio-edit"></i>
                                     </button>
                                 </div>
@@ -588,7 +588,7 @@
                                     {{translate('billing_address')}}
                                 </h4>
 
-                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-toggle="modal" data-bs-target="#billingAddressUpdateModal">
+                                <button class="btn btn-outline-primary btn-sm square-btn" title="Edit" data-bs-toggle="modal" data-bs-target="#billingAddressUpdateModal">
                                     <i class="tio-edit"></i>
                                 </button>
                             </div>

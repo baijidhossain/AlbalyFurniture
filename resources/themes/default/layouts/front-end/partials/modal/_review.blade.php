@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header border-0 pb-0">
                 <h6 class="text-center text-capitalize">{{translate('submit_a_review')}}</h6>
-                <button type="button" class="close" data-bs-dismiss="modal" >
+                <button type="button" class="btn-close" data-bs-dismiss="modal" >
                   
                 </button>
             </div>
@@ -140,7 +140,7 @@
                                 <label class="py-0 d-flex align-items-center m-0 cursor-pointer">
                                         <span class="position-relative">
                                             <img class="border rounded border-primary-light h-70px"
-                                                 src="{{asset('public/assets/front-end/img/image-place-holder.png')}}" alt="">
+                                                 src="{{asset('public/assets/front-end/img/image-place-holder.png')}}" alt="" width="70">
                                         </span>
                                     <input type="file" class="reviewfilesValue h-100 position-absolute w-100 " hidden multiple accept=".jpg, .png, .jpeg, .gif, .bmp, .webp |image/*">
                                 </label>

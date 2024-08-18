@@ -104,7 +104,7 @@
 
                                             <button class="btn py-0 px-2 fz-18" id="{{ $p->id }}"
                                                     onclick="update_quantity({{ $p->id }})" type="button"
-                                                    data-toggle="modal" data-bs-target="#update-quantity"
+                                                    data-bs-toggle="modal" data-bs-target="#update-quantity"
                                                     title="{{ translate('update_quantity') }}">
                                                 <i class="ri-add-line-circle c1"></i>
                                             </button>

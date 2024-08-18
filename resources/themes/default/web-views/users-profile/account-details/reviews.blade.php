@@ -228,7 +228,7 @@
                                                 @endif
                                                 <br>
                                                 <div class="d-flex justify-content-end justify-content-sm-start">
-                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-toggle="modal" data-bs-target="#submitReviewModal{{$order_details->id}}"><i class="tio-star-half"></i>{{translate('update_review')}}</button>
+                                                    <button type="button" class="btn btn-sm rounded btn-warning" data-bs-toggle="modal" data-bs-target="#submitReviewModal{{$order_details->id}}"><i class="tio-star-half"></i>{{translate('update_review')}}</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -15,7 +15,7 @@
                 {{translate('wallet')}}
             </h2>
             @if($customer_status == 1)
-                <button type="button" class="btn btn--primary" data-toggle="modal" data-bs-target="#addFundModal">
+                <button type="button" class="btn btn--primary" data-bs-toggle="modal" data-bs-target="#addFundModal">
                     {{translate('add_Fund')}}
                 </button>
             @endif

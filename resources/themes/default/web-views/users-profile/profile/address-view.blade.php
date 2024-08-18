@@ -16,7 +16,7 @@
                     <h1 class="h3  mb-0 folot-left headerTitle">{{translate('ADDRESSES')}}</h1>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-p btn-b float-right" data-toggle="modal"
+                    <button type="submit" class="btn btn-p btn-b float-right" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">{{translate('add_New_Address')}}
                     </button>
                 </div>

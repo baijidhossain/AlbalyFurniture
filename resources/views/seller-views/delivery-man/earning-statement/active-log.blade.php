@@ -109,7 +109,7 @@
                                             </td>
                                             <td>
                                                 <div class="media align-items-center gap-10 flex-wrap">
-                                                    <button onclick="test({{ $order->id }})" class="btn btn-info"  data-toggle="modal" data-bs-target="#exampleModalLong"><i class="tio-history"></i></button>
+                                                    <button onclick="test({{ $order->id }})" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModalLong"><i class="tio-history"></i></button>
                                                 </div>
                                             </td>
                                         </tr>

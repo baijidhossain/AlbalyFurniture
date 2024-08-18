@@ -49,7 +49,7 @@
                             <h4 class="mb-0">{{translate('my_shop_info')}} </h4>
                         </div>
                         <div class="d-inline-flex gap-2">
-                            <button class="btn btn-block __inline-70" data-toggle="modal" data-bs-target="#balance-modal">
+                            <button class="btn btn-block __inline-70" data-bs-toggle="modal" data-bs-target="#balance-modal">
                                 {{translate('go_to_Vacation_Mode')}}
                             </button>
 

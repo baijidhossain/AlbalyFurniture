@@ -223,13 +223,13 @@
                                         </div>
 
                                         <div class="d-flex justify-content-end flex-wrap gap-3 gap-sm-3">
-                                            <button type="button" class="btn btn-soft-info text-capitalize px-2 px-md-4" data-toggle="modal"
+                                            <button type="button" class="btn btn-soft-info text-capitalize px-2 px-md-4" data-bs-toggle="modal"
                                                 data-bs-target="#chatting_modal">
                                                 <img src="{{asset('/public/assets/front-end/img/seller-info-chat.png')}}" alt="">
                                                 <span class="d-none d-md-inline-block">{{translate('chat_with_delivery_man')}}</span>
                                             </button>
                                             @if($order->order_type == 'default_type' && $order->order_status=='delivered' && $order->delivery_man_id)
-                                                <button type="button" class="btn btn-sm btn-warning px-2 px-md-4" data-toggle="modal"
+                                                <button type="button" class="btn btn-sm btn-warning px-2 px-md-4" data-bs-toggle="modal"
                                                     data-bs-target="#submitReviewModal">
                                                     <i class="tio-star-half"></i>
                                                     @if(isset($order->delivery_man_review->comment) || isset($order->delivery_man_review->rating))

@@ -170,8 +170,6 @@
 
 @section('content')
   
-
-
     <main>
       <!-- Breadcrumbs S t a r t -->
       <section class="breadcrumb-section breadcrumb-bg">
@@ -305,8 +303,6 @@
                 
                     </div>
 
-
-
                   </div>
 
 
@@ -324,7 +320,7 @@
                   <div class="second-section">
                     <div class="product-desc">
 
-                      <div class="color-palatte">
+                      {{-- <div class="color-palatte">
                         <h4 class="title">Color:</h4>
                         <div class="color-section">
                           <div class="color-checkbox">
@@ -344,7 +340,7 @@
                             <div></div>
                           </div>
                         </div>
-                      </div>
+                      </div> --}}
                       <div class="d-flex gap-16 flex-wrap">
 
                         <div class="wish-list">
@@ -356,7 +352,6 @@
                           </a>
 
                         </div>
-
 
                       
                       </div>
@@ -425,199 +420,8 @@
 
                    </div>
 
-                      {{-- <form id="add-to-cart-form" class="mb-2">
 
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $product->id }}">
-                        <div class="position-relative {{Session::get('direction') === "rtl" ? 'ml-n4' : 'mr-n4'}} mb-2">
-                            @if (count(json_decode($product->colors)) > 0)
-                                <div class="flex-start align-items-center mb-2">
-                                    <div class="product-description-label m-0 text-dark font-bold">{{translate('color')}}:
-                                    </div>
-                                    <div>
-                                        <ul class="list-inline checkbox-color mb-0 flex-start {{Session::get('direction') === "rtl" ? 'mr-2' : 'ml-2'}}"
-                                            style="padding-{{Session::get('direction') === "rtl" ? 'right' : 'left'}}: 0;">
-                                            @foreach (json_decode($product->colors) as $key => $color)
-                                                <li>
-                                                    <input type="radio"
-                                                        id="{{ $product->id }}-color-{{ str_replace('#','',$color) }}"
-                                                        name="color" value="{{ $color }}"
-                                                        @if($key == 0) checked @endif>
-                                                    <label style="background: {{ $color }};"
-                                                        for="{{ $product->id }}-color-{{ str_replace('#','',$color) }}"
-                                                        data-bs-toggle="tooltip" onclick="focus_preview_image_by_color('{{ str_replace('#','',$color) }}')">
-                                                    <span class="outline"></span></label>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endif
-                            @php
-                                $qty = 0;
-                                if(!empty($product->variation)){
-                                foreach (json_decode($product->variation) as $key => $variation) {
-                                        $qty += $variation->qty;
-                                    }
-                                }
-                            @endphp
-                        </div>
-                        @foreach (json_decode($product->choice_options) as $key => $choice)
-                            <div class="row flex-start mx-0 align-items-center">
-                                <div
-                                    class="product-description-label text-dark font-bold {{Session::get('direction') === "rtl" ? 'pl-2' : 'pr-2'}} text-capitalize mb-2">{{ $choice->title }}
-                                    :
-                                </div>
-                                <div>
-                                    <ul class="list-inline checkbox-alphanumeric checkbox-alphanumeric--style-1 mb-0 mx-1 flex-start row"
-                                        style="padding-{{Session::get('direction') === "rtl" ? 'right' : 'left'}}: 0;">
-                                        @foreach ($choice->options as $key => $option)
-                                            <div>
-                                                <li class="for-mobile-capacity">
-                                                    <input type="radio"
-                                                        id="{{ $choice->name }}-{{ $option }}"
-                                                        name="{{ $choice->name }}" value="{{ $option }}"
-                                                        @if($key == 0) checked @endif >
-                                                    <label class="__text-12px"
-                                                        for="{{ $choice->name }}-{{ $option }}">{{ $option }}</label>
-                                                </li>
-                                            </div>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        @endforeach
                   
-                        <!-- Quantity + Add to cart -->
-                        <div class="mt-3">
-                            <div class="product-quantity d-flex flex-column __gap-15">
-                                <!-- quantity section -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="product-description-label text-dark font-bold mt-0">{{translate('quantity')}}:</div>
-                                    <div class="d-flex justify-content-center align-items-center quantity-box border rounded border-base"
-                                        style="color: {{$web_config['primary_color']}}">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-number __p-10" type="button"
-                                                    data-type="minus" data-field="quantity"
-                                                    disabled="disabled" style="color: {{$web_config['primary_color']}}">
-                                                -
-                                            </button>
-                                        </span>
-                                        <input type="text" name="quantity"
-                                            class="form-control input-number text-center cart-qty-field __inline-29 border-0 "
-                                            placeholder="1" value="{{ $product->minimum_order_qty ?? 1 }}" product-type="{{ $product->product_type }}" min="{{ $product->minimum_order_qty ?? 1 }}" max="{{$product['product_type'] == 'physical' ? $product->current_stock : 100}}">
-                                            <span class="input-group-btn">
-                                            <button class="btn btn-number __p-10" type="button" product-type="{{ $product->product_type }}" data-type="plus"
-                                                    data-field="quantity" style="color: {{$web_config['primary_color']}}">
-                                            +
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div id="chosen_price_div">
-                                    <div class="d-none d-sm-flex justify-content-start align-items-center {{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}}">
-                                        <div class="product-description-label text-dark font-bold text-capitalize"><strong>{{translate('total_price')}}</strong> : </div>
-                                        &nbsp; <strong id="chosen_price" class="text-base"></strong>
-                                        <small class="{{Session::get('direction') === "rtl" ? 'mr-2' : 'ml-2'}}  font-regular">
-                                            (<small>{{translate('tax')}} : </small>
-                                            <small id="set-tax-amount"></small>)
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                  
-                        <div class="row no-gutters d-none mt-2 flex-start d-flex">
-                            <div class="col-12">
-                                @if(($product['product_type'] == 'physical') && ($product['current_stock']<=0))
-                                    <h5 class="mt-3 text-danger">{{translate('out_of_stock')}}</h5>
-                                @endif
-                            </div>
-                        </div>
-                  
-                        <div class="__btn-grp mt-2 mb-3 d-none d-sm-flex">
-                            @if(($product->added_by == 'seller' && ($seller_temporary_close || (isset($product->seller->shop) && $product->seller->shop->vacation_status && $current_date >= $seller_vacation_start_date && $current_date <= $seller_vacation_end_date))) ||
-                             ($product->added_by == 'admin' && ($inhouse_temporary_close || ($inhouse_vacation_status && $current_date >= $inhouse_vacation_start_date && $current_date <= $inhouse_vacation_end_date))))
-                                <button class="btn btn-secondary" type="button" disabled>
-                                    {{translate('buy_now')}}
-                                </button>
-                                <button class="btn btn--primary string-limit" type="button" disabled>
-                                    {{translate('add_to_cart')}}
-                                </button>
-                            @else
-                                <button class="btn btn-secondary element-center __iniline-26 btn-gap-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}" onclick="buy_now()" type="button">
-                                    <span class="string-limit">{{translate('buy_now')}}</span>
-                                </button>
-                                <button
-                                    class="btn btn--primary element-center btn-gap-{{Session::get('direction') === "rtl" ? 'left' : 'right'}}"
-                                    onclick="addToCart()" type="button">
-                                    <span class="string-limit">{{translate('add_to_cart')}}</span>
-                                </button>
-                            @endif
-                            <button type="button" onclick="addWishlist('{{$product['id']}}')"
-                                    class="btn __text-18px border d-none d-sm-block">
-                                <i class="fa {{($wishlist_status == 1?'fa-heart':'fa-heart-o')}} wishlist_icon_{{$product['id']}}" style="color: {{$web_config['primary_color']}}"
-                                aria-hidden="true"></i>
-                                <span class="fs-14 text-muted align-bottom countWishlist-{{$product['id']}}">{{$countWishlist}}</span>
-                            </button>
-                            @if(($product->added_by == 'seller' && ($seller_temporary_close || (isset($product->seller->shop) && $product->seller->shop->vacation_status && $current_date >= $seller_vacation_start_date && $current_date <= $seller_vacation_end_date))) ||
-                             ($product->added_by == 'admin' && ($inhouse_temporary_close || ($inhouse_vacation_status && $current_date >= $inhouse_vacation_start_date && $current_date <= $inhouse_vacation_end_date))))
-                                <div class="alert alert-danger" role="alert">
-                                    {{translate('this_shop_is_temporary_closed_or_on_vacation._You_cannot_add_product_to_cart_from_this_shop_for_now')}}
-                            </div>
-                            @endif
-                        </div>
-
-                    </form>      --}}
-                    
-                    
-                    
-          
-
-
-
-
-                   {{-- <div class="col-md-3">
-                      <h4 class="label">Tags</h4>
-                    </div>
-
-                    <div class="col-md-9">
-                      <p class="info mb-19">Chairs, Sofa, Single Sofa</p>
-                    </div>
-
-                    <div class="col-md-3">
-                      <h4 class="label">Share</h4>
-                    </div>
-
-                    <div class="col-md-9">
-                      <div class="all-social-icon">
-                        <a href="javascript:void(0)" class="social-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"
-                            fill="none">
-                            <path
-                              d="M3 15.9761V8.98656H0V5.99104H3V3.99403C3 1.29806 4.7 0 7.1 0C8.3 0 9.2 0.0998507 9.5 0.0998507V2.89567H7.8C6.5 2.89567 6.2 3.49477 6.2 4.39343V5.99104H10L9 8.98656H6.3V15.9761H3Z"
-                              fill="#3E75B2" />
-                          </svg>
-                        </a>
-                        <a href="javascript:void(0)" class="social-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path
-                              d="M8 0C3.6 0 0 3.59463 0 7.98806C0 11.383 2.1 14.2787 5.1 15.377C5 14.7779 5 13.7794 5.1 13.0804C5.2 12.4813 6 9.08641 6 9.08641C6 9.08641 5.8 8.68701 5.8 7.98806C5.8 6.8897 6.5 5.99104 7.3 5.99104C8 5.99104 8.3 6.4903 8.3 7.0894C8.3 7.78835 7.9 8.78686 7.6 9.78537C7.4 10.5842 8 11.1833 8.8 11.1833C10.2 11.1833 11.3 9.68552 11.3 7.4888C11.3 5.59164 9.9 4.19373 8 4.19373C5.7 4.19373 4.4 5.89119 4.4 7.6885C4.4 8.38746 4.7 9.08641 5 9.48582C5 9.68552 5 9.78537 5 9.88522C4.9 10.1848 4.8 10.684 4.8 10.7839C4.8 10.8837 4.7 10.9836 4.5 10.8837C3.5 10.3845 2.9 8.98656 2.9 7.78835C2.9 5.29209 4.7 2.99552 8.2 2.99552C11 2.99552 13.1 4.99254 13.1 7.58865C13.1 10.3845 11.4 12.5812 8.9 12.5812C8.1 12.5812 7.3 12.1818 7.1 11.6825C7.1 11.6825 6.7 13.1803 6.6 13.5797C6.4 14.2787 5.9 15.1773 5.6 15.6766C6.4 15.8763 7.2 15.9761 8 15.9761C12.4 15.9761 16 12.3815 16 7.98806C16 3.59463 12.4 0 8 0Z"
-                              fill="#E12828" />
-                          </svg>
-                        </a>
-                        <a href="javascript:void(0)" class="social-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"
-                            fill="none">
-                            <path
-                              d="M17.0722 1.59813C16.432 1.88224 15.7562 2.05981 15.0448 2.16635C15.7562 1.74018 16.3253 1.06542 16.5742 0.248597C15.8985 0.639251 15.1515 0.923362 14.3335 1.10093C13.6933 0.426167 12.7686 0 11.7727 0C9.85206 0 8.28711 1.56261 8.28711 3.48036C8.28711 3.76447 8.32268 4.01307 8.39382 4.26167C5.51289 4.11961 2.9165 2.73457 1.17371 0.603737C0.889175 1.13645 0.71134 1.70467 0.71134 2.34392C0.71134 3.55139 1.31598 4.61681 2.27629 5.25606C1.70722 5.22055 1.17371 5.07849 0.675773 4.82989V4.86541C0.675773 6.57007 1.88505 7.99063 3.48557 8.31026C3.20103 8.38128 2.88093 8.4168 2.56082 8.4168C2.34742 8.4168 2.09845 8.38128 1.88505 8.34577C2.34742 9.73081 3.62784 10.7607 5.15722 10.7607C3.94794 11.6841 2.45412 12.2523 0.818041 12.2523C0.533505 12.2523 0.248969 12.2523 0 12.2168C1.56495 13.2112 3.37887 13.7794 5.37062 13.7794C11.8082 13.7794 15.3294 8.45231 15.3294 3.8355C15.3294 3.69345 15.3294 3.51588 15.3294 3.37382C16.0052 2.91214 16.6098 2.3084 17.0722 1.59813Z"
-                              fill="#3FD1FF" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div> --}}
-
                     </div>
 
                   </div>
@@ -766,62 +570,6 @@
                           @endforeach
 
 
-
-
-
-
-
-
-
-                          {{-- @foreach($reviews_of_product as $productReview)
-                        
-                            <div class="review-card ">
-                              <div class="col-md-3 d-flex mb-3 {{Session::get('direction') === "rtl" ? 'pl-5' : 'pr-5'}}">
-                                <div
-                                  class="media media-ie-fix  {{Session::get('direction') === "rtl" ? 'ml-4 pl-2' : 'mr-4 pr-2'}}">
-                                  <img class="rounded-circle __img-64 object-cover"
-                                    onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
-                                    src="{{asset("storage/app/public/profile")}}/{{(isset($productReview->user)?$productReview->user->image:'')}}"
-                                    alt="{{isset($productReview->user)?$productReview->user->f_name:'not exist'}}" />
-                                  <div
-                                    class="media-body {{Session::get('direction') === "rtl" ? 'pr-3' : 'pl-3'}} text-body">
-                                    <span class="font-size-sm mb-0 text-body"
-                                      style="font-weight: 700;font-size: 12px;">{{isset($productReview->user)?$productReview->user->f_name:'not exist'}}</span>
-                                    <div class="d-flex ">
-
-                                      <div class=" {{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}}">
-
-                                        <i class="sr-star czi-star-filled active"></i>
-
-                                      </div>
-                                      <div class="text-body text-nowrap" style="font-weight: 400;font-size: 15px;">
-                                        {{ isset($productReview->rating) ? $productReview->rating : 0 }} / 5 </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-7">
-                                <p class="mb-3 text-body __text-sm" style="word-wrap:break-word;">
-                                  {{isset($productReview->comment) ? $productReview->comment : ''}}</p>
-                                @if (isset($productReview->attachment) &&
-                                !empty(json_decode($productReview->attachment)))
-                                @foreach (json_decode($productReview->attachment) as $key => $photo)
-                                <img onclick="showInstaImage('{{asset("storage/app/public/review/$photo")}}')"
-                                  class="cz-image-zoom __img-70 rounded border"
-                                  onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
-                                  src="{{asset("storage/app/public/review/$photo")}}" alt="Product review">
-                                @endforeach
-                                @endif
-                              </div>
-                              <div class="col-md-2 text-body">
-                                <span
-                                  style="float: right;font-weight: 400;font-size: 13px;">{{isset($productReview->updated_at) ? $productReview->updated_at->format('M-d-Y') : ''}}</span>
-                              </div>
-                            </div>
-                         
-                          @endforeach --}}
-                          
-
                     </div>
                     <!-- End Tab contents -->
                   </div>
@@ -838,167 +586,6 @@
       </div>
       <!-- End-of more details area-->
 
-          {{-- <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab"
-              tabindex="0">
-            <div class="details-content-wrap custom-height ov-hidden show-more--content active">
-                <div class="row gy-4">
-                    <div class="col-lg-5">
-                        <div class="rating-review mx-auto text-center mb-30">
-                            <h2 class="rating-review__title"><span
-                                    class="rating-review__out-of">{{round($overallRating[0], 1)}}</span>/5
-                            </h2>
-                            <div class="rating text-gold mb-2">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    @if ($i <= (int)$overallRating[0])
-                                        <i class="bi bi-star-fill"></i>
-                                    @elseif ($overallRating[0] != 0 && $i <= (int)$overallRating[0] + 1.1 && $overallRating[0] > ((int)$overallRating[0]))
-                                        <i class="bi bi-star-half"></i>
-                                    @else
-                                        <i class="bi bi-star"></i>
-                                    @endif
-                                @endfor
-                            </div>
-                            <div class="rating-review__info">
-                                <span>{{$reviews_of_product->total()}} {{translate('ratings')}}</span>
-                            </div>
-                        </div>
-
-
-                        <ul class="list-rating gap-10">
-                            <li>
-                                <span class="review-name">5 {{translate('star')}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar"
-                                          style="width: {{($rating[0] != 0?number_format($rating[0]*100 / array_sum($rating)):0)}}%"
-                                          aria-valuenow="95" aria-valuemin="0"
-                                          aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="review-name">4 {{translate('star')}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar"
-                                          style="width: {{($rating[1] != 0?number_format($rating[1]*100 / array_sum($rating)):0)}}%"
-                                          aria-valuenow="35" aria-valuemin="0"
-                                          aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="review-name">3 {{translate('star')}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar"
-                                          style="width: {{($rating[2] != 0?number_format($rating[2]*100 / array_sum($rating)):0)}}%"
-                                          aria-valuenow="35" aria-valuemin="0"
-                                          aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="review-name">2 {{translate('star')}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar"
-                                          style="width: {{($rating[3] != 0?number_format($rating[3]*100 / array_sum($rating)):0)}}%"
-                                          aria-valuenow="20" aria-valuemin="0"
-                                          aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="review-name">1 {{translate('star')}}</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar"
-                                          style="width: {{($rating[4] != 0?number_format($rating[4]*100 / array_sum($rating)):0)}}%"
-                                          aria-valuenow="10" aria-valuemin="0"
-                                          aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="d-flex flex-wrap gap-3" id="product-review-list">
-                            @foreach ($reviews_of_product as $item)
-                                <div class="card border-primary-light flex-grow-1">
-                                    <div class="media flex-wrap align-items-centr gap-3 p-3">
-                                        <div class="avatar overflow-hidden border rounded-circle"
-                                              style="--size: 3.437rem">
-                                            <img
-                                                src="{{asset("storage/app/public/profile")}}/{{(isset($item->user)?$item->user->image:'')}}"
-                                                alt=""
-                                                class="img-fit dark-support"
-                                                onerror="this.src='{{theme_asset('assets/img/image-place-holder.png')}}'">
-                                        </div>
-                                        <div class="media-body d-flex flex-column gap-2">
-                                            <div
-                                                class="d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                                                <div>
-                                                    <h6 class="mb-1">{{isset($item->user)?$item->user->f_name:translate('User_Not_Exist')}}</h6>
-                                                    <div
-                                                        class="d-flex gap-2 align-items-center">
-                                                        <div
-                                                            class="star-rating text-gold fs-12">
-                                                            @for ($inc=0; $inc < 5; $inc++)
-                                                                @if ($inc < $item->rating)
-                                                                    <i class="bi bi-star-fill"></i>
-                                                                @else
-                                                                    <i class="bi bi-star"></i>
-                                                                @endif
-                                                            @endfor
-                                                        </div>
-                                                        <span>({{$item->rating}}/5)</span>
-                                                    </div>
-                                                </div>
-                                                <div>{{$item->updated_at->format("d M Y h:i:s A")}}</div>
-                                            </div>
-                                            <p>{{$item->comment}}</p>
-
-                                            <div class="d-flex flex-wrap gap-2 products-comments-img">
-                                                @foreach(json_decode($item->attachment) as $img)
-                                                    @if(file_exists(base_path("storage/app/public/review/".$img)))
-                                                        <a href="{{asset("storage/app/public/review/".$img)}}" data-lightbox="">
-                                                            <img src="{{asset("storage/app/public/review/".$img)}}" class="remove-mask-img"
-                                                                  onerror="this.src='{{theme_asset('assets/img/image-place-holder.png')}}'">
-                                                        </a>
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                            @if(count($product->reviews)==0)
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="text-danger text-center m-0">{{translate('product_review_not_available')}}</h6>
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-2">
-                @if(count($product->reviews) > 2)
-                    <button class="btn btn-outline-primary see-more-details-review m-1 view_text"
-                        onclick="seemore()"
-                        data-productid="{{$product->id}}"
-                        data-routename="{{route('review-list-product')}}"
-                        data-afterextend="{{translate('see_less')}}"
-                        data-seemore="{{translate('see_more')}}"
-                        data-onerror="{{translate('no_more_review_remain_to_load')}}">{{translate('see_more')}}</button>
-                @else
-                    <button class="btn btn-outline-primary see-more-details m-1">{{translate('see_more')}}</button>
-                @endif
-            </div>
-        </div> --}}
 
       <!-- Related Product S t a r t -->
           <section class="feature-area feature-bg position-relative">
@@ -1036,27 +623,7 @@
     <!-- Modal -->
     @include('layouts.front-end.partials.modal._chatting',['seller'=>$product->seller])
 
-    {{-- <div class="modal fade" id="remove-wishlist-modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-bs-close" data-bs-dismiss="modal">
-                    </button>
-                </div>
-                <div class="modal-body pb-5">
-                    <div class="text-center">
-                        <img src="{{asset('/public/assets/front-end/img/icons/remove-wishlist.png')}}" alt="">
-                        <h6 class="font-semibold mt-3 mb-4 mx-auto __max-w-220">{{translate('Product_has_been_removed_from_wishlist')}}?</h6>
-                    </div>
-                    <div class="d-flex gap-3 justify-content-center">
-                        <a href="javascript:" class="btn btn--primary __rounded-10" data-bs-dismiss="modal">
-                            {{translate('Okay')}}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+
 @endsection
 
 @push('script')

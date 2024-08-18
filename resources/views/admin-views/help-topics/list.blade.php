@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">{{translate('help_topic_Table')}} </h5>
-                        <button class="btn btn--primary btn-icon-split for-addFaq" data-toggle="modal"
+                        <button class="btn btn--primary btn-icon-split for-addFaq" data-bs-toggle="modal"
                                 data-bs-target="#addModal">
                             <i class="ri-add-line"></i>
                             <span class="text">{{translate('add_FAQ')}}  </span>
@@ -66,7 +66,7 @@
                                         <td>
                                             <div class="d-flex justify-content-center gap-10">
                                                 <a class="btn btn-outline--primary btn-sm edit"
-                                                   data-toggle="modal" data-bs-target="#editModal"
+                                                   data-bs-toggle="modal" data-bs-target="#editModal"
                                                    title="{{ translate('edit')}}"
                                                    data-id="{{ $help->id }}">
                                                     <i class="tio-edit"></i>

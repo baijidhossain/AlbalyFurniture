@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
-                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-bs-target="#{{$socialLoginService['login_medium']}}-modal">
+                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#{{$socialLoginService['login_medium']}}-modal">
                                             {{translate('credential_setup')}}
                                             <img width="16" class="svg" src="{{asset('/public/assets/back-end/img/info-circle.svg')}}" loading="lazy" alt="">
                                         </button>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-end mb-2">
-                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-toggle="modal" data-bs-target="#{{$appleLoginService['login_medium']}}-modal">
+                                        <button class="btn-link text-capitalize d-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#{{$appleLoginService['login_medium']}}-modal">
                                             {{translate('credential_setup')}}
                                             <img width="16" class="svg" src="{{asset('/public/assets/back-end/img/info-circle.svg')}}" loading="lazy" alt="">
                                         </button>

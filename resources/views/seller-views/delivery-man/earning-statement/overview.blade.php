@@ -214,7 +214,7 @@
                         <center>
                             <form action="">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn--primary" data-toggle="modal" data-bs-target="#exampleModal">{{translate('collect_Cash')}}</button>
+                                <button class="btn btn--primary" data-bs-toggle="modal" data-bs-target="#exampleModal">{{translate('collect_Cash')}}</button>
                             </form>
                         </center>
                         <hr class="non-printable">

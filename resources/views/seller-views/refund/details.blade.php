@@ -41,7 +41,7 @@
 
                         <div class="col-md-4 d-flex justify-content-md-end">
                             @if ($refund->change_by != 'admin')
-                                <button class="btn btn--primary" data-toggle="modal"
+                                <button class="btn btn--primary" data-bs-toggle="modal"
                                         data-bs-target="#refund-status">{{translate('change_refund_status')}}</button>
                             @endif
                         </div>
