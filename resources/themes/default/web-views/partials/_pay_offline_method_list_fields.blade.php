@@ -30,24 +30,26 @@
 
     <!-- dynamic payment modal field section -->
     <div class="payment-list-area">
+
+      <h4 class="my-3 font-weight-bold text-center">{{translate('amount')}} : {{ \App\CPU\Helpers::currency_converter($total_offline_amount) }}</h4>
         
-        <div class="bg-primary-light rounded p-4 mt-4 mx-xl-5">
-            <h6 class="text-capitalize">{{ $method->method_name }} {{translate('info')}}</h6>
+        <div class="bg-primary-light rounded mb-4">
+            <h4 class="text-capitalize mb-2">{{ $method->method_name }} {{translate('payment')}}</h4>
 
             <div class="row g-2 fs-12">
                 @foreach ($method->method_fields as $method_field)
-                    <div class="col-xl-5 col-sm-6">
+                    <div class="col-md-12">
                         <div class="d-flex gap-2">
-                            <span class="text-muted text-capitalize">{{ translate($method_field['input_name']) }}</span>   :   <span class="text-dark">{{ translate($method_field['input_data']) }}</span>
+                            <span class="text-muted text-nowrap">{{ translate($method_field['input_name']) }} : </span>      <span >{!! translate($method_field['input_data']) !!}</span>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
 
-        <h4 class="mt-4 font-weight-bold text-center">{{translate('amount')}} : {{ \App\CPU\Helpers::currency_converter($total_offline_amount) }}</h4>
-
-        <div class="mx-xl-5">
+        <h4 class="text-capitalize ">{{translate('customer_info')}}</h4>
+        
+        <div class="mt-2">
             <div class="row">
                 <input type="hidden" value="offline_payment" name="payment_method">
                 <input type="hidden" value="{{ $method->id }}" name="method_id">
@@ -56,7 +58,7 @@
                     $count_status = $count%2 == 1 ? 'odd' : 'even';
                 ?>
                 @foreach ($method->method_informations as $key=>$informations)
-                    <div class="col-sm-{{$key == 0 && $count_status==="odd" ? 12 : 6}}">
+                    <div class="col-sm-{{$key == 0 && $count_status==="odd" ? 12 : 6}} mb-3">
                         <div class="form-group">
                             <label for="payment_by">{{ translate($informations['customer_input']) }}
                                 <span class="text-danger">{{ $informations['is_required'] == 1?'*':''}}</span>
@@ -66,8 +68,8 @@
                     </div>
                 @endforeach
 
-                <div class="col-12">
-                    <div class="form-group">
+                <div class="col-12 mb-3">
+                    <div class="form-group ">
                         <label for="account_no">{{translate('payment_note')}}</label>
                         <textarea class="form-control" name="payment_note" rows="4" placeholder="{{translate('insert_note')}}"></textarea>
                     </div>

@@ -31,7 +31,7 @@
 </style>
 @endpush
 
-<div class="card">
+<div class="card mt-3 mt-lg-0">
   <div class="card-body">
     <div class="__cart-total __cart-total_sticky">
         <div class="cart_total p-0">

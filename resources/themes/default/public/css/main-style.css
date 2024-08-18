@@ -20649,21 +20649,21 @@ input[type=number] {
   z-index: 12;
 }
 
-/* .subscription-bg::before {
+.subscription-bg::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/images/gallery/subscription-banner.png");
+  background-image: url("/resources/themes/default/public/img/subscription-banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.3;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
-} */
+}
 
 .subscription-content {
   position: relative;
@@ -20701,7 +20701,7 @@ input[type=number] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 60px;
+  gap: 20px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -22016,16 +22016,16 @@ input[type=number] {
   position: relative;
 }
 
-/* .section-bg::before {
+.section-bg::before {
   content: "";
   position: absolute;
   top: 0;
   opacity: 0.5;
-  background-image: url("../../assets/images/gallery/deals-banner.png");
+  background-image: url("/resources/themes/default/public/img/deals-banner.png");
   background-size: cover;
   height: 100%;
   width: 100%;
-} */
+}
 
 .deals-area {
   padding: 100px 0px;

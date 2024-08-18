@@ -2,7 +2,7 @@
 
 @section('title', translate('choose_Payment_Method'))
 
-@push('css_or_js')
+@push('css')
     <style>
         .stripe-button-el {
             display: none !important;
@@ -18,6 +18,20 @@
             height: 1rem !important;
             position: static !important;
             width: 1rem !important;
+        }
+
+        .offline_payment1{
+        background-color: #da126b !important;
+        color: #ffff !important;
+        }
+
+        .offline_payment2{
+        background-color: #8a288f !important;
+        color: #ffff !important;
+        }
+        .offline_payment3{
+        background-color: #ea1d25 !important;
+        color: #ffff !important;
         }
     </style>
 
@@ -129,14 +143,15 @@
                             @endif
 
                             <!-- offline Payment -->
+
                             @if(isset($offline_payment) && $offline_payment['status'] && count($offline_payment_methods)>0)
-                            <div class="row g-3">
+                            <div class="row g-3 pb-4 bg-body-tertiary">
                                 <div class="col-12">
-                                    <div class="bg-primary-light rounded p-4">
+                                    <div class="bg-primary-light rounded ">
                                         <div class="d-flex justify-content-between align-items-center gap-2 position-relative">
                                             <span class="d-flex align-items-center gap-3">
-                                                <input type="radio" id="pay_offline" name="online_payment" class="custom-radio" value="pay_offline">
-                                                <label for="pay_offline" class="cursor-pointer d-flex align-items-center gap-2 mb-0 text-capitalize">{{translate('pay_offline')}}</label>
+                                                <input type="radio" id="pay_offline" name="online_payment" class="custom-radio form-check-input custom-radio" value="pay_offline">
+                                                <label for="pay_offline" class=" cursor-pointer d-flex align-items-center gap-2 mb-0 text-capitalize">{{translate('pay_offline')}}</label>
                                             </span>
 
                                             <div data-toggle="tooltip" title="{{translate('for_offline_payment_options,_please_follow_the_steps_below')}}">
@@ -147,7 +162,7 @@
                                         <div class="mt-4 pay_offline_card d-none">
                                             <div class="d-flex flex-wrap gap-3">
                                                 @foreach ($offline_payment_methods as $method)
-                                                    <button type="button" class="btn btn-light offline_payment_button text-capitalize" id="{{ $method->id }}">{{ $method->method_name }}</button>
+                                                    <button type="button" class="btn btn-light offline_payment_button text-capitalize offline_payment{{ $method->id }}" id="{{ $method->id }}">{{ $method->method_name }} </button>
                                                 @endforeach
                                             </div>
                                         </div>
@@ -172,29 +187,41 @@
         <div class="modal fade" id="selectPaymentMethod" tabindex="-1" aria-labelledby="selectPaymentMethodLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header border-0 pb-0">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{route('offline-payment-checkout-complete')}}" method="post" class="needs-validation">
-                            @csrf
-                            <div class="d-flex justify-content-center mb-4">
-                                <img width="52" src="{{asset('public/assets/front-end/img/select-payment-method.png')}}" alt="">
-                            </div>
-                            <p class="fs-14 text-center">{{translate('pay_your_bill_using_any_of_the_payment_method_below_and_input_the_required_information_in_the_form')}}</p>
 
-                            <select class="form-control mx-xl-5 max-width-661" id="pay_offline_method" name="payment_by" required>
-                                <option value="" disabled>{{ translate('select_Payment_Method') }}</option>
-                                @foreach ($offline_payment_methods as $method)
-                                    <option value="{{ $method->id }}">{{ translate('payment_Method') }} : {{ $method->method_name }}</option>
-                                @endforeach
-                            </select>
-                            <div class="" id="payement_method_field">
-                            </div>
-                        </form>
+                    <div class="modal-header border-0 pb-0">
+                      <h3 class="modal-title">Payment Info</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
                     </div>
+
+                    <div class="modal-body">
+
+                        <form action="{{route('offline-payment-checkout-complete')}}" method="post" class="needs-validation">
+
+                          @csrf
+                          <div class="d-flex justify-content-center mb-3">
+                            <img width="100" src="{{asset('public/assets/front-end/img/select-payment-method.png')}}"
+                              alt="">
+                          </div>
+
+                        
+
+                          <div class="mb-3">
+                            <select class="form-control " id="pay_offline_method" name="payment_by" required>
+                              <option value="" disabled>{{ translate('select_Payment_Method') }}</option>
+                              @foreach ($offline_payment_methods as $method)
+                              <option value="{{ $method->id }}">{{ translate('payment_Method') }} :
+                                {{ $method->method_name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+
+                          <div class="" id="payement_method_field">
+                          </div>
+
+                        </form>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -307,6 +334,7 @@
         $('#pay_offline_method').on('change', function () {
             pay_offline_method_field(this.value);
         });
+
         function pay_offline_method_field(method_id){
 
             $.ajaxSetup({
@@ -322,7 +350,9 @@
                 type: 'get',
                 success: function (response) {
                     $("#payement_method_field").html(response.methodHtml);
-                    $('#selectPaymentMethod').modal().show();
+                   
+                    $('#selectPaymentMethod').modal('show');
+
                 },
                 error: function () {
 
